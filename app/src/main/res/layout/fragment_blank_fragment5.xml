@@ -1,0 +1,228 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="fragment.BlankFragment5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingTop="16dp"
+        android:paddingRight="16dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_to_coordinator"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Coordinatorlayout"
+            android:background="@drawable/shape_btn_corners"
+            android:textColor="@color/colorWhite"/>
+
+        <Button
+            android:id="@+id/btn_password"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:text="九宫格密码"
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/shape_btn_corners"/>
+
+        <Button
+            android:id="@+id/btn_photo"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:text="上传头像"
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/shape_btn_corners"/>
+
+        <Button
+            android:id="@+id/btn_grid_view"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:text="Item进入动画"
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/shape_btn_corners"/>
+
+        <Button
+            android:id="@+id/btn_date_select"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:text="PickerDialog"
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/shape_btn_corners"/>
+
+        <Button
+            android:id="@+id/btn_shape"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:text="宝箱各种shape"
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/shape_btn_corners"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <customview.CircleImageView
+                android:id="@+id/civ_bang"
+                android:layout_centerInParent="true"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:src="@mipmap/ic_header"
+                app:border_color="@color/colorBlack"
+                app:border_overlay="false"
+                app:border_width="4dp"
+                android:clickable="true"
+                android:elevation="4dp"
+                android:outlineProvider="background"/>
+
+            <Button
+                android:id="@+id/btn_field_reset"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_width="80dp"
+                android:layout_height="48dp"
+                android:text="Reset"
+                android:textColor="@color/colorWhite"
+                android:background="@drawable/shape_btn_corners" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btn_barrage"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="弹幕"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/shape_btn_corners"/>
+
+        <Button
+            android:id="@+id/btn_anim"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="量化分析图表动画"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/shape_btn_corners"/>
+
+        <Button
+            android:id="@+id/btn_alpha_analyze"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="量化分析界面"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/shape_btn_corners"/>
+
+        <Button
+            android:id="@+id/btn_recycler_enter"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="RecyclerView总界面"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/shape_btn_corners"/>
+
+        <Button
+            android:id="@+id/btn_circle_text_anim"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="08dp"
+            android:text="circle_Text_Anim"
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/shape_btn_corners"/>
+
+        <Button
+            android:id="@+id/btn_table_layout"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="08dp"
+            android:text="Table_Layout"
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/shape_btn_corners"/>
+
+        <Button
+            android:id="@+id/btn_request_permission"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="08dp"
+            android:text="获取系统权限"
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/shape_btn_corners"/>
+
+        <Button
+            android:id="@+id/btn_loading_progress"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="08dp"
+            android:text="自定义加载样式"
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/shape_btn_corners"/>
+
+        <Button
+            android:id="@+id/btn_turntable"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="08dp"
+            android:text="大转盘"
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/shape_btn_corners"/>
+
+        <Button
+            android:id="@+id/btn_iv_switch"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="08dp"
+            android:text="图片切换"
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/shape_btn_corners"/>
+
+        <Button
+            android:id="@+id/btn_emoji"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="08dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/shape_btn_corners"
+            android:text="Emoji过滤"
+            android:textColor="@color/colorWhite" />
+
+        <Button
+            android:id="@+id/btn_ConstraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="08dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/shape_btn_corners"
+            android:text="ConstraintLayout"
+            android:textColor="@color/colorWhite" />
+
+        <Button
+            android:id="@+id/btn_Glide"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="08dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/shape_btn_corners"
+            android:text="Glide"
+            android:textColor="@color/colorWhite" />
+
+    </LinearLayout>
+
+</ScrollView>

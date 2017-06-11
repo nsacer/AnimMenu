@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".DateSelectActivity">
+
+    <TextClock
+        android:id="@+id/textClock"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:format12Hour="yyyy年MM月dd日hh:mm:ss"
+        android:format24Hour="yyyy年MM月dd日HH:mm:ss"/>
+
+
+    <!--XML属性	说明
+    android:dial	设置该模拟时钟的表盘使用的图片
+    android:hand_hour	设置该模拟时钟的时针表盘使用的图片
+    android:hand_minute	设置该模拟时钟的分针使用的图片-->
+    <AnalogClock
+        android:id="@+id/analog_clock"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:dial="@mipmap/clock"/>
+
+    <Chronometer
+        android:id="@+id/chronometer"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_btn_corners"
+            android:text="start"
+            android:onClick="chronometerStart"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_btn_corners"
+            android:text="base"
+            android:onClick="chronometerBase"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_btn_corners"
+            android:text="end"
+            android:onClick="chronometerStop"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_date"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="48dp"
+            android:layout_margin="4dp"
+            android:text="datePicker"
+            android:background="@drawable/shape_btn_corners"
+            android:textColor="@color/colorWhite"
+            android:onClick="createDatePickerDialog"/>
+
+        <Button
+            android:id="@+id/btn_time"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="48dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/shape_btn_corners"
+            android:textColor="@color/colorWhite"
+            android:text="timePicker"
+            android:onClick="createTimePickerDialog"/>
+
+        <Button
+            android:id="@+id/btn_calendar"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="48dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/shape_btn_corners"
+            android:textColor="@color/colorWhite"
+            android:text="Calendar"
+            android:onClick="createTimePickerDialog"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_number_selected"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:gravity="center"
+        android:hint="the number you selected"/>
+
+    <NumberPicker
+        android:id="@+id/numberPicker"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+</LinearLayout>

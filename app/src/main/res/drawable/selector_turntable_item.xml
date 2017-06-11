@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/layer_turntable_item_btn_nor" android:state_enabled="false" />
+    <item android:drawable="@drawable/layer_turntable_item_btn_sel" android:state_enabled="true" />
+
+</selector>

@@ -1,0 +1,44 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#0099cc"
+    tools:context="com.example.zpf.animmenu.LauncherActivity">
+
+    <TextView
+        android:id="@+id/tv_jump"
+        android:layout_gravity="end"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingTop="4dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="4dp"
+        android:text="@string/launcher_jump"
+        android:textColor="@color/colorWhite"
+        android:background="@drawable/shape_btn_corners_white_border"/>
+
+    <ImageSwitcher
+        android:id="@+id/is"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:inAnimation="@anim/push_btm_to_top_enter"
+        android:outAnimation="@anim/push_btm_to_top_exit" />
+
+    <com.hanks.htextview.HTextView
+        android:id="@+id/htv"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="24dp"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:textColor="@color/colorWhite"
+        app:animateType="typer"/>
+
+    <!--animateType: scale/evaporate/fall/sparkle/anvil/line/pixelate-->
+
+</FrameLayout>

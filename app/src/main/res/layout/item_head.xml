@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="16dp"
+    android:background="@color/colorPrimary"
+    app:layout_scrollFlags="scroll|snap"
+    app:layout_scrollInterpolator="@android:interpolator/accelerate_decelerate"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/colorAccent"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="@string/room_name"
+        android:textSize="18sp"
+        android:textColor="@android:color/white"/>
+
+    <customview.FlowLayout
+        android:id="@+id/layout_tag"
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_live_room_tag">
+
+        <TextView
+            android:id="@+id/tv_tag_one"
+            style="@style/TextViewTag"/>
+
+        <TextView
+            style="@style/TextViewTag"
+            android:text="@string/tag_one"/>
+
+        <TextView
+            style="@style/TextViewTag"
+            android:text="@string/tag_three"/>
+
+        <TextView
+            style="@style/TextViewTag"
+            android:text="@string/tag_four"/>
+
+        <TextView
+            style="@style/TextViewTag"
+            android:text="@string/tag_two"/>
+
+        <TextView
+            style="@style/TextViewTag"
+            android:text="@string/tag_one"/>
+
+        <TextView
+            style="@style/TextViewTag"
+            android:text="@string/tag_two"/>
+
+        <TextView
+            style="@style/TextViewTag"
+            android:text="@string/tag_two"/>
+
+        <TextView
+            style="@style/TextViewTag"
+            android:text="@string/short_content"/>
+
+
+    </customview.FlowLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:gravity="center"
+        android:text="@string/short_content"
+        android:textSize="14sp"
+        android:textColor="@android:color/white"/>
+
+</LinearLayout>

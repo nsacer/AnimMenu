@@ -1,0 +1,85 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- 窗口切换的动画（用于Activity 、 PopupWindow...） -->
+    <style name="AnimWindowChangeFade">
+        <item name="android:windowEnterAnimation">@anim/fade_in</item>
+        <item name="android:windowExitAnimation">@anim/fade_out</item>
+        <item name="android:windowHideAnimation">@anim/fade_in</item>
+        <item name="android:windowShowAnimation">@anim/fade_out</item>
+    </style>
+
+    <!-- 中心放射菜单按钮样式 -->
+    <style name="MenuItemStyle">
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_gravity">right|bottom</item>
+    </style>
+
+    <style name="TextViewTag">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:background">@drawable/shape_live_room_tag</item>
+        <item name="android:lines">1</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <!-- PopWindow 出现消失动画 -->
+    <style name="PopWindowAnimation">
+        <item name="android:windowEnterAnimation">@anim/pop_window_show</item>
+        <item name="android:windowExitAnimation">@anim/pop_window_dismiss</item>
+    </style>
+
+    <style name="FullscreenTheme" parent="AppTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!-- CalendarView的样式 -->
+    <!-- 历史股票池 CalendarView的样式 -->
+    <style name="CalendarHeaderTextAppearance">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/history_calendar_title_color</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="CalendarViewWeekDayTextAppearance">
+        <item name="android:textColor">@color/history_calendar_text_color_black</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="CalendarViewDateTextAppearance">
+        <item name="android:textColor">@color/selector_calendar_date_text</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <!-- 抽奖的Item方块的样式 -->
+    <style name="ImageButtonTurnTable">
+        <item name="android:layout_margin">4dp</item>
+        <item name="android:padding">4dp</item>
+        <item name="android:background">@drawable/selector_turntable_item</item>
+        <item name="android:src">@mipmap/red_envelope</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:enabled">false</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+</resources>

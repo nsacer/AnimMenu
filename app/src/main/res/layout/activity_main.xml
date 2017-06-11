@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.zpf.animmenu.MainActivity">
+
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop" />
+
+    <RelativeLayout
+        android:id="@+id/layout_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#e5ffffff" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="88dp"
+        android:layout_marginRight="24dp">
+
+        <ImageView
+            android:id="@+id/menu_1"
+            style="@style/MenuItemStyle"
+            android:src="@mipmap/ic_accessibility_black_48dp"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/menu_2"
+            style="@style/MenuItemStyle"
+            android:src="@mipmap/ic_accessible_black_48dp"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/menu_3"
+            style="@style/MenuItemStyle"
+            android:src="@mipmap/ic_account_balance_wallet_black_48dp"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/menu_4"
+            style="@style/MenuItemStyle"
+            android:src="@mipmap/ic_account_box_black_48dp"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/menu_5"
+            style="@style/MenuItemStyle"
+            android:src="@mipmap/ic_account_balance_black_48dp"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/menu_switch"
+            style="@style/MenuItemStyle"
+            android:src="@mipmap/ic_3d_rotation_black_48dp"
+            android:tint="@color/colorPrimaryDark" />
+
+    </FrameLayout>
+
+
+</FrameLayout>

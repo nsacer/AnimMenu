@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.zpf.animmenu">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <!-- 手机振动器权限 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- 系统弹窗权限 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <!-- 更改系统设置的权限 -->
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <!-- 调用相机的权限 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/logo"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:icon, android:theme">
+        <activity
+            android:name=".LauncherActivity"
+            android:label="@string/app_name"
+            android:theme="@style/FullscreenTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".ActivitySpark" />
+        <activity
+            android:name=".CoordinatorActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity android:name=".PasswordActivity" />
+        <activity android:name=".PhotoSetActivity" />
+        <activity
+            android:name=".ClipActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity android:name=".GridViewActivity" />
+        <activity android:name=".DateSelectActivity" />
+        <activity android:name=".CowboyActivity" />
+
+        <!-- Image Selector Entry -->
+        <activity
+            android:name="me.nereo.multi_image_selector.MultiImageSelectorActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity android:name=".DanmuKuActivity" />
+        <activity android:name=".ChartActivity" />
+        <activity android:name=".RecyclerViewRefreshActivity" />
+        <activity android:name=".CircleTextViewAnim" />
+        <activity
+            android:name=".AlphaAnalyzeActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity android:name=".TableLayoutActivity" />
+        <activity
+            android:name=".PermissionActivity"
+            android:label="申请权限" />
+        <activity
+            android:name=".CustomBehaviorActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity android:name=".CalendarViewActivity" />
+        <activity android:name=".CustomLoadingActivity" />
+        <activity android:name=".RecyclerSnapHelperActivity" />
+        <activity android:name=".RecyclerViewEnterActivity" />
+        <activity android:name=".BaseActivity" />
+        <activity android:name=".RecyclerRemoveItemActivity" />
+        <activity android:name=".TurnTableActivity" />
+        <activity android:name=".ImageSwitchViewPagerActivity" />
+        <activity android:name=".EmojiActivity" />
+        <activity
+            android:name=".ConstraintLayoutActivity"
+            android:label="@string/title_activity_constraint_layout"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".RecyclerAllActivity" />
+        <activity android:name=".GlideActivity" />
+        <activity android:name=".RecyclerHeadFootActivity" />
+        <activity android:name=".RecyclerItemClickActivity" />
+        <activity android:name=".RecyclerSwipeDragActivity" />
+        <activity android:name=".RecyclerPrizeInfoActivity"></activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,29 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="card_item_default_elevation">0.8dp</dimen>
+    <dimen name="card_item_selected_elevation">8dp</dimen>
+    <dimen name="circle_header_max_size">80dp</dimen>
+    <dimen name="circle_header_min_size">32dp</dimen>
+    <dimen name="toolbar_left_padding">16dp</dimen>
+
+    <!--Button 按钮-->
+    <dimen name="btn_width">128dp</dimen>
+    <dimen name="btn_height">40dp</dimen>
+    <dimen name="btn_text_size">18sp</dimen>
+
+    <!-- CalendarView -->
+    <dimen name="calendar_date_text_size">18sp</dimen>
+
+    <!-- 横滑删除的相关 -->
+    <dimen name="rdi_height">72dp</dimen>
+    <dimen name="rdi_iv_delete_width">20dp</dimen><!-- (rdi_height - 32) / 2 -->
+    <dimen name="rdi_item_marginTop">8dp</dimen>
+    <dimen name="rdi_civ_width">56dp</dimen>
+    <dimen name="rdi_civ_margin">16dp</dimen>
+    <dimen name="rdi_civ_marginStart">8dp</dimen>
+    <dimen name="rdi_civ_border">2dp</dimen>
+    <dimen name="rdi_lr_num_margin">4dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+</resources>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_calendar_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.zpf.animmenu.CalendarViewActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <CalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:dateTextAppearance="@style/CalendarViewDateTextAppearance"
+            android:focusedMonthDateColor="@color/colorGreen"
+            android:selectedWeekBackgroundColor="@color/colorBlackDark"
+            android:showWeekNumber="true"
+            android:unfocusedMonthDateColor="@color/colorGrayDarkDark"
+            android:weekDayTextAppearance="@style/CalendarViewWeekDayTextAppearance"
+            android:weekNumberColor="@color/colorPink"
+            android:weekSeparatorLineColor="@color/colorPurple" />
+
+        <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+            android:id="@+id/mcv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:background="@color/colorWhite"
+            android:padding="16dp"
+            app:mcv_allowClickDaysOutsideCurrentMonth="true"
+            app:mcv_dateTextAppearance="@style/CalendarViewDateTextAppearance"
+            app:mcv_firstDayOfWeek="sunday"
+            app:mcv_headerTextAppearance="@style/CalendarHeaderTextAppearance"
+            app:mcv_leftArrowMask="@mipmap/calendar_arrow_left"
+            app:mcv_rightArrowMask="@mipmap/calendar_arrow_right"
+            app:mcv_selectionColor="@color/history_calendar_red"
+            app:mcv_showOtherDates="other_months"
+            app:mcv_weekDayLabels="@array/cowboy_weekdays"
+            app:mcv_weekDayTextAppearance="@style/CalendarViewWeekDayTextAppearance" />
+    </LinearLayout>
+
+</ScrollView>

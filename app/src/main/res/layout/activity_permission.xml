@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_permission"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.zpf.animmenu.PermissionActivity">
+
+    <LinearLayout
+        android:id="@+id/layout_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="申请SYSTEM_ALERT_WINDOW权限"
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/shape_btn_corners"/>
+
+        <Button
+            android:id="@+id/btn_two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="申请更改系统设置的权限"
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/shape_btn_corners"/>
+
+        <Button
+            android:id="@+id/btn_three"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="拍照权限"
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/shape_btn_corners"/>
+    </LinearLayout>
+
+</ScrollView>

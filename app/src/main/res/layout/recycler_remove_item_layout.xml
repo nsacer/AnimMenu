@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/rdi_height"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+
+    <LinearLayout
+        android:id="@+id/layout_rdi"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb_rdi"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:visibility="gone"/>
+
+        <customview.CircleImageView
+            android:id="@+id/civ_rdi"
+            android:layout_gravity="center_vertical"
+            android:layout_width="@dimen/rdi_civ_width"
+            android:layout_height="@dimen/rdi_civ_width"
+            android:layout_marginStart="@dimen/rdi_civ_marginStart"
+            android:layout_marginTop="@dimen/rdi_item_marginTop"
+            android:layout_marginEnd="@dimen/rdi_civ_margin"
+            android:layout_marginBottom="@dimen/rdi_item_marginTop"
+            android:src="@mipmap/ic_header"
+            app:border_width="@dimen/rdi_civ_border"
+            app:border_color="@color/black_alpha_4"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/rdi_item_marginTop"
+            android:layout_marginBottom="@dimen/rdi_item_marginTop"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tv_title_rdi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="item项目的title"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_num_rdi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/rdi_lr_num_margin"
+                android:text="直播室的房间号吗96666"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/iv_delete_rdi"
+            android:layout_width="@dimen/rdi_height"
+            android:layout_height="@dimen/rdi_height"
+            android:padding="@dimen/rdi_iv_delete_width"
+            android:background="#88ff0000"
+            android:contentDescription="@null"
+            android:src="@mipmap/ic_delete_white_24dp"
+            android:scaleType="centerCrop"/>
+    </LinearLayout>
+
+</RelativeLayout>

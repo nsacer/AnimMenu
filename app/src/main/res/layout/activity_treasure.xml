@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context=".CowboyActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:drawableLeft="@drawable/treasure_title_tag"
+            android:drawableStart="@drawable/treasure_title_tag"
+            android:drawablePadding="8dp"
+            android:text="热销宝箱"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:background="@drawable/treasure_earn_describe"
+                android:text="近365天最高收益"
+                android:textSize="10sp"
+                android:textColor="@color/colorGrayDarkDark"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="-2dp"
+                android:layout_marginStart="-2dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:background="@drawable/treasure_earn_percent"
+                android:text="120.00%"
+                android:textSize="10sp"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/treasure_subscription"
+            android:text="立即订阅"
+            android:textSize="14sp"
+            android:textColor="@color/treasure_e94b4b"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/treasure_new"
+            android:text="新品发布"
+            android:textSize="12sp"
+            android:textColor="#ffffff"/>
+
+        <LinearLayout
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:padding="16dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <customview.CircleImageView
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:src="@mipmap/ic_header"
+                android:background="@drawable/layer_head_bg"/>
+
+            <ImageView
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:src="@mipmap/ic_header"
+                android:background="@drawable/layer_head_bg"/>
+
+        </LinearLayout>
+
+        <customview.TurtleGraph
+            android:id="@+id/turtle"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="380dp"
+            android:layout_height="380dp"
+            android:background="@color/colorPrimary"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_start_anim_turtle"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="48dp"
+                android:layout_margin="2dp"
+                android:text="@string/anim_start"
+                android:textColor="@color/colorWhite"
+                android:background="@drawable/shape_btn_corners"/>
+
+            <Button
+                android:id="@+id/btn_cancel_anim_turtle"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="48dp"
+                android:layout_margin="2dp"
+                android:text="@string/anim_cancel"
+                android:textColor="@color/colorWhite"
+                android:background="@drawable/shape_btn_corners"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/et_input_blank"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"/>
+
+            <Button
+                android:id="@+id/btn_blank_click"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_margin="2dp"
+                android:text="点击测试"
+                android:textColor="@color/colorWhite"
+                android:background="@drawable/shape_btn_corners"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

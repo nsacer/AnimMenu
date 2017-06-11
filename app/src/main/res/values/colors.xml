@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!-- 白色梯度透明 -->
+    <color name="white_alpha_9">#e5ffffff</color>
+    <color name="white_alpha_8">#ccffffff</color>
+    <color name="white_alpha_7">#b2ffffff</color>
+    <color name="white_alpha_6">#99ffffff</color>
+    <color name="white_alpha_5">#7fffffff</color>
+    <color name="white_alpha_4">#66ffffff</color>
+    <color name="white_alpha_3">#4cffffff</color>
+    <color name="white_alpha_2">#33ffffff</color>
+    <color name="white_alpha_1">#19ffffff</color>
+
+    <!-- 黑色梯度透明 -->
+    <color name="black_alpha_9">#e5000000</color>
+    <color name="black_alpha_8">#cc000000</color>
+    <color name="black_alpha_7">#b2000000</color>
+    <color name="black_alpha_6">#99000000</color>
+    <color name="black_alpha_5">#7f000000</color>
+    <color name="black_alpha_4">#66000000</color>
+    <color name="black_alpha_3">#4c000000</color>
+    <color name="black_alpha_2">#33000000</color>
+    <color name="black_alpha_1">#19000000</color>
+
+    <color name="colorTransparent">#00ffffff</color>
+    <color name="colorWhite">#FAFAFA</color>
+    <color name="colorWhiteDark">#FFFFFF</color>
+    <color name="colorBlack">#333333</color>
+    <color name="colorBlackDark">#000000</color>
+    <color name="colorGray">#F5F5F5</color>
+    <color name="colorGrayDark">#DFDFDF</color>
+    <color name="colorGreen">#1DA362</color>
+    <color name="colorPink">#F07CC6</color>
+    <color name="colorPurple">#5E34AD</color>
+    <color name="colorAccentAlpha">#66FF4081</color>
+
+
+    <color name="treasure_e94b4b">#e94b4b</color>
+    <color name="colorGrayDarkDark">#929292</color>
+
+    <!-- CircleRingGraph -->
+    <color name="circle_out_blue">#EAF7FD</color>
+    <color name="circle_in">#FAFAFA</color>
+    <color name="circle_progress_blue">#39B2EF</color>
+    <!-- SpiderChart -->
+    <color name="spider_ring_light">#FFFFFF</color>
+    <color name="spider_ring_dark">#F5F5F5</color>
+    <color name="spider_ring_line">#D2D2D2</color>
+    <color name="spider_value_line">#2727FA</color>
+    <color name="spider_value_rect">#7f2727FA</color>
+    <!-- TextDiagram -->
+    <color name="diagram_title">#7C7C7C</color>
+    <color name="diagram_blue">#5386F6</color>
+    <color name="diagram_red">#ED2E35</color>
+
+    <color name="black_overlay">#66000000</color>
+
+    <!-- CalendarView -->
+    <color name="calendar_date_selected_color">#E94B4B</color>
+    <color name="calendar_date_text_color">#565656</color>
+    <color name="calendar_week_text_color">#D5D5D5</color>
+    <color name="calendar_title_color">#000000</color>
+    <!--历史股票池-->
+    <color name="history_stocks_enter_text_color">#565656</color>
+    <color name="history_calendar_title_color">#000000</color>
+    <color name="history_calendar_red">#E94B4B</color>
+    <color name="history_calendar_text_color_black">#565656</color>
+    <color name="history_calendar_text_color_gray">#D5D5D5</color>
+    <color name="history_stock_no">#878D9F</color>
+
+    <!-- 大转盘 -->
+    <color name="turntable_item_bg_nor_light">#FFEEEE</color>
+    <color name="turntable_item_bg_nor_dark">#FFBFBF</color>
+    <color name="turntable_item_bg_sel_light">#FFE400</color>
+    <color name="turntable_item_bg_sel_dark">#E58E01</color>
+</resources>

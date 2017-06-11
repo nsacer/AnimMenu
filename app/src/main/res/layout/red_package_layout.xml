@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="64dp">
+
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:layout_width="wrap_content"
+        android:layout_height="28dp"
+        android:paddingLeft="2dp"
+        android:paddingRight="80dp"
+        android:background="@drawable/shape_red_package"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout">
+
+
+        <customview.CircleImageView
+            android:id="@+id/header_image_view"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@mipmap/ic_header"/>
+
+        <TextView
+            android:id="@+id/vote_text_view"
+            android:layout_marginLeft="6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="小小为股市女神直播是投票2000票"
+            android:textSize="14sp"
+            android:textColor="@android:color/background_dark"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/footer_image_view"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:src="@mipmap/red_envelope"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/linearLayout"
+        android:layout_alignEnd="@+id/linearLayout"
+        android:layout_marginRight="8dp"/>
+
+</RelativeLayout>
+
+
+

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<gridLayoutAnimation xmlns:android="http://schemas.android.com/apk/res/android"
+    android:rowDelay="75%"
+    android:columnDelay="60%"
+    android:direction="right_to_left|top_to_bottom"
+    android:directionPriority="none"
+    android:animation="@anim/fragment_in">
+
+</gridLayoutAnimation>

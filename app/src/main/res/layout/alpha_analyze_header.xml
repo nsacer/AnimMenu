@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/alpha_header_layout"
+    android:layout_width="match_parent"
+    android:layout_height="280dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@mipmap/wall"
+    app:layout_collapseMode="parallax"
+    app:layout_collapseParallaxMultiplier="0.6">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize" />
+
+    <TextView
+        android:id="@+id/tv_introduce"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:drawableEnd="@mipmap/ask_help"
+        android:gravity="center"
+        android:text="跳转到自定义Behavior页面"
+        android:textColor="@color/colorWhite"
+        android:textSize="14sp"/>
+
+
+</RelativeLayout>

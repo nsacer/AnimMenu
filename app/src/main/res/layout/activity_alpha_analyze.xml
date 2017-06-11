@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- CoordinatorLayout是LinearLayout vertical -->
+
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_alpha_analyze"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/circle_progress_blue"
+    tools:context="com.example.zpf.animmenu.AlphaAnalyzeActivity">
+
+
+    <!-- AppBarLayout vertical -->
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:fitsSystemWindows="true"
+            app:title="@string/anim_cancel"
+            app:contentScrim="@color/colorWhite"
+            app:expandedTitleGravity="top|center_horizontal"
+            app:expandedTitleMarginTop="40dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+
+            <include
+                layout="@layout/alpha_analyze_header"/>
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar_alpha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_collapseMode="pin"/>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include
+        layout="@layout/alpha_analyze_footer"/>
+
+
+</android.support.design.widget.CoordinatorLayout>

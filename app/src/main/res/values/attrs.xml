@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- CircleImageView的xml样式属性 -->
+    <declare-styleable name="CircleImageView">
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+        <attr name="border_overlay" format="boolean" />
+    </declare-styleable>
+
+    <!-- Declare custom theme attributes that allow changing which styles are
+         used for button bars depending on the API level.
+         ?android:attr/buttonBarStyle is new as of API 11 so this is
+         necessary to support previous API levels. -->
+    <declare-styleable name="ButtonBarContainerTheme">
+        <attr name="metaButtonBarStyle" format="reference" />
+        <attr name="metaButtonBarButtonStyle" format="reference" />
+    </declare-styleable>
+
+    <!-- 弹幕item样式xml属性 -->
+    <declare-styleable name="RedPackageView">
+        <attr name="android:text" />
+        <attr name="android:src" />
+    </declare-styleable>
+
+    <!-- 设置图文都有的tabRadioButton -->
+    <declare-styleable name="TabRadioButton">
+        <!-- 设置top图片的宽度 -->
+        <attr name="zhao_drawableTopWith" format="dimension" />
+        <!-- 设置top图片的高度 -->
+        <attr name="zhao_drawableTopHeight" format="dimension" />
+        <attr name="zhao_drawableBottomWith" format="dimension" />
+        <attr name="zhao_drawableBottomHeight" format="dimension" />
+        <attr name="zhao_drawableRightWith" format="dimension" />
+        <attr name="zhao_drawableRightHeight" format="dimension" />
+        <attr name="zhao_drawableLeftWith" format="dimension" />
+        <attr name="zhao_drawableLeftHeight" format="dimension" />
+        <!-- 设置top的图片资源 -->
+        <attr name="zhao_drawableTop" format="reference" />
+        <attr name="zhao_drawableBottom" format="reference" />
+        <attr name="zhao_drawableRight" format="reference" />
+        <attr name="zhao_drawableLeft" format="reference" />
+    </declare-styleable>
+
+    <!-- 圆形进度条类型图表的相关属性 -->
+    <declare-styleable name="CircleRingGraph">
+        <!-- 进度条的背景色 -->
+        <attr name="progressBackgroundColor" format="color" />
+        <!-- 进度条颜色 -->
+        <attr name="progressColor" format="color" />
+        <!-- 中心圆形的颜色 -->
+        <attr name="circleHeartColor" format="color" />
+        <!-- 进度条的宽度 -->
+        <attr name="progressWidth" format="dimension" />
+        <!-- 进度条是否显示圆形头部 -->
+        <attr name="progressRoundCap" format="boolean" />
+        <!-- 圆心显示的文字 -->
+        <attr name="centerText" format="string" />
+        <!-- 圆心显示的文字颜色 -->
+        <attr name="centerTextColor" format="color" />
+        <!-- 圆心显示的文字大小 -->
+        <attr name="centerTextSize" format="dimension" />
+    </declare-styleable>
+
+    <!-- 带文字的横向柱状图 -->
+    <declare-styleable name="TextDiagram">
+        <!-- 股票名字的textSize -->
+        <attr name="textSize" format="dimension"/>
+        <!-- 股票名字的textColor -->
+        <attr name="textColor" format="color"/>
+        <!-- 股票名字右边距离图形的距离 -->
+        <attr name="textMarginRight" format="dimension"/>
+        <!-- 股票的数值值的文本大小 -->
+        <attr name="textValueSize" format="dimension"/>
+        <!-- 顶部的颜色 -->
+        <attr name="topColor" format="color"/>
+        <!-- 底部的颜色 -->
+        <attr name="bottomColor" format="color"/>
+        <!-- 数据线条的宽度 -->
+        <attr name="lineWidth" format="dimension"/>
+        <!-- 竖直虚线的颜色 -->
+        <attr name="dashLineColor" format="color"/>
+        <!-- 竖直虚线的线条长度 -->
+        <attr name="dashLineLength" format="dimension"/>
+        <!-- 竖直虚线的间隔 -->
+        <attr name="dashLinePadding" format="dimension"/>
+        <!-- 竖直虚线的宽度 -->
+        <attr name="dashLineWidth" format="dimension"/>
+        <!-- 竖直虚线是否可见（主力深度不可见） -->
+        <attr name="dashLineVisible" format="boolean"/>
+        <!-- 主力深度距离第二条数据间距 -->
+        <attr name="mainDeepTop" format="dimension"/>
+    </declare-styleable>
+
+
+    <!-- SpiderChart -->
+    <declare-styleable name="SpiderChart">
+        <!-- 分割成圆环的数量 -->
+        <attr name="spiderRingNum" format="integer"/>
+        <!-- 五个顶点的标题（从顶部开始顺时针顺序titleOne-titleFive） -->
+        <attr name="spiderTitleOne" format="string"/>
+        <attr name="spiderTitleTwo" format="string"/>
+        <attr name="spiderTitleThree" format="string"/>
+        <attr name="spiderTitleFour" format="string"/>
+        <attr name="spiderTitleFive" format="string"/>
+        <attr name="spiderTitleMargin" format="dimension"/>
+        <attr name="spiderTitleSize" format="dimension"/>
+        <attr name="spiderTitleColor" format="color"/>
+        <!-- 内圆环的浅色、深色 -->
+        <attr name="spiderRingLightColor" format="color"/>
+        <attr name="spiderRingDarkColor" format="color"/>
+        <!-- 内圆环线的颜色、宽度 -->
+        <attr name="spiderRingLineColor" format="color"/>
+        <attr name="spiderRingLineWidth" format="dimension"/>
+        <!-- 数值点的颜色、半径 -->
+        <attr name="spiderValuePointColor" format="color"/>
+        <attr name="spiderValuePointRadius" format="dimension"/>
+        <!-- 数值点内点的颜色、半径 -->
+        <attr name="spiderValueInnerPointColor" format="color"/>
+        <attr name="spiderValueInnerPointRadius" format="dimension"/>
+        <!-- 数值点连接线的颜色、宽度 -->
+        <attr name="spiderValueLineColor" format="color"/>
+        <attr name="spiderValueLineWidth" format="dimension"/>
+        <!-- 数值范围内部封闭区域颜色 -->
+        <attr name="spiderValueRectColor" format="color"/>
+    </declare-styleable>
+
+
+    <!-- 方形蜘蛛图 -->
+    <declare-styleable name="TurtleGraph">
+        <attr name="turtleMaxValue" format="float" />
+
+        <attr name="turtleRingLineColor" format="color" />
+        <attr name="turtleRingLineWidth" format="dimension" />
+
+        <attr name="turtleColorValue" format="color" />
+        <attr name="turtleColorTitle" format="color" />
+        <attr name="turtleTitleSize" format="dimension" />
+    </declare-styleable>
+
+    <!-- CircleTextView -->
+    <declare-styleable name="CircleTextView">
+        <!-- 文本透明度（0-255，数值越小越透明） -->
+        <attr name="circleTextAlpha" format="integer" />
+
+        <!-- 顺时针旋转文字 -->
+        <attr name="circleRotationCW" format="boolean" />
+
+        <!-- 旋转文字一圈的时间（毫秒） -->
+        <attr name="circleRotationTime" format="integer" />
+    </declare-styleable>
+
+    <!-- “股”字加载样式 -->
+    <declare-styleable name="LoadingView">
+        <attr name="android:text"/>
+        <attr name="android:textSize"/>
+        <attr name="android:textColor"/>
+        <attr name="android:dividerHeight"/>
+    </declare-styleable>
+</resources>

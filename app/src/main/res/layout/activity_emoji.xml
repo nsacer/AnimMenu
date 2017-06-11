@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_emoji"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.zpf.animmenu.EmojiActivity">
+
+    <EditText
+        android:id="@+id/et_input_emoji"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:background="@drawable/treasure_subscription"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginRight="16dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:textSize="16sp"
+        android:textColor="@color/colorBlack"
+        android:gravity="center_vertical"/>
+
+    <Button
+        android:id="@+id/btn_emoji"
+        android:layout_below="@id/et_input_emoji"
+        android:layout_alignParentRight="true"
+        android:layout_width="@dimen/btn_width"
+        android:layout_height="@dimen/btn_height"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:text="Ok"
+        android:textSize="@dimen/btn_text_size"
+        android:textColor="@color/colorWhite"
+        android:background="@color/colorAccent"/>
+
+</RelativeLayout>
