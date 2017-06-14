@@ -23,6 +23,7 @@ public class ConstraintLayoutActivity extends BaseActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
     }
 
     @Event(R.id.fab)
