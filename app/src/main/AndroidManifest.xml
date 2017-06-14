@@ -86,7 +86,7 @@
         <activity android:name=".RecyclerHeadFootActivity" />
         <activity android:name=".RecyclerItemClickActivity" />
         <activity android:name=".RecyclerSwipeDragActivity" />
-        <activity android:name=".RecyclerPrizeInfoActivity"></activity>
+        <activity android:name=".RecyclerPrizeInfoActivity" />
     </application>
 
 </manifest>
