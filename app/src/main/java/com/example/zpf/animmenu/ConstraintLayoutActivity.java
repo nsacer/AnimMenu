@@ -3,6 +3,7 @@ package com.example.zpf.animmenu;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 
 import org.xutils.view.annotation.ContentView;
@@ -23,6 +24,7 @@ public class ConstraintLayoutActivity extends BaseActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        Log.i("====", "");
     }
 
     @Event(R.id.fab)
