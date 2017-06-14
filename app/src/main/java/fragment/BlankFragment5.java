@@ -168,6 +168,7 @@ public class BlankFragment5 extends Fragment implements View.OnClickListener {
         //Glide
         Button btnGlide = (Button) root.findViewById(R.id.btn_Glide);
         btnGlide.setOnClickListener(this);
+
     }
 
     /**
