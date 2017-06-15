@@ -1,21 +1,13 @@
 package com.example.zpf.animmenu;
 
-import android.graphics.Color;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.support.constraint.ConstraintLayout;
-import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 import android.view.WindowManager;
 import android.widget.PopupWindow;
 
@@ -23,18 +15,11 @@ import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 
-import utils.DisplayUtil;
-
 @ContentView(R.layout.activity_constraint_layout)
 public class ConstraintLayoutActivity extends BaseActivity {
 
-    private static int WIDTH = 900;
-
     @ViewInject(R.id.coordinator_layout_root)
     private CoordinatorLayout coordinatorLayout;
-
-    @ViewInject(R.id.constraint_layout_coupon)
-    private ConstraintLayout constraintLayoutCoupon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +30,6 @@ public class ConstraintLayoutActivity extends BaseActivity {
     }
 
     private void initView() {
-
-        WIDTH = getResources().getDisplayMetrics().widthPixels;
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -82,18 +65,6 @@ public class ConstraintLayoutActivity extends BaseActivity {
             }
         });
 
-
-//        appBarLayout.setVisibility(View.GONE);
-//        constraintLayoutCoupon.setVisibility(View.VISIBLE);
-    }
-
-    /**
-     * 收起RecyclerView
-     */
-    @Event(R.id.btn_coupon)
-    private void clickBtnCoupon(View view) {
-
-//        constraintLayoutCoupon.setVisibility(View.GONE);
     }
 
     private void popupWindowBackgroundAlpha(float alpha) {
