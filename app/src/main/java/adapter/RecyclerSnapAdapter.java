@@ -34,7 +34,7 @@ public class RecyclerSnapAdapter extends RecyclerView.Adapter<RecyclerSnapAdapte
     @Override
     public SnapViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(context).inflate(R.layout.grid_recycler_item, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_grid_recycler, parent, false);
         return new SnapViewHolder(view);
     }
 

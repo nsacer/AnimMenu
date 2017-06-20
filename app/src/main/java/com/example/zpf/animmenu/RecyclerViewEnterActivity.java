@@ -1,6 +1,5 @@
 package com.example.zpf.animmenu;
 
-import android.content.Intent;
 import android.view.View;
 
 import org.xutils.view.annotation.ContentView;
@@ -9,23 +8,34 @@ import org.xutils.view.annotation.Event;
 @ContentView(R.layout.activity_recycler_view_enter)
 public class RecyclerViewEnterActivity extends BaseActivity {
 
+    @Event(R.id.btn_enter_anim)
+    private void goEnterAnimAct(View view) {
+
+        openActivity(GridViewActivity.class, view);
+    }
+
+    @Event(R.id.btn_count_switch)
+    private void goCountSwitchAct(View view) {
+
+        openActivity(RecyclerViewSwitchActivity.class, view);
+    }
 
     @Event(R.id.btn_circle_refresh)
     private void goRecyclerRefresh(View view) {
 
-        startActivity(new Intent(this, RecyclerViewRefreshActivity.class));
+        openActivity(RecyclerViewRefreshActivity.class, view);
     }
 
     @Event(R.id.btn_recycler_snap)
     private void goRecyclerSnap(View view) {
 
-        startActivity(new Intent(this, RecyclerSnapHelperActivity.class));
+        openActivity(RecyclerSnapHelperActivity.class, view);
     }
 
     @Event(R.id.btn_recycler_horizontal)
     private void goRecyclerHorizontal(View view) {
 
-        startActivity(new Intent(this, RecyclerRemoveItemActivity.class));
+        openActivity(RecyclerRemoveItemActivity.class, view);
     }
 
     @Event(R.id.btn_recycler_head_foot)

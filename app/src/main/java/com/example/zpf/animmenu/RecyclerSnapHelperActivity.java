@@ -4,24 +4,25 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.LinearSnapHelper;
 import android.support.v7.widget.RecyclerView;
-import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;
 
 import java.util.Arrays;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 import adapter.RecyclerSnapAdapter;
-import helpers.LinearHorizontalLeftSnapHelper;
-import tyrantgit.explosionfield.Utils;
 
 @ContentView(R.layout.activity_recycler_snap_helper)
 public class RecyclerSnapHelperActivity extends BaseActivity {
 
     @ViewInject(R.id.recycler_snap)
     private RecyclerView recyclerViewSnap;
+
+    private int countRvItem = 0;
+    private int itemIndex = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +40,8 @@ public class RecyclerSnapHelperActivity extends BaseActivity {
 
         new LinearSnapHelper().attachToRecyclerView(recyclerViewSnap);
 
+//        new PagerSnapHelper().attachToRecyclerView(recyclerViewSnap);
+
         //自定义的SnapHelper
 //        new LinearHorizontalLeftSnapHelper().attachToRecyclerView(recyclerViewSnap);
 
@@ -47,12 +50,31 @@ public class RecyclerSnapHelperActivity extends BaseActivity {
 
         recyclerViewSnap.setAdapter(adapter);
 
+        countRvItem = adapter.getItemCount();
 
+//        scheduleTask();
     }
 
     private float dp2Px(float dp) {
 
         return Math.round(dp * getResources().getDisplayMetrics().density);
+    }
+
+    /**
+     * java定时任务
+     */
+    private void scheduleTask() {
+
+        ScheduledExecutorService ses = Executors.newSingleThreadScheduledExecutor();
+        ses.scheduleAtFixedRate(new Runnable() {
+            @Override
+            public void run() {
+
+                itemIndex = itemIndex % countRvItem;
+                recyclerViewSnap.smoothScrollToPosition(itemIndex);
+                itemIndex++;
+            }
+        }, 0, 3000, TimeUnit.MILLISECONDS);
     }
 
 }

@@ -46,7 +46,7 @@ implements OnItemTouchListener {
     @Override
     public GridViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View view = inflater.inflate(R.layout.grid_recycler_item, parent, false);
+        View view = inflater.inflate(R.layout.item_grid_recycler, parent, false);
         return new GridViewHolder(view);
     }
 

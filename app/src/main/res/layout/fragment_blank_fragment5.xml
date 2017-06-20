@@ -40,15 +40,6 @@
             android:background="@drawable/shape_btn_corners"/>
 
         <Button
-            android:id="@+id/btn_grid_view"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginTop="16dp"
-            android:text="Item进入动画"
-            android:textColor="@color/colorWhite"
-            android:background="@drawable/shape_btn_corners"/>
-
-        <Button
             android:id="@+id/btn_date_select"
             android:layout_width="match_parent"
             android:layout_height="48dp"

@@ -9,26 +9,24 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.example.zpf.animmenu.AlphaAnalyzeActivity;
-import com.example.zpf.animmenu.ConstraintLayoutActivity;
-import com.example.zpf.animmenu.DanmuKuActivity;
 import com.example.zpf.animmenu.ChartActivity;
+import com.example.zpf.animmenu.CircleTextViewAnim;
+import com.example.zpf.animmenu.ConstraintLayoutActivity;
+import com.example.zpf.animmenu.CoordinatorActivity;
+import com.example.zpf.animmenu.CowboyActivity;
+import com.example.zpf.animmenu.CustomLoadingActivity;
+import com.example.zpf.animmenu.DanmuKuActivity;
+import com.example.zpf.animmenu.DateSelectActivity;
 import com.example.zpf.animmenu.EmojiActivity;
 import com.example.zpf.animmenu.GlideActivity;
 import com.example.zpf.animmenu.ImageSwitchViewPagerActivity;
-import com.example.zpf.animmenu.RecyclerViewEnterActivity;
-import com.example.zpf.animmenu.CircleTextViewAnim;
-import com.example.zpf.animmenu.CoordinatorActivity;
-import com.example.zpf.animmenu.CustomLoadingActivity;
-import com.example.zpf.animmenu.DateSelectActivity;
-import com.example.zpf.animmenu.GridViewActivity;
 import com.example.zpf.animmenu.PasswordActivity;
 import com.example.zpf.animmenu.PermissionActivity;
 import com.example.zpf.animmenu.PhotoSetActivity;
 import com.example.zpf.animmenu.R;
-import com.example.zpf.animmenu.CowboyActivity;
+import com.example.zpf.animmenu.RecyclerViewEnterActivity;
 import com.example.zpf.animmenu.TableLayoutActivity;
 import com.example.zpf.animmenu.TurnTableActivity;
 
@@ -98,10 +96,6 @@ public class BlankFragment5 extends Fragment implements View.OnClickListener {
         //上传头像 Demo
         Button btnPhoto = (Button) root.findViewById(R.id.btn_photo);
         btnPhoto.setOnClickListener(this);
-
-        //GridView 动画
-        Button btnGridViewAnim = (Button) root.findViewById(R.id.btn_grid_view);
-        btnGridViewAnim.setOnClickListener(this);
 
         //PickerDialog
         Button btnDateSelect = (Button) root.findViewById(R.id.btn_date_select);
@@ -195,12 +189,6 @@ public class BlankFragment5 extends Fragment implements View.OnClickListener {
             case R.id.btn_photo:
 
                 openActivity(PhotoSetActivity.class, v);
-                break;
-
-            //GridView动画
-            case R.id.btn_grid_view:
-
-                openActivity(GridViewActivity.class, v);
                 break;
 
             //Date Select

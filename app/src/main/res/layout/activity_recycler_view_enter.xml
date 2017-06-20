@@ -16,6 +16,24 @@
         android:orientation="vertical">
 
         <Button
+            android:id="@+id/btn_enter_anim"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/shape_btn_corners"
+            android:text="item进入动画"
+            android:textColor="@color/colorWhite" />
+
+        <Button
+            android:id="@+id/btn_count_switch"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/shape_btn_corners"
+            android:text="RecyclerView单双列切换"
+            android:textColor="@color/colorWhite" />
+
+        <Button
             android:id="@+id/btn_circle_refresh"
             android:layout_width="match_parent"
             android:layout_height="48dp"
