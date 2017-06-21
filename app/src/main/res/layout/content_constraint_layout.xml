@@ -102,7 +102,7 @@
 
     <Button
         android:id="@+id/btn_five"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="five"
         app:layout_constraintEnd_toStartOf="@+id/btn_six"
@@ -112,7 +112,7 @@
 
     <Button
         android:id="@+id/btn_six"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="six"
         app:layout_constraintEnd_toStartOf="@+id/btn_seven"
@@ -122,7 +122,7 @@
 
     <Button
         android:id="@+id/btn_seven"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="seven"
         app:layout_constraintEnd_toEndOf="parent"
