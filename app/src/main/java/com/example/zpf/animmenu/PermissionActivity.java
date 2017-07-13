@@ -2,19 +2,21 @@ package com.example.zpf.animmenu;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
-import android.provider.Settings;
-import android.support.annotation.RequiresApi;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.provider.Settings;
+import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-public class PermissionActivity extends AppCompatActivity implements View.OnClickListener {
+public class PermissionActivity extends BaseActivity implements View.OnClickListener {
 
     private static final String LOG_TAG = "====";
 
@@ -30,6 +32,10 @@ public class PermissionActivity extends AppCompatActivity implements View.OnClic
      * 调用拍照的权限
      */
     private static final int REQUEST_CODE_CAMERA = 3;
+    /**
+     * 发送短信的权限
+     */
+    private static final int REQUEST_SEND_SMS = 0x004;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,9 +46,6 @@ public class PermissionActivity extends AppCompatActivity implements View.OnClic
     }
 
     private void initView() {
-
-        if (getActionBar() != null)
-            getActionBar().setTitle("获取系统相关权限");
 
         LinearLayout layoutBtn = (LinearLayout) findViewById(R.id.layout_btn);
         int childCount = layoutBtn.getChildCount();
@@ -77,6 +80,11 @@ public class PermissionActivity extends AppCompatActivity implements View.OnClic
             case R.id.btn_three:
 
                 requestPermission(Manifest.permission.CAMERA, REQUEST_CODE_CAMERA);
+                break;
+
+            case R.id.btn_four:
+
+                permissionSendMsg();
                 break;
 
             default:
@@ -120,12 +128,47 @@ public class PermissionActivity extends AppCompatActivity implements View.OnClic
 
             case REQUEST_CODE_WRITE_SYSTEM_SETTING:
 
-                if(Settings.System.canWrite(this))
+                if (Settings.System.canWrite(this))
                     Log.i(LOG_TAG, "received");
                 break;
 
             default:
                 break;
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        switch (requestCode) {
+
+            case REQUEST_SEND_SMS:
+
+                if (grantResults.length > 0 &&
+                        grantResults[0] == PackageManager.PERMISSION_GRANTED)
+                    showToast("获取到了发短信权限");
+                else
+                    showToast("短信权限被拒绝！");
+                break;
+
+            default:
+                break;
+        }
+    }
+
+    /**
+     * 短信权限处理
+     */
+    private void permissionSendMsg() {
+
+        int permissionState = ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS);
+        if (permissionState == PackageManager.PERMISSION_GRANTED)
+            showToast("有发短信权限");
+        else {
+
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.SEND_SMS},
+                    REQUEST_SEND_SMS);
         }
     }
 

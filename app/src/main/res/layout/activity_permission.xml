@@ -10,36 +10,45 @@
         android:id="@+id/layout_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:orientation="vertical">
+        android:paddingRight="16dp">
 
         <Button
             android:id="@+id/btn_one"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
+            android:background="@drawable/shape_btn_corners"
             android:text="申请SYSTEM_ALERT_WINDOW权限"
-            android:textColor="@color/colorWhite"
-            android:background="@drawable/shape_btn_corners"/>
+            android:textColor="@color/colorWhite" />
 
         <Button
             android:id="@+id/btn_two"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
+            android:background="@drawable/shape_btn_corners"
             android:text="申请更改系统设置的权限"
-            android:textColor="@color/colorWhite"
-            android:background="@drawable/shape_btn_corners"/>
+            android:textColor="@color/colorWhite" />
 
         <Button
             android:id="@+id/btn_three"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
+            android:background="@drawable/shape_btn_corners"
             android:text="拍照权限"
-            android:textColor="@color/colorWhite"
-            android:background="@drawable/shape_btn_corners"/>
+            android:textColor="@color/colorWhite" />
+
+        <Button
+            android:id="@+id/btn_four"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@drawable/shape_btn_corners"
+            android:text="短信权限"
+            android:textColor="@color/colorWhite" />
     </LinearLayout>
 
 </ScrollView>
