@@ -12,7 +12,6 @@ import android.view.View;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -20,34 +19,59 @@ import model.Point;
 import utils.MathUtil;
 
 public class LocusPassWordView extends View {
+
     boolean movingNoPoint = false;
     float moveingX, moveingY;
-    private float width = 0;
-    private float height = 0;
     private boolean isCache = false;
     private Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
     private Point[][] mPoints = new Point[3][3];
     private float dotRadius = 0;
-    private List<Point> sPoints = new ArrayList<>();
+    private ArrayList<Point> sPoints = new ArrayList<>();
     private boolean checking = false;
     private long CLEAR_TIME = 1000;
     private int pwdMaxLen = 9;
     private int pwdMinLen = 4;
     private boolean isTouch = true;
+    /**
+     * 连接线上的箭头Paint
+     */
     private Paint arrowPaint;
+    /**
+     * 连接线的paint
+     */
     private Paint linePaint;
+    /**
+     * 选中状态的paint
+     */
     private Paint selectedPaint;
+    /**
+     * 错误状态的paint
+     */
     private Paint errorPaint;
+    /**
+     * 正常状态的paint
+     */
     private Paint normalPaint;
     /**
      * 密码错误状态的颜色
      */
     private int errorColor = 0xffFF3425;
+    /**
+     * 箭头颜色
+     */
+    private int colorArrow = 0x00009988;
+    private int colorArrowError = 0x00009933;
+    /**
+     * 连接线颜色
+     */
+    private int colorLine = 0xff008899;
+    private int colorLineError = 0xff008856;
+
     private int selectedColor = 0xff3F51B5;
-    private int outterSelectedColor = 0xff3F51B5;//0xff8cbad8
-    private int outterErrorColor = 0xffFF3425;//0xff901032
-    private int dotColor = 0xff3285FF;//0xffd9d9d9
-    private int outterDotColor = 0xff3285FF;//0xff9988ff
+    private int outterSelectedColor = 0xff3F51B5;
+    private int outterErrorColor = 0xffFF3425;
+    private int dotColor = 0xff3285FF;
+    private int outterDotColor = 0xff3285FF;
     /**
      * 手势密码输入完成监听
      */
@@ -87,34 +111,43 @@ public class LocusPassWordView extends View {
     private void drawToCanvas(Canvas canvas) {
 
         boolean inErrorState = false;
+
         for (Point[] mPoint : mPoints) {
+
             for (Point p : mPoint) {
+
                 if (p.state == Point.STATE_CHECK) {
+
                     selectedPaint.setColor(outterSelectedColor);
                     canvas.drawCircle(p.x, p.y, dotRadius, selectedPaint);
                     selectedPaint.setColor(selectedColor);
                     canvas.drawCircle(p.x, p.y, dotRadius / 4, selectedPaint);
+
                 } else if (p.state == Point.STATE_CHECK_ERROR) {
+
                     inErrorState = true;
                     errorPaint.setColor(outterErrorColor);
                     canvas.drawCircle(p.x, p.y, dotRadius, errorPaint);
                     errorPaint.setColor(errorColor);
                     canvas.drawCircle(p.x, p.y, dotRadius / 4, errorPaint);
+
                 } else {
+
                     normalPaint.setColor(outterDotColor);
                     canvas.drawCircle(p.x, p.y, dotRadius, normalPaint);
                     normalPaint.setColor(dotColor);
                     canvas.drawCircle(p.x, p.y, dotRadius / 4, normalPaint);
+
                 }
             }
         }
 
         if (inErrorState) {
-            arrowPaint.setColor(errorColor);
-            linePaint.setColor(errorColor);
+            arrowPaint.setColor(colorArrowError);
+            linePaint.setColor(colorLineError);
         } else {
-            arrowPaint.setColor(selectedColor);
-            linePaint.setColor(selectedColor);
+            arrowPaint.setColor(colorArrow);
+            linePaint.setColor(colorLine);
         }
 
         if (sPoints.size() > 0) {
@@ -168,8 +201,7 @@ public class LocusPassWordView extends View {
 
     private void initCache() {
 
-        width = this.getMeasuredWidth();
-        height = this.getMeasuredHeight();
+        float width = this.getMeasuredWidth();
 
         float single = width / 6;
         float dou = width / 3;
@@ -193,13 +225,14 @@ public class LocusPassWordView extends View {
     }
 
     private void initPaints() {
+
         arrowPaint = new Paint();
-        arrowPaint.setColor(selectedColor);
+        arrowPaint.setColor(colorArrow);
         arrowPaint.setStyle(Style.FILL);
         arrowPaint.setAntiAlias(true);
 
         linePaint = new Paint();
-        linePaint.setColor(selectedColor);
+        linePaint.setColor(colorLine);
         linePaint.setStyle(Style.STROKE);
         linePaint.setAntiAlias(true);
         linePaint.setStrokeWidth(dotRadius / 12);
@@ -225,6 +258,7 @@ public class LocusPassWordView extends View {
      * @return
      */
     public int[] getArrayIndex(int index) {
+
         int[] ai = new int[2];
         ai[0] = index / 3;
         ai[1] = index % 3;
@@ -237,14 +271,20 @@ public class LocusPassWordView extends View {
      * @return
      */
     private Point checkSelectPoint(float x, float y) {
+
         for (int i = 0; i < mPoints.length; i++) {
+
             for (int j = 0; j < mPoints[i].length; j++) {
+
                 Point p = mPoints[i][j];
+
                 if (MathUtil.checkInRound(p.x, p.y, dotRadius, (int) x, (int) y)) {
+
                     return p;
                 }
             }
         }
+
         return null;
     }
 
@@ -252,9 +292,12 @@ public class LocusPassWordView extends View {
      *
      */
     private void reset() {
+
         for (Point p : sPoints) {
+
             p.state = Point.STATE_NORMAL;
         }
+
         sPoints.clear();
         this.enableTouch();
     }
@@ -266,15 +309,16 @@ public class LocusPassWordView extends View {
     private int crossPoint(Point p) {
         // reset
         if (sPoints.contains(p)) {
+
             if (sPoints.size() > 2) {
-                //
+
                 if (sPoints.get(sPoints.size() - 1).index != p.index) {
                     return 2;
                 }
             }
-            return 1; //
+            return 1;
         } else {
-            return 0; //
+            return 0;
         }
     }
 
@@ -305,7 +349,7 @@ public class LocusPassWordView extends View {
      */
     private String toPointString() {
         if (sPoints.size() >= pwdMinLen && sPoints.size() <= pwdMaxLen) {
-            StringBuffer sf = new StringBuffer();
+            StringBuilder sf = new StringBuilder();
             for (Point p : sPoints) {
                 sf.append(p.index);
             }
