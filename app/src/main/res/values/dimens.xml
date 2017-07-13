@@ -26,4 +26,10 @@
     <dimen name="rdi_civ_border">2dp</dimen>
     <dimen name="rdi_lr_num_margin">4dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+
+
+    <dimen name="tab_line_width">40dp</dimen>
+    <dimen name="tab_line_height">2dp</dimen>
+
+
 </resources>

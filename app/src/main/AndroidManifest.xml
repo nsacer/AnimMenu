@@ -89,7 +89,8 @@
         <activity android:name=".RecyclerItemClickActivity" />
         <activity android:name=".RecyclerSwipeDragActivity" />
         <activity android:name=".RecyclerPrizeInfoActivity" />
-        <activity android:name=".RecyclerViewSwitchActivity"></activity>
+        <activity android:name=".RecyclerViewSwitchActivity" />
+        <activity android:name=".TabTitleActivity" />
     </application>
 
 </manifest>

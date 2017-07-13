@@ -27,6 +27,7 @@ import com.example.zpf.animmenu.PermissionActivity;
 import com.example.zpf.animmenu.PhotoSetActivity;
 import com.example.zpf.animmenu.R;
 import com.example.zpf.animmenu.RecyclerViewEnterActivity;
+import com.example.zpf.animmenu.TabTitleActivity;
 import com.example.zpf.animmenu.TableLayoutActivity;
 import com.example.zpf.animmenu.TurnTableActivity;
 
@@ -163,6 +164,10 @@ public class BlankFragment5 extends Fragment implements View.OnClickListener {
         Button btnGlide = (Button) root.findViewById(R.id.btn_Glide);
         btnGlide.setOnClickListener(this);
 
+        //tabRadioGroup
+        Button btnTabRg = (Button) root.findViewById(R.id.btn_tab_rg);
+        btnTabRg.setOnClickListener(this);
+
     }
 
     /**
@@ -288,6 +293,13 @@ public class BlankFragment5 extends Fragment implements View.OnClickListener {
             case R.id.btn_Glide:
 
                 openActivity(GlideActivity.class, v);
+                break;
+
+
+            //RadioGroup实现的tab
+            case R.id.btn_tab_rg:
+
+                openActivity(TabTitleActivity.class, v);
                 break;
 
             default:
