@@ -63,4 +63,10 @@ public class RecyclerViewEnterActivity extends BaseActivity {
         openActivity(RecyclerPrizeInfoActivity.class, view);
     }
 
+    @Event(R.id.btn_rv_pull_up)
+    private void goPullToUpAct(View view) {
+
+        openActivity(RvPullUpActivity.class, view);
+    }
+
 }
