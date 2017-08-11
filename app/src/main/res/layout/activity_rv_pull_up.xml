@@ -8,7 +8,7 @@
     app:srlEnablePreviewInEditMode="true"
     tools:context="com.example.zpf.animmenu.RvPullUpActivity">
 
-    <com.scwang.smartrefresh.layout.header.ClassicsHeader
+    <customview.SmartRefreshHeader
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
@@ -18,7 +18,7 @@
         android:layout_height="match_parent"
         android:overScrollMode="never" />
 
-    <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+    <customview.SmartRefreshFooter
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
