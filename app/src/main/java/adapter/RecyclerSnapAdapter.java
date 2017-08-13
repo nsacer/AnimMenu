@@ -15,6 +15,8 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import holder.CardAdapterHelper;
+
 /**
  * Created by zpf on 2017/2/17.
  */
@@ -23,6 +25,7 @@ public class RecyclerSnapAdapter extends RecyclerView.Adapter<RecyclerSnapAdapte
 
     private Context context;
     private ArrayList<String> urlList = new ArrayList<>();
+    private CardAdapterHelper cardAdapterHelper = new CardAdapterHelper();
 
     public RecyclerSnapAdapter(Context context, String[] urls) {
 
@@ -35,11 +38,14 @@ public class RecyclerSnapAdapter extends RecyclerView.Adapter<RecyclerSnapAdapte
     public SnapViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(context).inflate(R.layout.item_grid_recycler, parent, false);
+        cardAdapterHelper.onCreateViewHolder(parent, view);
         return new SnapViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(SnapViewHolder holder, int position) {
+
+        cardAdapterHelper.onBindViewHolder(holder.itemView, position, getItemCount());
 
         Picasso.with(context).load(urlList.get(position)).config(Bitmap.Config.ARGB_4444)
                 .placeholder(R.mipmap.wall).into(holder.iv);
