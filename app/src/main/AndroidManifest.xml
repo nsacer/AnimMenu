@@ -91,7 +91,9 @@
         <activity android:name=".RecyclerPrizeInfoActivity" />
         <activity android:name=".RecyclerViewSwitchActivity" />
         <activity android:name=".TabTitleActivity" />
-        <activity android:name=".RvPullUpActivity"></activity>
+        <activity android:name=".RvPullUpActivity" />
+        <activity android:name=".F10Activity" />
+        <activity android:name=".VideoActivity"></activity>
     </application>
 
 </manifest>

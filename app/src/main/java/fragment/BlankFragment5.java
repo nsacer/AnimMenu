@@ -20,6 +20,7 @@ import com.example.zpf.animmenu.CustomLoadingActivity;
 import com.example.zpf.animmenu.DanmuKuActivity;
 import com.example.zpf.animmenu.DateSelectActivity;
 import com.example.zpf.animmenu.EmojiActivity;
+import com.example.zpf.animmenu.F10Activity;
 import com.example.zpf.animmenu.GlideActivity;
 import com.example.zpf.animmenu.ImageSwitchViewPagerActivity;
 import com.example.zpf.animmenu.PasswordActivity;
@@ -30,6 +31,7 @@ import com.example.zpf.animmenu.RecyclerViewEnterActivity;
 import com.example.zpf.animmenu.TabTitleActivity;
 import com.example.zpf.animmenu.TableLayoutActivity;
 import com.example.zpf.animmenu.TurnTableActivity;
+import com.example.zpf.animmenu.VideoActivity;
 
 import customview.CircleImageView;
 import top.wefor.circularanim.CircularAnim;
@@ -168,6 +170,14 @@ public class BlankFragment5 extends Fragment implements View.OnClickListener {
         Button btnTabRg = (Button) root.findViewById(R.id.btn_tab_rg);
         btnTabRg.setOnClickListener(this);
 
+        //F10
+        Button btnF10 = (Button) root.findViewById(R.id.btn_tab_f10);
+        btnF10.setOnClickListener(this);
+
+        //视频
+        Button btnVideo = (Button) root.findViewById(R.id.btn_video);
+        btnVideo.setOnClickListener(this);
+
     }
 
     /**
@@ -300,6 +310,18 @@ public class BlankFragment5 extends Fragment implements View.OnClickListener {
             case R.id.btn_tab_rg:
 
                 openActivity(TabTitleActivity.class, v);
+                break;
+
+            //F10
+            case R.id.btn_tab_f10:
+
+                openActivity(F10Activity.class, v);
+                break;
+
+            //视频
+            case R.id.btn_video:
+
+                openActivity(VideoActivity.class, v);
                 break;
 
             default:

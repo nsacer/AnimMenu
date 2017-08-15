@@ -11,14 +11,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.SpannableStringBuilder;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextSwitcher;
 import android.widget.TextView;
 import android.widget.ViewSwitcher;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
+
 import adapter.MainPagerAdapter;
+import customview.FlowLayout;
 import fragment.LiveFragment1;
 import fragment.LiveFragment2;
 import fragment.LiveFragment3;
@@ -31,6 +35,8 @@ public class CoordinatorActivity extends AppCompatActivity {
     private SpannableStringBuilder builder;
     private TextSwitcher switcher;
     private Timer timer;
+
+    private FlowLayout layoutFlow;
 
     /**
      * handler接受不同类型消息处理
@@ -138,6 +144,14 @@ public class CoordinatorActivity extends AppCompatActivity {
     }
 
     private void initTag(){
+
+        layoutFlow = (FlowLayout) findViewById(R.id.layout_tag);
+
+        TextView textView = new TextView(this, null, 0, R.style.TextViewTag);
+        textView.setText("tamendoushuo");
+        textView.setLayoutParams(new ViewGroup.MarginLayoutParams(ViewGroup.MarginLayoutParams.WRAP_CONTENT,
+                ViewGroup.MarginLayoutParams.WRAP_CONTENT));
+        layoutFlow.addView(textView);
 
         TextView tv = (TextView) findViewById(R.id.tv_tag_one);
         tv.setText("纯手工输入测试动态改变TextView");

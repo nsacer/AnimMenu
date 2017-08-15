@@ -224,6 +224,26 @@
             android:text="Tab_RadioGroup"
             android:textColor="@color/colorWhite" />
 
+        <Button
+            android:id="@+id/btn_tab_f10"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="08dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/shape_btn_corners"
+            android:text="F10"
+            android:textColor="@color/colorWhite" />
+
+        <Button
+            android:id="@+id/btn_video"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="08dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/shape_btn_corners"
+            android:text="Video"
+            android:textColor="@color/colorWhite" />
+
     </LinearLayout>
 
 </ScrollView>
