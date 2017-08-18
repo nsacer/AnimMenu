@@ -157,4 +157,16 @@
         <attr name="android:textColor"/>
         <attr name="android:dividerHeight"/>
     </declare-styleable>
+
+    <!-- 我的积分页面击败多少用户进度条 -->
+    <declare-styleable name="ProgressScore">
+        <!-- 进度条的高度 -->
+        <attr name="progressHeight" format="dimension" />
+        <!-- 进度条的背景色 -->
+        <attr name="progressColorBack" format="color" />
+        <!-- 进度条的前景色 -->
+        <attr name="progressColorFore" format="color" />
+        <!-- 进度条的数据最大值 -->
+        <attr name="progressMaxValue" format="integer" />
+    </declare-styleable>
 </resources>

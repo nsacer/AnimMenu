@@ -219,6 +219,32 @@
                 android:background="@drawable/shape_btn_corners"/>
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <customview.ProgressScore
+                android:id="@+id/progress_score"
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:background="#098789"
+                android:layout_height="100dp"
+                app:progressColorBack="#333333"
+                app:progressColorFore="#967766"
+                app:progressHeight="2dp"
+                app:progressMaxValue="150" />
+
+            <Button
+                android:id="@+id/btn_progress_score_anim"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:text="@string/anim_start"
+                android:textColor="@color/colorWhite"
+                android:background="@drawable/shape_btn_corners" />
+        </LinearLayout>
+
     </LinearLayout>
 
 </ScrollView>

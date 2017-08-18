@@ -2,9 +2,9 @@ package com.example.zpf.animmenu;
 
 import android.animation.TypeEvaluator;
 import android.animation.ValueAnimator;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -16,14 +16,19 @@ import android.widget.EditText;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
+import org.xutils.view.annotation.ContentView;
+import org.xutils.view.annotation.Event;
+
 import customview.CircleRingGraph;
 import customview.CircleView;
+import customview.ProgressScore;
 import customview.SpiderChart;
 import customview.TextDiagram;
 import customview.TurtleGraph;
 import utils.DisplayUtil;
 
-public class ChartActivity extends AppCompatActivity implements View.OnClickListener {
+@ContentView(R.layout.activity_chart)
+public class ChartActivity extends BaseActivity implements View.OnClickListener {
 
     private TextView tvNumberChange;
     private CircleView circleView;
@@ -44,7 +49,6 @@ public class ChartActivity extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chart);
 
         initView();
     }
@@ -274,6 +278,14 @@ public class ChartActivity extends AppCompatActivity implements View.OnClickList
         if (!popWin.isShowing())
             popWin.showAtLocation(((ViewGroup) findViewById(android.R.id.content)).getChildAt(0),
                     Gravity.BOTTOM, 0, 0);
+    }
+
+    @Event(R.id.btn_progress_score_anim)
+    private void startProgressScore(View view) {
+
+        ProgressScore progressScore = (ProgressScore) findViewById(R.id.progress_score);
+        progressScore.setBitmapIndicatorHead(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_cat));
+        progressScore.setProgressAndStartAnim(120);
     }
 
 
