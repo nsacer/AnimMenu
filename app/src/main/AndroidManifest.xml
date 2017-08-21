@@ -93,7 +93,8 @@
         <activity android:name=".TabTitleActivity" />
         <activity android:name=".RvPullUpActivity" />
         <activity android:name=".F10Activity" />
-        <activity android:name=".VideoActivity"></activity>
+        <activity android:name=".VideoActivity" />
+        <activity android:name=".TabMainActivity"></activity>
     </application>
 
 </manifest>

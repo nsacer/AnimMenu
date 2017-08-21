@@ -244,6 +244,16 @@
             android:text="Video"
             android:textColor="@color/colorWhite" />
 
+        <Button
+            android:id="@+id/btn_tabAct"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="08dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/shape_btn_corners"
+            android:text="TabAct"
+            android:textColor="@color/colorWhite" />
+
     </LinearLayout>
 
 </ScrollView>
