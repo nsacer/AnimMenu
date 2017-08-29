@@ -105,6 +105,16 @@
             android:background="@drawable/shape_btn_corners"
             android:text="下拉回弹横滑删除"
             android:textColor="@color/colorWhite" />
+
+        <Button
+            android:id="@+id/btn_full_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="08dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/shape_btn_corners"
+            android:text="展开收缩分组列表"
+            android:textColor="@color/colorWhite" />
     </LinearLayout>
 
 </ScrollView>

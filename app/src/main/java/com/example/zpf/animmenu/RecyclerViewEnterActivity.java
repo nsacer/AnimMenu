@@ -69,4 +69,10 @@ public class RecyclerViewEnterActivity extends BaseActivity {
         openActivity(RvPullUpActivity.class, view);
     }
 
+    @Event(R.id.btn_full_list_view)
+    private void goFullListView(View view) {
+
+        openActivity(GroupListActivity.class, view);
+    }
+
 }

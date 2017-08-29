@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.zpf.animmenu.GroupListActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:background="#e671df">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="这个就是当做其他的布局，所以很随意啦"
+                android:gravity="center"
+                android:textColor="#ffffff"
+                tools:ignore="HardcodedText" />
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="给个标题"
+            android:background="#dadada"
+            android:lines="1"
+            android:textSize="12sp" />
+
+        <customview.nestfulllistview.NestFullListView
+            android:id="@+id/nflv_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:divider="@drawable/shape_divider_group"
+            android:showDividers="middle" />
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>
