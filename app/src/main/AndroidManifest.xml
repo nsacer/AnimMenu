@@ -95,7 +95,8 @@
         <activity android:name=".F10Activity" />
         <activity android:name=".VideoActivity" />
         <activity android:name=".TabMainActivity" />
-        <activity android:name=".GroupListActivity"></activity>
+        <activity android:name=".GroupListActivity" />
+        <activity android:name=".RvChatActivity"></activity>
     </application>
 
 </manifest>
