@@ -53,6 +53,7 @@
     </LinearLayout>
 
     <FrameLayout
+        android:id="@+id/fl_chat"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/ll_input"

@@ -9,6 +9,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -103,14 +104,17 @@ public class RvChatActivity extends AppCompatActivity implements View.OnClickLis
         rvChat.setAdapter(adapterChat);
         adapterChat.setModels(models);
 
-        rvChat.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
+        //这里flChat为聊天信息展示RecyclerView所在的根布局
+        FrameLayout flChat = (FrameLayout) findViewById(R.id.fl_chat);
+        flChat.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
             @Override
             public void onLayoutChange(View v, int left, int top, int right, int bottom,
                                        int oldLeft, int oldTop, int oldRight, int oldBottom) {
 
                 if (bottom < oldBottom) {
 
-                    rvChat.smoothScrollToPosition(adapterChat.getModels().size() - 1);
+                    //通过RecyclerView的滚动方法将聊天信息滚动到最后一条
+                    rvChat.scrollToPosition(adapterChat.getModels().size() - 1);
                 }
             }
         });
