@@ -13,9 +13,9 @@
         android:layout_height="120dp"
         android:background="#30987f"
         android:visibility="gone"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <LinearLayout
         android:id="@+id/ll_input"
@@ -23,18 +23,18 @@
         android:layout_height="48dp"
         android:background="#ffffff"
         android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/vp_face"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/vp_face">
+        app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
             android:id="@+id/iv_face"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:contentDescription="@null"
             android:layout_weight="1"
-            android:src="@mipmap/ic_face_chat"
-            android:scaleType="centerInside" />
+            android:contentDescription="@null"
+            android:scaleType="centerInside"
+            android:src="@mipmap/ic_face_chat" />
 
         <EditText
             android:id="@+id/et_input"
@@ -44,21 +44,26 @@
 
         <ImageView
             android:id="@+id/iv_send"
-            android:contentDescription="@null"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@mipmap/ic_send_chat"
-            android:scaleType="centerInside" />
+            android:contentDescription="@null"
+            android:scaleType="centerInside"
+            android:src="@mipmap/ic_send_chat" />
     </LinearLayout>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_chat"
+    <FrameLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/ll_input"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/ll_input" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_chat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </FrameLayout>
 
 </android.support.constraint.ConstraintLayout>

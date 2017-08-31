@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -32,6 +33,9 @@ public class RvChatActivity extends AppCompatActivity implements View.OnClickLis
      * 聊天内容输入框
      */
     private EditText etInput;
+
+    private RecyclerView rvChat;
+    private ChatAdapter adapterChat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,13 +93,27 @@ public class RvChatActivity extends AppCompatActivity implements View.OnClickLis
 
     private void initRecyclerView() {
 
-        RecyclerView rvChat = (RecyclerView) findViewById(R.id.rv_chat);
-        rvChat.setLayoutManager(new LinearLayoutManager(this));
+        rvChat = (RecyclerView) findViewById(R.id.rv_chat);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        layoutManager.setStackFromEnd(true);
+        rvChat.setLayoutManager(layoutManager);
         rvChat.setHasFixedSize(true);
 
-        ChatAdapter adapterChat = new ChatAdapter(this);
+        adapterChat = new ChatAdapter(this);
         rvChat.setAdapter(adapterChat);
         adapterChat.setModels(models);
+
+        rvChat.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
+            @Override
+            public void onLayoutChange(View v, int left, int top, int right, int bottom,
+                                       int oldLeft, int oldTop, int oldRight, int oldBottom) {
+
+                if (bottom < oldBottom) {
+
+                    rvChat.smoothScrollToPosition(adapterChat.getModels().size() - 1);
+                }
+            }
+        });
 
     }
 
@@ -127,8 +145,18 @@ public class RvChatActivity extends AppCompatActivity implements View.OnClickLis
             Toast.makeText(this, "请输入内容！", Toast.LENGTH_SHORT).show();
         } else {
 
+            hideSoftInput();
             Toast.makeText(this, "发送成功", Toast.LENGTH_SHORT).show();
             etInput.setText(null);
         }
+    }
+
+    /**
+     * 收起软键盘
+     */
+    private void hideSoftInput() {
+
+        ((InputMethodManager) getSystemService(INPUT_METHOD_SERVICE))
+                .hideSoftInputFromWindow(etInput.getWindowToken(), 0);
     }
 }

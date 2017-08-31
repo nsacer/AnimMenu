@@ -76,7 +76,6 @@ public class TabMainActivity extends TabActivity implements TabHost.OnTabChangeL
         }
 
         tabHost.getTabWidget().setCurrentTab(0);
-        tabHost.getTabWidget().getChildAt(0).setBackgroundColor(Color.GREEN);
         tabHost.setOnTabChangedListener(this);
 
     }
