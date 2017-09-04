@@ -45,5 +45,6 @@ dependencies {
     compile 'com.github.lovetuzitong:MultiImageSelector:1.2'
     compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.3'
     compile 'com.github.anzaizai:EasySwipeMenuLayout:1.1.1'
+    compile 'com.gavin.com.library:stickyDecoration:1.1.2'
     testCompile 'junit:junit:4.12'
 }

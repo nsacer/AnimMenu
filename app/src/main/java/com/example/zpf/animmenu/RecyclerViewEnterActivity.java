@@ -81,4 +81,10 @@ public class RecyclerViewEnterActivity extends BaseActivity {
         openActivity(RvChatActivity.class, view);
     }
 
+    @Event(R.id.btn_group_title)
+    private void goRvGroupTitle(View view) {
+
+        openActivity(RvGroupTitleActivity.class, view);
+    }
+
 }
