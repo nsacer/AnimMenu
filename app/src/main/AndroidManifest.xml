@@ -18,6 +18,8 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <!-- 短信权限 -->
     <uses-permission android:name="android.permission.SEND_SMS" />
+    <!-- 获取网络状态权限 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -93,11 +95,13 @@
         <activity android:name=".TabTitleActivity" />
         <activity android:name=".RvPullUpActivity" />
         <activity android:name=".F10Activity" />
-        <activity android:name=".VideoActivity" />
+        <activity
+            android:name=".VideoActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
         <activity android:name=".TabMainActivity" />
         <activity android:name=".GroupListActivity" />
         <activity android:name=".RvChatActivity" />
-        <activity android:name=".RvGroupTitleActivity"></activity>
+        <activity android:name=".RvGroupTitleActivity" />
     </application>
 
 </manifest>
