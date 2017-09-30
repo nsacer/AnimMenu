@@ -52,5 +52,8 @@ dependencies {
     compile 'com.github.anzaizai:EasySwipeMenuLayout:1.1.1'
     compile 'com.gavin.com.library:stickyDecoration:1.1.2'
     compile 'com.shuyu:GSYVideoPlayer:2.0.6'
+//    compile 'com.shuyu:gsyVideoPlayer-java:2.0.6'
+//    compile 'com.shuyu:gsyVideoPlayer-armv7a:2.0.6'
+//    compile 'com.shuyu:gsyVideoPlayer-arm64:2.0.6'
     testCompile 'junit:junit:4.12'
 }

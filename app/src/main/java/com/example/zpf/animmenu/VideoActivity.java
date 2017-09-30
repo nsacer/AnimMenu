@@ -110,6 +110,7 @@ public class VideoActivity extends BaseActivity {
             }
         });
 
+        //显示锁屏图标
         videoPlayer.setNeedLockFull(true);
 
         videoPlayer.setRotateViewAuto(true);
