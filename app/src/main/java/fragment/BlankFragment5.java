@@ -13,7 +13,7 @@ import android.widget.Button;
 import com.example.zpf.animmenu.AlphaAnalyzeActivity;
 import com.example.zpf.animmenu.ChartActivity;
 import com.example.zpf.animmenu.CircleTextViewAnim;
-import com.example.zpf.animmenu.ConstraintLayoutActivity;
+import com.example.zpf.animmenu.ConstraintEnterActivity;
 import com.example.zpf.animmenu.CoordinatorActivity;
 import com.example.zpf.animmenu.CowboyActivity;
 import com.example.zpf.animmenu.CustomLoadingActivity;
@@ -301,7 +301,7 @@ public class BlankFragment5 extends Fragment implements View.OnClickListener {
             //ConstraintLayout
             case R.id.btn_ConstraintLayout:
 
-                openActivity(ConstraintLayoutActivity.class, v);
+                openActivity(ConstraintEnterActivity.class, v);
                 break;
 
             //Glide

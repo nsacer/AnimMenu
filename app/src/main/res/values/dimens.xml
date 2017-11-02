@@ -10,7 +10,8 @@
 
     <!--Button 按钮-->
     <dimen name="btn_width">128dp</dimen>
-    <dimen name="btn_height">40dp</dimen>
+    <dimen name="btn_height">48dp</dimen>
+    <dimen name="btn_margin">8dp</dimen>
     <dimen name="btn_text_size">18sp</dimen>
 
     <!-- CalendarView -->

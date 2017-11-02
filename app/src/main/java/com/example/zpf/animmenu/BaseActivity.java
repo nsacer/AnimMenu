@@ -44,6 +44,11 @@ public class BaseActivity extends AppCompatActivity {
                 });
     }
 
+    protected void openAct(Class<?> clazz) {
+
+        startActivity(new Intent(this, clazz));
+    }
+
     protected void showToast(String message) {
 
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();

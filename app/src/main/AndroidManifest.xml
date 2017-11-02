@@ -102,6 +102,8 @@
         <activity android:name=".GroupListActivity" />
         <activity android:name=".RvChatActivity" />
         <activity android:name=".RvGroupTitleActivity" />
+        <activity android:name=".ConstraintLayoutAnimActivity" />
+        <activity android:name=".ConstraintEnterActivity" />
     </application>
 
 </manifest>
