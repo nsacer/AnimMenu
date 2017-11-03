@@ -3,6 +3,7 @@ package com.example.zpf.animmenu
 import android.os.Bundle
 import android.support.constraint.ConstraintSet
 import android.support.v7.app.AppCompatActivity
+import android.text.TextUtils
 import android.transition.TransitionManager
 import android.view.View
 import kotlinx.android.synthetic.main.activity_constraint_layout_anim.*
@@ -27,17 +28,33 @@ class ConstraintLayoutAnimActivity : AppCompatActivity() {
 
     fun onApplyClick(v: View) {
 
-//        animFirstBtnToLeft();
+        val sNum: String = et_num.text.toString()
+        if (TextUtils.isEmpty(sNum))
+            return
+        val iNum: Int = Integer.getInteger(sNum)
+        when (iNum) {
 
-//        animAllBtnCenterHorizontal();
+            0 -> {
+                animFirstBtnToLeft()
+            }
+            1 -> {
+                animAllBtnCenterHorizontal()
+            }
+            2 -> {
+                animThreeBtnCenter()
+            }
+            3 -> {
+                animTwoBtnWidthHeight()
+            }
+            4 -> {
+                animTwoThreeGoneOneCrop()
+            }
+            5 -> {
+                animChainStyleButtons()
+            }
 
-//        animThreeBtnCenter();
+        }
 
-//        animTwoBtnWidthHeight();
-
-//        animTwoThreeGoneOneCrop();
-
-        animChainStyleButtons()
     }
 
     /**
