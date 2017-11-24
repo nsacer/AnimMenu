@@ -11,11 +11,12 @@ class ConstraintEnterActivity : BaseActivity(), View.OnClickListener {
         when (v?.id) {
 
             R.id.btnOne -> {
-
                 openActivity(ConstraintLayoutActivity::class.java, v)
             }
             R.id.btnTwo -> {
-
+                openActivity(ConstraintLayoutAnimActivity::class.java, v)
+            }
+            R.id.btnBanner -> {
                 openActivity(ConstraintLayoutAnimActivity::class.java, v)
             }
         }
@@ -28,6 +29,7 @@ class ConstraintEnterActivity : BaseActivity(), View.OnClickListener {
 
         btnOne.setOnClickListener(this)
         btnTwo.setOnClickListener(this)
+        btnBanner.setOnClickListener(this)
     }
 
 }

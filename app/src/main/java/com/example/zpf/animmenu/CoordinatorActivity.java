@@ -96,7 +96,7 @@ public class CoordinatorActivity extends AppCompatActivity {
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabLayout);
 
-        ViewPager pager = (ViewPager) findViewById(R.id._viewPager);
+        ViewPager pager = (ViewPager) findViewById(R.id.viewPager);
 
         initViewPager(pager);
 
