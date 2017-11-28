@@ -17,7 +17,7 @@ class ConstraintEnterActivity : BaseActivity(), View.OnClickListener {
                 openActivity(ConstraintLayoutAnimActivity::class.java, v)
             }
             R.id.btnBanner -> {
-                openActivity(ConstraintLayoutAnimActivity::class.java, v)
+                openActivity(BannerZoomCenterActivity::class.java, v)
             }
         }
     }

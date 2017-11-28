@@ -1,9 +1,9 @@
 package com.example.zpf.animmenu
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_banner_zoom_center.*
 
-class BannerZoomCenterActivity : AppCompatActivity() {
+class BannerZoomCenterActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -15,5 +15,8 @@ class BannerZoomCenterActivity : AppCompatActivity() {
 
         val list = ArrayList<String>()
         list.addAll(resources.getStringArray(R.array.picUrlsShort))
+
+        vpZoomBanner.setViewPagerOffscreenPageLimit(list.size)
+        vpZoomBanner.setImagesUrl(list)
     }
 }

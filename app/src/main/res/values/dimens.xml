@@ -7,6 +7,8 @@
     <dimen name="circle_header_max_size">80dp</dimen>
     <dimen name="circle_header_min_size">32dp</dimen>
     <dimen name="toolbar_left_padding">16dp</dimen>
+    <dimen name="dp8">8dp</dimen>
+    <dimen name="dp32">32dp</dimen>
 
     <!--Button 按钮-->
     <dimen name="btn_width">128dp</dimen>

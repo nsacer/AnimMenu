@@ -169,4 +169,14 @@
         <!-- 进度条的数据最大值 -->
         <attr name="progressMaxValue" format="integer" />
     </declare-styleable>
+    <!-- 循环ViewPager实现FlyBanner -->
+    <declare-styleable name="FlyBanner">
+        <attr name="points_position" format="integer">
+            <enum name="CENTER" value="0" />
+            <enum name="LEFT" value="1" />
+            <enum name="RIGHT" value="2" />
+        </attr>
+        <attr name="points_visibility" format="boolean" />
+        <attr name="points_container_background" format="reference" />
+    </declare-styleable>
 </resources>
