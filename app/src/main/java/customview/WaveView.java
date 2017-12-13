@@ -13,6 +13,7 @@ import com.example.zpf.animmenu.R;
 
 /**
  * Created by zpf on 2016/8/1.
+ * 波浪降低view
  */
 public class WaveView extends View {
 
@@ -52,10 +53,10 @@ public class WaveView extends View {
 
         dy += 6;
 
-        for (int i = -waveLength; i <= getWidth() + waveLength; i+=waveLength) {
+        for (int i = -waveLength; i <= getWidth() + waveLength; i += waveLength) {
 
-            path.rQuadTo(halfWaveLength/2, -waveF, halfWaveLength, 0);
-            path.rQuadTo(halfWaveLength/2, waveF, halfWaveLength, 0);
+            path.rQuadTo(halfWaveLength / 2, -waveF, halfWaveLength, 0);
+            path.rQuadTo(halfWaveLength / 2, waveF, halfWaveLength, 0);
         }
 
         path.lineTo(getWidth(), getHeight());
@@ -67,8 +68,8 @@ public class WaveView extends View {
 
     /**
      * 启动动画（波动）
-     * */
-    public void startAnim(){
+     */
+    public void startAnim() {
 
         ValueAnimator animator = ValueAnimator.ofInt(0, waveLength);
         animator.setDuration(1200);

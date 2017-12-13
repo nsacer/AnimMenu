@@ -12,6 +12,7 @@ import com.example.zpf.animmenu.R;
 
 /**
  * Created by zpf on 2016/7/28.
+ * 根据手势绘制路径（贝塞尔曲线路径）
  */
 public class MyView extends View {
 
@@ -28,7 +29,7 @@ public class MyView extends View {
         paint = new Paint();
         paint.setAntiAlias(true);
         paint.setColor(getResources().getColor(R.color.colorPrimary));
-        paint.setStrokeWidth(32);
+        paint.setStrokeWidth(2);
         paint.setStyle(Paint.Style.STROKE);
         mPath = new Path();
     }
@@ -36,6 +37,14 @@ public class MyView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+
+        mPath.moveTo(100, 300);
+        //quadTo方法
+//        mPath.quadTo(200,200,300,300);
+//        mPath.quadTo(400,400,500,300);
+        //rQuadTo方法
+        mPath.rQuadTo(100, -100, 200, 0);
+        mPath.rQuadTo(100, 100, 200, 0);
 
         canvas.drawPath(mPath, paint);
     }
@@ -65,7 +74,7 @@ public class MyView extends View {
         return super.onTouchEvent(event);
     }
 
-    public void reset(){
+    public void reset() {
 
         mPath.reset();
         invalidate();

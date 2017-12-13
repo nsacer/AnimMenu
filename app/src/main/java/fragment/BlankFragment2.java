@@ -41,7 +41,7 @@ public class BlankFragment2 extends Fragment {
 
     private void initWaveView(){
 
-        final WaveView waveView = (WaveView) root.findViewById(R.id.waveView);
+        WaveView waveView = (WaveView) root.findViewById(R.id.waveView);
         waveView.startAnim();
     }
 
