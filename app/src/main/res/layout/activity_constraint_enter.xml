@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:flexWrap="wrap"
     app:alignContent="flex_start"
     app:alignItems="flex_start"
+    app:flexWrap="wrap"
     tools:context="com.example.zpf.animmenu.ConstraintEnterActivity">
 
     <Button
         android:id="@+id/btnOne"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/btn_height"
-        android:text="布局页面"
-        android:layout_margin="@dimen/btn_margin" />
+        android:layout_margin="@dimen/btn_margin"
+        android:text="布局页面" />
 
     <Button
         android:id="@+id/btnTwo"
@@ -29,5 +29,12 @@
         android:layout_height="@dimen/btn_height"
         android:layout_margin="@dimen/btn_margin"
         android:text="循环放大Banner" />
+
+    <Button
+        android:id="@+id/btnSheet"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/btn_height"
+        android:layout_margin="@dimen/btn_margin"
+        android:text="bottomSheet" />
 
 </com.google.android.flexbox.FlexboxLayout>

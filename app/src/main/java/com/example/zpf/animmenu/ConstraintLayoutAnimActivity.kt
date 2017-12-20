@@ -10,8 +10,8 @@ import kotlinx.android.synthetic.main.activity_constraint_layout_anim.*
 
 class ConstraintLayoutAnimActivity : AppCompatActivity() {
 
-    val csApply: ConstraintSet = ConstraintSet()
-    val csReset: ConstraintSet = ConstraintSet()
+    private val csApply: ConstraintSet = ConstraintSet()
+    private val csReset: ConstraintSet = ConstraintSet()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,30 +28,17 @@ class ConstraintLayoutAnimActivity : AppCompatActivity() {
 
     fun onApplyClick(v: View) {
 
-        val sNum: String = et_num.text.toString()
-        if (TextUtils.isEmpty(sNum))
-            return
-        val iNum: Int = Integer.getInteger(sNum)
+        val sNum = et_num.text.toString()
+        if (TextUtils.isEmpty(sNum)) return
+        val iNum = Integer.parseInt(sNum)
         when (iNum) {
 
-            0 -> {
-                animFirstBtnToLeft()
-            }
-            1 -> {
-                animAllBtnCenterHorizontal()
-            }
-            2 -> {
-                animThreeBtnCenter()
-            }
-            3 -> {
-                animTwoBtnWidthHeight()
-            }
-            4 -> {
-                animTwoThreeGoneOneCrop()
-            }
-            5 -> {
-                animChainStyleButtons()
-            }
+            0 -> animFirstBtnToLeft()
+            1 -> animAllBtnCenterHorizontal()
+            2 -> animThreeBtnCenter()
+            3 -> animTwoBtnWidthHeight()
+            4 -> animTwoThreeGoneOneCrop()
+            5 -> animChainStyleButtons()
 
         }
 

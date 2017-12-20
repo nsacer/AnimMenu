@@ -11,6 +11,7 @@ import android.widget.Toast;
 import org.xutils.x;
 
 import top.wefor.circularanim.CircularAnim;
+import utils.DisplayUtil;
 
 public class BaseActivity extends AppCompatActivity {
 
@@ -57,6 +58,14 @@ public class BaseActivity extends AppCompatActivity {
     protected void showToast(int resId) {
 
         Toast.makeText(this, getResources().getString(resId), Toast.LENGTH_SHORT).show();
+    }
+
+    /**
+     * 传入dp值得到px
+     */
+    protected int getDp(int dp) {
+
+        return DisplayUtil.dip2px(this, dp);
     }
 
 }
