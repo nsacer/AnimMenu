@@ -71,4 +71,7 @@
 
     <string name="update_content">更新内容</string>
     <string name="title_activity_constraint_layout">ConstraintLayoutActivity</string>
+    <string name="shortcuts">shortcuts</string>
+    <string name="setting">设置</string>
+    <string name="setting_long">设置长标题</string>
 </resources>

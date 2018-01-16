@@ -13,13 +13,16 @@ import android.widget.Button;
 import com.example.zpf.animmenu.ActivitySpark;
 import com.example.zpf.animmenu.R;
 
+import customview.LineView;
+
 /**
  * A simple {@link Fragment} subclass.
  */
-public class BlankFragment4 extends Fragment {
+public class BlankFragment4 extends Fragment implements View.OnClickListener {
 
     private View root;
     private Context context;
+    private LineView lineView;
 
     public BlankFragment4() {
         // Required empty public constructor
@@ -41,6 +44,11 @@ public class BlankFragment4 extends Fragment {
     private void initView(){
 
         initBtnToSpark();
+
+        Button btnStartAnim = (Button) root.findViewById(R.id.btnStartLineAnim);
+        btnStartAnim.setOnClickListener(this);
+
+        lineView = (LineView) root.findViewById(R.id.lineView);
     }
 
     private void initBtnToSpark(){
@@ -55,4 +63,14 @@ public class BlankFragment4 extends Fragment {
         });
     }
 
+    @Override
+    public void onClick(View v) {
+
+        switch (v.getId()) {
+
+            case R.id.btnStartLineAnim:
+                lineView.doAnimator();
+                break;
+        }
+    }
 }
