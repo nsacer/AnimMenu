@@ -77,4 +77,6 @@
     <color name="turntable_item_bg_nor_dark">#FFBFBF</color>
     <color name="turntable_item_bg_sel_light">#FFE400</color>
     <color name="turntable_item_bg_sel_dark">#E58E01</color>
+
+    <color name="line">#dadada</color>
 </resources>

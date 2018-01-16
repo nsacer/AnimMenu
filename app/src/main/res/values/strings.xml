@@ -74,4 +74,5 @@
     <string name="shortcuts">shortcuts</string>
     <string name="setting">设置</string>
     <string name="setting_long">设置长标题</string>
+    <string name="bottom_sheet_dialog_title">This is bottomSheetDialog title</string>
 </resources>
