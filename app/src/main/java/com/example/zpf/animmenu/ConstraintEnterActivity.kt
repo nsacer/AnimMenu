@@ -19,6 +19,7 @@ class ConstraintEnterActivity : BaseActivity(), View.OnClickListener {
             R.id.btnTwo -> openActivity(ConstraintLayoutAnimActivity::class.java, v)
             R.id.btnBanner -> openActivity(BannerZoomCenterActivity::class.java, v)
             R.id.btnSheet -> btmSheetDialog!!.show()
+            R.id.btnSurfaceView -> openActivity(SurfaceViewActivity::class.java, v)
         }
     }
 
@@ -33,6 +34,8 @@ class ConstraintEnterActivity : BaseActivity(), View.OnClickListener {
 
         initBottomSheetDialog()
         btnSheet.setOnClickListener(this)
+
+        btnSurfaceView.setOnClickListener(this)
     }
 
     //创建bottomSheetDialog

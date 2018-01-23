@@ -112,6 +112,7 @@
         <activity
             android:name=".FaceInputActivity"
             android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".SurfaceViewActivity" />
     </application>
 
 </manifest>
