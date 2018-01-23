@@ -35,6 +35,7 @@ class ConstraintEnterActivity : BaseActivity(), View.OnClickListener {
         btnSheet.setOnClickListener(this)
     }
 
+    //创建bottomSheetDialog
     private fun initBottomSheetDialog() {
 
         btmSheetDialog = BottomSheetDialog(this)

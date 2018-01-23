@@ -37,6 +37,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
             <meta-data
                 android:name="android.app.shortcuts"
                 android:resource="@xml/shortcuts" />
@@ -107,7 +108,10 @@
         <activity android:name=".RvGroupTitleActivity" />
         <activity android:name=".ConstraintLayoutAnimActivity" />
         <activity android:name=".ConstraintEnterActivity" />
-        <activity android:name=".BannerZoomCenterActivity"></activity>
+        <activity android:name=".BannerZoomCenterActivity" />
+        <activity
+            android:name=".FaceInputActivity"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>

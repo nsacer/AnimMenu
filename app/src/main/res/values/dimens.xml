@@ -9,6 +9,10 @@
     <dimen name="toolbar_left_padding">16dp</dimen>
     <dimen name="dp8">8dp</dimen>
     <dimen name="dp32">32dp</dimen>
+    <dimen name="textTitle">16sp</dimen>
+    <dimen name="textContent">14sp</dimen>
+    <dimen name="textDescription">12sp</dimen>
+    <dimen name="textStatement">10sp</dimen>
 
     <!--Button 按钮-->
     <dimen name="btn_width">128dp</dimen>
@@ -34,6 +38,9 @@
     <dimen name="tab_line_height">2dp</dimen>
 
     <dimen name="line_height">0.4dp</dimen>
+    <dimen name="radius_input_border">4dp</dimen>
+    <dimen name="radius_button_send_border">4dp</dimen>
+    <dimen name="text_size_send">12sp</dimen>
 
 
 </resources>

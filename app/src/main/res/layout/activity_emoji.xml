@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_emoji"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -13,7 +14,7 @@
         android:minHeight="48dp"
         android:background="@drawable/treasure_subscription"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="24dp"
         android:layout_marginRight="16dp"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
@@ -33,5 +34,27 @@
         android:textSize="@dimen/btn_text_size"
         android:textColor="@color/colorWhite"
         android:background="@color/colorAccent"/>
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="16dp"
+        app:alignItems="flex_start"
+        app:alignContent="flex_start"
+        android:layout_below="@+id/btn_emoji">
+
+        <Button
+            android:id="@+id/btnFaceInput"
+            android:layout_width="@dimen/btn_width"
+            android:layout_height="@dimen/btn_height"
+            android:text="表情输入页面"
+            android:layout_margin="4dp"
+            android:textSize="@dimen/btn_text_size"
+            android:textColor="@color/colorWhite"
+            android:background="@color/colorAccent" />
+
+
+    </com.google.android.flexbox.FlexboxLayout>
+
 
 </RelativeLayout>

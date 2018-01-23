@@ -3,6 +3,9 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="colorTitle">#333333</color>
+    <color name="colorContent">#666666</color>
+    <color name="colorDescription">#999999</color>
 
     <!-- 白色梯度透明 -->
     <color name="white_alpha_9">#e5ffffff</color>
@@ -79,4 +82,7 @@
     <color name="turntable_item_bg_sel_dark">#E58E01</color>
 
     <color name="line">#dadada</color>
+    <color name="button_send_0">#F0F0F0</color>
+    <color name="button_send_1">#DADADA</color>
+    <color name="button_send_text">#666666</color>
 </resources>

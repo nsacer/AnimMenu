@@ -35,4 +35,10 @@ public class EmojiActivity extends BaseActivity {
 
         Toast.makeText(this, "emojiOk", Toast.LENGTH_SHORT).show();
     }
+
+    @Event(R.id.btnFaceInput)
+    private void openFaceInputAct(View view) {
+
+        openAct(FaceInputActivity.class);
+    }
 }
