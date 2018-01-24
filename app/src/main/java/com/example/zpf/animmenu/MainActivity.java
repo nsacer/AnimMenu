@@ -2,25 +2,22 @@ package com.example.zpf.animmenu;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.animation.OvershootInterpolator;
 import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
 
-import java.util.Arrays;
-
 import fragment.BlankFragment2;
 import fragment.BlankFragment3;
 import fragment.BlankFragment4;
 import fragment.BlankFragment5;
 import fragment.Fragment1;
+import utils.ScreenUtils;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -45,11 +42,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    private void initDeviceInfo(){
+    private void initDeviceInfo() {
 
-        DisplayMetrics metrics = getResources().getDisplayMetrics();
-        Info.DISPLAY_WIDTH = metrics.widthPixels;
-        Info.DISPLAY_HEIGHT = metrics.heightPixels;
+        Info.DISPLAY_SCREEN_HEIGHT = ScreenUtils.getScreenHeightWithoutVirtualBar(this);
+        Info.DISPLAY_SCREEN_WIDTH = ScreenUtils.getScreenWidth(this);
+        Info.DISPLAY_STATUS_BAR_HEIGHT = ScreenUtils.getStatusBarHeight(this);
+        Info.DISPLAY_VIRTUALS_BAR_HEIGHT = ScreenUtils.getVirtualBarHeight(this);
+        Info.DISPLAY_APP_SHOW_HEIGHT = Info.DISPLAY_SCREEN_HEIGHT - Info.DISPLAY_STATUS_BAR_HEIGHT;
     }
 
     private void initView() {
@@ -76,7 +75,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    private void initWallpaper(){
+    private void initWallpaper() {
 
         String[] urls = getResources().getStringArray(R.array.picUrls);
         int size = urls.length;
@@ -90,8 +89,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     /**
      * Fragment one
-     * */
-    private void addOneFragment(){
+     */
+    private void addOneFragment() {
 
         Fragment1 fragment1 = new Fragment1();
 
@@ -104,8 +103,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     /**
      * FragmentTwo
-     * */
-    private void replaceTwoFragment(){
+     */
+    private void replaceTwoFragment() {
 
         BlankFragment2 fragment2 = new BlankFragment2();
 
@@ -120,8 +119,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     /**
      * FragmentThree
-     * */
-    private void replaceThreeFragment(){
+     */
+    private void replaceThreeFragment() {
 
         BlankFragment3 fragment3 = new BlankFragment3();
 
@@ -136,8 +135,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     /**
      * FragmentFour
-     * */
-    private void replaceFourFragment(){
+     */
+    private void replaceFourFragment() {
 
         BlankFragment4 fragment4 = new BlankFragment4();
 
@@ -152,8 +151,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     /**
      * FragmentFive
-     * */
-    private void replaceFiveFragment(){
+     */
+    private void replaceFiveFragment() {
 
         BlankFragment5 fragment5 = new BlankFragment5();
 
@@ -218,11 +217,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     /**
      * 子菜单的打开动画
+     *
      * @param target 目标控件
-     * @param index 目标index（从0开始）
-     * @param total 子菜单的总个数
+     * @param index  目标index（从0开始）
+     * @param total  子菜单的总个数
      * @param radius 展开半径
-     * */
+     */
     private void doAnimMenuOpen(View target, int index, int total, int radius) {
 
         if (target.getVisibility() != View.VISIBLE)
@@ -250,11 +250,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     /**
      * 子菜单的关闭动画
+     *
      * @param target 目标控件
-     * @param index 目标index（从0开始）
-     * @param total 子菜单的总个数
+     * @param index  目标index（从0开始）
+     * @param total  子菜单的总个数
      * @param radius 展开半径
-     * */
+     */
     private void doAnimMenuClose(View target, int index, int total, int radius) {
 
         if (target.getVisibility() != View.VISIBLE)
@@ -263,7 +264,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //根据index和total计算translationX/translationY的值
         double single = Math.PI / ((total - 1) * 2);
         float translationX = (float) -(radius * Math.sin(index * single));
-        float translationY = (float) -(radius * Math.cos(index  * single));
+        float translationY = (float) -(radius * Math.cos(index * single));
 
         AnimatorSet set = new AnimatorSet();
         set.playTogether(
@@ -280,33 +281,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     //关闭所有的菜单方法
-    private void closeAllMenu(){
+    private void closeAllMenu() {
 
         isMenuOpen = false;
 
-        doAnimMenuClose(iv_menu1, 0, 5, Info.DISPLAY_WIDTH/3);
-        doAnimMenuClose(iv_menu2, 1, 5, Info.DISPLAY_WIDTH/3);
-        doAnimMenuClose(iv_menu3, 2, 5, Info.DISPLAY_WIDTH/3);
-        doAnimMenuClose(iv_menu4, 3, 5, Info.DISPLAY_WIDTH/3);
-        doAnimMenuClose(iv_menu5, 4, 5, Info.DISPLAY_WIDTH/3);
+        doAnimMenuClose(iv_menu1, 0, 5, Info.DISPLAY_SCREEN_WIDTH / 3);
+        doAnimMenuClose(iv_menu2, 1, 5, Info.DISPLAY_SCREEN_WIDTH / 3);
+        doAnimMenuClose(iv_menu3, 2, 5, Info.DISPLAY_SCREEN_WIDTH / 3);
+        doAnimMenuClose(iv_menu4, 3, 5, Info.DISPLAY_SCREEN_WIDTH / 3);
+        doAnimMenuClose(iv_menu5, 4, 5, Info.DISPLAY_SCREEN_WIDTH / 3);
     }
 
     //打开所有的菜单的方法
-    private void openAllMenu(){
+    private void openAllMenu() {
 
         isMenuOpen = true;
 
-        doAnimMenuOpen(iv_menu1, 0, 5, Info.DISPLAY_WIDTH/3);
-        doAnimMenuOpen(iv_menu2, 1, 5, Info.DISPLAY_WIDTH/3);
-        doAnimMenuOpen(iv_menu3, 2, 5, Info.DISPLAY_WIDTH/3);
-        doAnimMenuOpen(iv_menu4, 3, 5, Info.DISPLAY_WIDTH/3);
-        doAnimMenuOpen(iv_menu5, 4, 5, Info.DISPLAY_WIDTH/3);
+        doAnimMenuOpen(iv_menu1, 0, 5, Info.DISPLAY_SCREEN_WIDTH / 3);
+        doAnimMenuOpen(iv_menu2, 1, 5, Info.DISPLAY_SCREEN_WIDTH / 3);
+        doAnimMenuOpen(iv_menu3, 2, 5, Info.DISPLAY_SCREEN_WIDTH / 3);
+        doAnimMenuOpen(iv_menu4, 3, 5, Info.DISPLAY_SCREEN_WIDTH / 3);
+        doAnimMenuOpen(iv_menu5, 4, 5, Info.DISPLAY_SCREEN_WIDTH / 3);
     }
 
     /**
      * Fragment默认动画
-     * */
-    private void fragmentDefaultAnim(FragmentTransaction transaction){
+     */
+    private void fragmentDefaultAnim(FragmentTransaction transaction) {
 
         transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
         transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE);
@@ -314,8 +315,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     /**
      * Fragment自定义动画
-     * */
-    private void fragmentCustomAnim(FragmentTransaction transaction){
+     */
+    private void fragmentCustomAnim(FragmentTransaction transaction) {
 
         //默认动画
         transaction.setCustomAnimations(R.anim.fragment_in, R.anim.fragment_out);

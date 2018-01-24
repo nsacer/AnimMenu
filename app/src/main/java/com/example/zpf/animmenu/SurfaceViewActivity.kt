@@ -1,32 +1,35 @@
 package com.example.zpf.animmenu
 
 import android.os.Bundle
-import android.view.View
+import android.support.constraint.ConstraintSet
 import kotlinx.android.synthetic.main.activity_surface_view.*
 
-class SurfaceViewActivity : BaseActivity(), View.OnClickListener {
-    override fun onClick(v: View?) {
+class SurfaceViewActivity : BaseActivity() {
 
-        when (v?.id) {
-
-            R.id.btnSurfaceStart -> ssm.run()
-        }
-    }
+    private val csMain = ConstraintSet()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_surface_view)
 
-        btnSurfaceStart.setOnClickListener(this)
+        initView()
     }
 
     override fun onResume() {
         super.onResume()
 
-        initView()
+        setSurfaceView()
     }
 
     private fun initView() {
 
+        csMain.clone(clSurfaceRoot)
+
     }
+
+    private fun setSurfaceView() {
+
+        surfaceShootMarbles.run()
+    }
+
 }

@@ -263,8 +263,8 @@ public class ChartActivity extends BaseActivity implements View.OnClickListener 
             }
         });
 
-        popWin.setWidth(Info.DISPLAY_WIDTH - DisplayUtil.dip2px(this, 32));
-        popWin.setHeight(Info.DISPLAY_HEIGHT * 8 / 11);
+        popWin.setWidth(Info.DISPLAY_SCREEN_WIDTH - DisplayUtil.dip2px(this, 32));
+        popWin.setHeight(Info.DISPLAY_SCREEN_HEIGHT * 8 / 11);
         popWin.setContentView(view);
         popWin.setAnimationStyle(R.style.PopWindowAnimation);
 
