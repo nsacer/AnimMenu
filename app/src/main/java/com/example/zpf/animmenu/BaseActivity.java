@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -66,6 +67,11 @@ public class BaseActivity extends AppCompatActivity {
     protected int getDp(int dp) {
 
         return DisplayUtil.dip2px(this, dp);
+    }
+
+    protected void Logi(String content) {
+
+        Log.i("====", content);
     }
 
 }

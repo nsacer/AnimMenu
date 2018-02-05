@@ -1,9 +1,7 @@
 package customview
 
 import android.content.Context
-import android.graphics.Canvas
-import android.graphics.Color
-import android.graphics.Paint
+import android.graphics.*
 import android.util.AttributeSet
 import android.util.Log
 import android.view.MotionEvent
@@ -43,11 +41,13 @@ class SurfaceShootMarbles : SurfaceView, SurfaceHolder.Callback, Runnable {
     private var marbles = mutableListOf<Marbles>()
     //要打击的目标
     private val wTarget = 120f
-    private var marbleTarget = Marbles(0f, 0f, 120f, 30f)
+    private var marbleTarget = Marbles(0f, 0f, 120f, 30f, false)
     //使用线程定时刷新
     private lateinit var threadRefresh: Thread
     //用来创建新tank的计数器
     private var mRunCount = 0
+    //记录目标是否被击中（用于在循环里边判定是否绘制或者跳过）
+    private var isTargetShooted = false
 
     constructor(context: Context) : super(context) {
         initView()
@@ -105,6 +105,7 @@ class SurfaceShootMarbles : SurfaceView, SurfaceHolder.Callback, Runnable {
         mPaintTarget.color = Color.TRANSPARENT
         mPaintTarget.style = Paint.Style.FILL
         mPaintTarget.strokeWidth = 2f
+        mPaintTarget.xfermode = PorterDuffXfermode(PorterDuff.Mode.CLEAR)
     }
 
     override fun run() {
@@ -128,7 +129,7 @@ class SurfaceShootMarbles : SurfaceView, SurfaceHolder.Callback, Runnable {
                 Thread.sleep(sleepTime - (end - start))
             }
 
-            marbles = marbles.dropLastWhile { it.btm < 0 }.toMutableList()
+            marbles = marbles.dropLastWhile { (it.btm < 0) || it.isDestroy }.toMutableList()
         }
     }
 
@@ -142,8 +143,13 @@ class SurfaceShootMarbles : SurfaceView, SurfaceHolder.Callback, Runnable {
 
                 mCanvas!!.drawColor(Color.WHITE)
                 drawTankCenter(mCanvas)
-                drawShootMarbleAndUpdateData(mCanvas!!)
                 drawMarbleTarget(mCanvas!!)
+                drawShootMarbleAndUpdateData(mCanvas!!)
+                if (isTargetShooted) {
+
+                    mCanvas!!.drawRect(marbleTarget.left, marbleTarget.top, marbleTarget.right, marbleTarget.btm, mPaintTarget)
+                    updateMarbleTarget()
+                }
             } catch (e: Exception) {
                 Log.e(tagLog, e.message)
 
@@ -183,11 +189,11 @@ class SurfaceShootMarbles : SurfaceView, SurfaceHolder.Callback, Runnable {
 
         marbles.forEachIndexed { index, marble ->
 
-            if (marble.left >= marbleTarget.left && marble.left <= (marbleTarget.right - 30) &&
-                    marbleTarget.btm >= marble.top) {
+            if (marble.right > marbleTarget.left && marble.left < (marbleTarget.right) &&
+                    marbleTarget.btm >= marble.top && !isTargetShooted) {
 
-                canvas.drawRect(marbleTarget.left, marbleTarget.top, marbleTarget.right, marbleTarget.btm, mPaintTarget)
-                updateMarbleTarget()
+                isTargetShooted = true
+                marbles[index].isDestroy = true
             }
 
             if (marble.btm >= 0) {
@@ -236,7 +242,7 @@ class SurfaceShootMarbles : SurfaceView, SurfaceHolder.Callback, Runnable {
     //创建Marbles对象
     private fun createMarble(): Marbles {
 
-        return Marbles(preTankX + 60, hScreen - 60f, preTankX + 90, hScreen - 30f)
+        return Marbles(preTankX + 60, hScreen - 60f, preTankX + 90, hScreen - 30f, false)
     }
 
     //更新发射出去的弹珠的位置坐标
