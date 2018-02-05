@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.example.zpf.animmenu.R;
 
 import java.util.ArrayList;
@@ -23,6 +24,9 @@ public class RecyclerViewSwitchAdapter extends RecyclerView.Adapter<RecyclerView
     private Context mContext;
     private ArrayList<String> urls = new ArrayList<>();
     private LayoutInflater inflater;
+    private RequestOptions options = new RequestOptions()
+            .placeholder(R.mipmap.bg_loading)
+            .error(R.mipmap.bg_loading);
 
     public RecyclerViewSwitchAdapter(Context contexts, List<String> strings) {
 
@@ -42,8 +46,7 @@ public class RecyclerViewSwitchAdapter extends RecyclerView.Adapter<RecyclerView
     public void onBindViewHolder(GridViewHolder holder, int position) {
 
         Glide.with(mContext).load(urls.get(position))
-                .asBitmap().placeholder(R.mipmap.bg_loading)
-                .error(R.mipmap.ic_launcher)
+                .apply(options)
                 .into(holder.iv);
 
         holder.tv.setText(urls.get(position));

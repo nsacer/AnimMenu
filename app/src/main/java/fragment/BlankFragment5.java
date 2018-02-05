@@ -197,77 +197,62 @@ public class BlankFragment5 extends Fragment implements View.OnClickListener {
             case R.id.btn_to_coordinator:
                 openActivity(CoordinatorActivity.class, v);
                 break;
-
             //跳转到九宫格手势密码
             case R.id.btn_password:
                 openActivity(PasswordActivity.class, v);
                 break;
-
             //拍照
             case R.id.btn_photo:
                 openActivity(PhotoSetActivity.class, v);
                 break;
-
             //Date Select
             case R.id.btn_date_select:
                 openActivity(DateSelectActivity.class, v);
                 break;
-
             //宝箱用的各种Shape
             case R.id.btn_shape:
                 openActivity(CowboyActivity.class, v);
                 break;
-
             //bang效果
             case R.id.civ_bang:
                 field.explode(civBang);
                 break;
-
             //band效果Reset
             case R.id.btn_field_reset:
                 resetBangedView(civBang);
                 break;
-
             //弹幕
             case R.id.btn_barrage:
                 openActivity(DanmuKuActivity.class, v);
                 break;
-
             //量化分析图表动画
             case R.id.btn_anim:
                 openActivity(ChartActivity.class, v);
                 break;
-
             //量化分析界面
             case R.id.btn_alpha_analyze:
                 openActivity(AlphaAnalyzeActivity.class, v);
                 break;
-
             //RecyclerView主界面
             case R.id.btn_recycler_enter:
                 openActivity(RecyclerViewEnterActivity.class, v);
                 break;
-
             //CircleTextViewActivity
             case R.id.btn_circle_text_anim:
                 openActivity(CircleTextViewAnim.class, v);
                 break;
-
             //TableLayout
             case R.id.btn_table_layout:
                 openActivity(TableLayoutActivity.class, v);
                 break;
-
             //获取系统权限
             case R.id.btn_request_permission:
                 openActivity(PermissionActivity.class, v);
                 break;
-
             //自定义加载样式
             case R.id.btn_loading_progress:
                 openActivity(CustomLoadingActivity.class, v);
                 break;
-
             //大转盘
             case R.id.btn_turntable:
                 openActivity(TurnTableActivity.class, v);
@@ -284,32 +269,26 @@ public class BlankFragment5 extends Fragment implements View.OnClickListener {
             case R.id.btn_ConstraintLayout:
                 openActivity(ConstraintEnterActivity.class, v);
                 break;
-
             //Glide
             case R.id.btn_Glide:
                 openActivity(GlideActivity.class, v);
                 break;
-
             //RadioGroup实现的tab
             case R.id.btn_tab_rg:
                 openActivity(TabTitleActivity.class, v);
                 break;
-
             //F10
             case R.id.btn_tab_f10:
                 openActivity(F10Activity.class, v);
                 break;
-
             //视频
             case R.id.btn_video:
                 openActivity(VideoActivity.class, v);
                 break;
-
             //TabActivity
             case R.id.btn_tabAct:
                 openActivity(TabMainActivity.class, v);
                 break;
-
             default:
                 break;
         }

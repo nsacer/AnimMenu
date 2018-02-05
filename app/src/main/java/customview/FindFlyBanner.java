@@ -21,6 +21,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.example.zpf.animmenu.R;
 
 import java.util.List;
@@ -74,6 +75,10 @@ public class FindFlyBanner extends RelativeLayout {
     private List<String> mTipsDatas;
     //指示点是否可见
     private boolean mPointsIsVisible = true;
+
+    private RequestOptions options = new RequestOptions()
+            .placeholder(R.mipmap.bg_loading)
+            .error(R.mipmap.bg_loading);
 
 
     private Handler mAutoPlayHandler = new Handler() {
@@ -330,8 +335,7 @@ public class FindFlyBanner extends RelativeLayout {
             if (mIsImageUrl) {
                 Glide.with(getContext())
                         .load(mImageUrls.get(toRealPosition(position)))
-                        .placeholder(R.mipmap.bg_loading)
-                        .error(R.mipmap.bg_loading)
+                        .apply(options)
                         .into(imageView);
             } else {
                 imageView.setImageResource(mImages.get(toRealPosition(position)));

@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.example.zpf.animmenu.R;
 
 import java.util.ArrayList;
@@ -36,6 +37,8 @@ public class RvAdapterHeadFoot extends RecyclerView.Adapter<RvAdapterHeadFoot.HF
 
     private Context mContext;
     private ArrayList<String> strings = new ArrayList<>();
+    private RequestOptions options = new RequestOptions()
+            .placeholder(R.mipmap.img_eig);
 
     public RvAdapterHeadFoot(Context context) {
 
@@ -96,7 +99,7 @@ public class RvAdapterHeadFoot extends RecyclerView.Adapter<RvAdapterHeadFoot.HF
         int positionModel = position - 1;
         String url = strings.get(positionModel);
 
-        Glide.with(mContext).load(url).thumbnail(0.1f).placeholder(R.mipmap.img_eig).into(holder.iv);
+        Glide.with(mContext).load(url).thumbnail(0.1f).apply(options).into(holder.iv);
         holder.tv.setText(url);
     }
 

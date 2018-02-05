@@ -10,16 +10,16 @@
         android:id="@+id/btn_load_glide"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingLeft="32dp"
-        android:paddingTop="16dp"
-        android:paddingRight="32dp"
-        android:paddingBottom="16dp"
-        android:text="download"
         android:background="@color/colorBlack"
+        android:paddingBottom="16dp"
+        android:paddingLeft="32dp"
+        android:paddingRight="32dp"
+        android:paddingTop="16dp"
+        android:text="download"
         android:textColor="@color/colorWhite"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="HardcodedText" />
 
     <TextView
@@ -28,18 +28,18 @@
         android:layout_height="wrap_content"
         android:textColor="@color/colorBlack"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_load_glide"
-        app:layout_constraintRight_toRightOf="parent"/>
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_load_glide" />
 
     <ImageView
         android:id="@+id/iv_glide"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:background="@color/black_alpha_2"
-        android:contentDescription="@null"/>
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

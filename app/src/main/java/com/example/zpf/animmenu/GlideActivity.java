@@ -1,90 +1,85 @@
 package com.example.zpf.animmenu;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.DrawableRequestBuilder;
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.resource.drawable.GlideDrawable;
+import com.bumptech.glide.RequestBuilder;
+import com.bumptech.glide.load.DataSource;
+import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
+import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.Target;
 
-import org.xutils.view.annotation.ContentView;
-import org.xutils.view.annotation.Event;
-import org.xutils.view.annotation.ViewInject;
-
-@ContentView(R.layout.activity_glide)
-public class GlideActivity extends BaseActivity {
+public class GlideActivity extends BaseActivity implements View.OnClickListener {
 
     private final String URL_PIC = "http://isujin.com/wp-content/uploads/2017/03/wallhaven-78430.jpg";
-
-    @ViewInject(R.id.iv_glide)
     private ImageView ivGlide;
-
-    @ViewInject(R.id.tv_info_glide)
     private TextView tvInfo;
+
+    @Override
+    public void onClick(View v) {
+
+        switch (v.getId()) {
+
+            case R.id.btn_load_glide:
+                loadImageThumbnailRequest();
+                break;
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_glide);
+
+        initView();
     }
 
-    @Event(R.id.btn_load_glide)
-    private void LoadImage(View view) {
+    private void initView() {
 
-        loadImageThumbnailRequest();
+        (findViewById(R.id.btn_load_glide)).setOnClickListener(this);
+
+        ivGlide = (ImageView) findViewById(R.id.iv_glide);
+        tvInfo = (TextView) findViewById(R.id.tv_info_glide);
     }
 
     private void loadImageThumbnailRequest() {
         // setup Glide request without the into() method
-        DrawableRequestBuilder<String> thumbnailRequest = Glide
-                .with(this)
-                .load(URL_PIC)
-                .thumbnail(0.5f)
-                .listener(requestListener);
+        RequestOptions options = new RequestOptions();
+        options = options.error(R.mipmap.ic_header).error(R.mipmap.ic_header).centerInside();
+
+        RequestBuilder<Drawable> builder = Glide.with(this).asDrawable().apply(options).listener(new RequestListener<Drawable>() {
+            @Override
+            public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
+                return false;
+            }
+
+            @Override
+            public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
+                int width = resource.getIntrinsicWidth();
+                int height = resource.getIntrinsicHeight();
+
+                tvInfo.setText("width: " + width + "_height: " + height);
+
+                //根据图片实际宽高比例更改ImageView
+                ViewGroup.LayoutParams ll = ivGlide.getLayoutParams();
+                ll.width = ivGlide.getWidth();
+                ll.height = ivGlide.getWidth() * height / width;
+                ivGlide.setLayoutParams(ll);
+
+                showToast("ok");
+                return false;
+            }
+        });
 
         // pass the request as a a parameter to the thumbnail request
-        Glide.with(this)
-                .load(URL_PIC)
-                .thumbnail(thumbnailRequest)
+        builder.load(URL_PIC)
                 .into(ivGlide);
     }
-
-    private RequestListener<String, GlideDrawable> requestListener =
-            new RequestListener<String, GlideDrawable>() {
-        @Override
-        public boolean onException(Exception e, String model,
-                                   Target<GlideDrawable> target, boolean isFirstResource) {
-            // todo log exception
-
-            // important to return false so the error placeholder can be placed
-            return false;
-        }
-
-        @Override
-        public boolean onResourceReady(GlideDrawable resource,
-                                       String model, Target<GlideDrawable> target,
-                                       boolean isFromMemoryCache, boolean isFirstResource) {
-
-            int width = resource.getIntrinsicWidth();
-            int height = resource.getIntrinsicHeight();
-            tvInfo.setText(width + "---" + height);
-
-            ViewGroup.LayoutParams ll = ivGlide.getLayoutParams();
-//            ll.height = ivGlide.getWidth() / (resource.getIntrinsicWidth() / resource.getIntrinsicHeight());
-            ll.width = ivGlide.getWidth();
-            ll.height = ivGlide.getWidth() * height / width ;
-            ivGlide.setLayoutParams(ll);
-
-            showToast("ok");
-
-            return false;
-        }
-    };
 }
