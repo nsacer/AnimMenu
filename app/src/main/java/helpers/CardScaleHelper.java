@@ -1,6 +1,8 @@
 package helpers;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
+import android.support.v7.widget.LinearSnapHelper;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
@@ -146,5 +148,19 @@ public class CardScaleHelper {
 
     public void setShowLeftCardWidth(int showLeftCardWidth) {
         mShowLeftCardWidth = showLeftCardWidth;
+    }
+
+    class CardLinearSnapHelper extends LinearSnapHelper {
+
+        boolean mNoNeedToScroll = false;
+
+        @Override
+        public int[] calculateDistanceToFinalSnap(@NonNull RecyclerView.LayoutManager layoutManager, @NonNull View targetView) {
+            if (mNoNeedToScroll) {
+                return new int[]{0, 0};
+            } else {
+                return super.calculateDistanceToFinalSnap(layoutManager, targetView);
+            }
+        }
     }
 }

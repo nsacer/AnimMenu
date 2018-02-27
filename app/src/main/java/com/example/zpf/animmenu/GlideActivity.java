@@ -30,6 +30,12 @@ public class GlideActivity extends BaseActivity implements View.OnClickListener 
             case R.id.btn_load_glide:
                 loadImageThumbnailRequest();
                 break;
+            case R.id.iv_glide:
+                showToast("click");
+                break;
+            case R.id.btnGlideListImg:
+                openAct(GlideListPicActivity.class);
+                break;
         }
     }
 
@@ -46,7 +52,10 @@ public class GlideActivity extends BaseActivity implements View.OnClickListener 
         (findViewById(R.id.btn_load_glide)).setOnClickListener(this);
 
         ivGlide = (ImageView) findViewById(R.id.iv_glide);
+        ivGlide.setOnClickListener(this);
         tvInfo = (TextView) findViewById(R.id.tv_info_glide);
+
+        findViewById(R.id.btnGlideListImg).setOnClickListener(this);
     }
 
     private void loadImageThumbnailRequest() {
@@ -81,5 +90,27 @@ public class GlideActivity extends BaseActivity implements View.OnClickListener 
         // pass the request as a a parameter to the thumbnail request
         builder.load(URL_PIC)
                 .into(ivGlide);
+    }
+
+    class MyRequestListener implements RequestListener<Drawable> {
+
+        private ImageView iv;
+
+        MyRequestListener(ImageView iv) {
+
+            this.iv = iv;
+        }
+
+        @Override
+        public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
+            return false;
+        }
+
+        @Override
+        public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
+
+
+            return false;
+        }
     }
 }

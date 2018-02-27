@@ -77,4 +77,5 @@
     <string name="bottom_sheet_dialog_title">This is bottomSheetDialog title</string>
     <string name="tag_face">face</string>
     <string name="send">发送</string>
+    <string name="list_page">列表页</string>
 </resources>

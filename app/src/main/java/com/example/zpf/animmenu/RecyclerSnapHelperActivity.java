@@ -35,7 +35,7 @@ public class RecyclerSnapHelperActivity extends BaseActivity {
 
         LinearLayoutManager manager = new LinearLayoutManager(this,
                 LinearLayoutManager.HORIZONTAL,false);
-//        recyclerViewSnap.setHasFixedSize(true);
+        recyclerViewSnap.setHasFixedSize(true);
         recyclerViewSnap.setLayoutManager(manager);
 
         //LinearSnapHelper支持一次滚动多个item
@@ -47,21 +47,16 @@ public class RecyclerSnapHelperActivity extends BaseActivity {
         //自定义的SnapHelper,前两个都有第一个、最后一个item显示不全问题，这个没有，但是滑动到最后会全部显示完全
 //        new LinearHorizontalLeftSnapHelper().attachToRecyclerView(recyclerViewSnap);
 
+        //CardView+中间放大效果
+        new CardScaleHelper().attachToRecyclerView(recyclerViewSnap);
+
         String[] strings = Arrays.copyOf(getResources().getStringArray(R.array.picUrls), 7);
         RecyclerSnapAdapter adapter = new RecyclerSnapAdapter(this, strings);
         recyclerViewSnap.setAdapter(adapter);
 
-        CardScaleHelper cardScaleHelper = new CardScaleHelper();
-        cardScaleHelper.attachToRecyclerView(recyclerViewSnap);
-
         countRvItem = adapter.getItemCount();
 
 //        scheduleTask();
-    }
-
-    private float dp2Px(float dp) {
-
-        return Math.round(dp * getResources().getDisplayMetrics().density);
     }
 
     /**
@@ -78,7 +73,7 @@ public class RecyclerSnapHelperActivity extends BaseActivity {
                 recyclerViewSnap.smoothScrollToPosition(itemIndex);
                 itemIndex++;
             }
-        }, 0, 3000, TimeUnit.MILLISECONDS);
+        }, 3000, 3000, TimeUnit.MILLISECONDS);
     }
 
 }
