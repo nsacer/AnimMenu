@@ -54,7 +54,6 @@ public class RecyclerViewEnterActivity extends BaseActivity {
     private void goRecyclerAll(View view) {
 
         openActivity(RecyclerSwipeDragActivity.class, view);
-//        openActivity(RecyclerAllActivity.class, view);
     }
 
     @Event(R.id.btn_recycler_prize)

@@ -90,7 +90,6 @@
             android:name=".ConstraintLayoutActivity"
             android:label="@string/title_activity_constraint_layout"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".RecyclerAllActivity" />
         <activity android:name=".GlideActivity" />
         <activity android:name=".RecyclerHeadFootActivity" />
         <activity android:name=".RecyclerItemClickActivity" />
