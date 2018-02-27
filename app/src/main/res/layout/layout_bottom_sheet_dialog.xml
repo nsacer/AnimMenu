@@ -25,6 +25,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
 
     <TextView
+        android:id="@+id/tvContent"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:lineSpacingMultiplier="1.4"

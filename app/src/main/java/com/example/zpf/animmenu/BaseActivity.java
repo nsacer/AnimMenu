@@ -66,7 +66,7 @@ public class BaseActivity extends AppCompatActivity {
      */
     protected int getDp(int dp) {
 
-        return DisplayUtil.dip2px(dp);
+        return DisplayUtil.dip2px(this, dp);
     }
 
     protected void Logi(String content) {

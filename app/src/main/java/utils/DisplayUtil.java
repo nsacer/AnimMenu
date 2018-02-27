@@ -2,8 +2,6 @@ package utils;
 
 import android.content.Context;
 
-import com.example.zpf.animmenu.MyApplication;
-
 /**
  * dp、sp 转换为 px 的工具类
  *
@@ -30,13 +28,7 @@ public class DisplayUtil {
      */
     public static int dip2px(Context context, float dipValue) {
 
-        float scale = context.getResources().getDisplayMetrics().density;
-        return (int) (dipValue * scale + 0.5f);
-    }
-
-    public static int dip2px(float dipValue) {
-
-        float scale = MyApplication.Companion.getResources().getDisplayMetrics().density;
+        float scale = context.getApplicationContext().getResources().getDisplayMetrics().density;
         return (int) (dipValue * scale + 0.5f);
     }
 
