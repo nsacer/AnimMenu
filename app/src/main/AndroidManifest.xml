@@ -113,6 +113,7 @@
             android:windowSoftInputMode="adjustResize" />
         <activity android:name=".SurfaceViewActivity" />
         <activity android:name=".GlideListPicActivity" />
+        <activity android:name=".TanTanCardActivity"></activity>
     </application>
 
 </manifest>

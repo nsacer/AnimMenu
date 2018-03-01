@@ -132,6 +132,16 @@
             android:background="@drawable/shape_btn_corners"
             android:text="Rv顶部悬浮"
             android:textColor="@color/colorWhite" />
+
+        <Button
+            android:id="@+id/btnTanTanCard"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="08dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/shape_btn_corners"
+            android:text="探探卡片"
+            android:textColor="@color/colorWhite" />
     </LinearLayout>
 
 </ScrollView>

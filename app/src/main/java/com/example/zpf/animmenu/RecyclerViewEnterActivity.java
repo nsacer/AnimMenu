@@ -86,4 +86,10 @@ public class RecyclerViewEnterActivity extends BaseActivity {
         openActivity(RvGroupTitleActivity.class, view);
     }
 
+    @Event(R.id.btnTanTanCard)
+    private void goTanTanCard(View view) {
+
+        openAct(TanTanCardActivity.class);
+    }
+
 }
