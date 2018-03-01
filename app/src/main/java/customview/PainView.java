@@ -21,7 +21,12 @@ public class PainView extends View {
 
     private Paint paint = new Paint();
 
+    private Path path = new Path();
+
+    private CornerPathEffect cornerPathEffect = new CornerPathEffect(120);
+
     private int fx = 0;//虚线偏移量
+    private DashPathEffect dashPathEffect = new DashPathEffect(new float[]{20, 10, 50, 20}, fx);
 
     public PainView(Context context) {
         super(context);
@@ -55,7 +60,6 @@ public class PainView extends View {
         paint.setStrokeWidth(40);
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeJoin(Paint.Join.MITER);
-        Path path = new Path();
         path.moveTo(100, 700);
         path.lineTo(500, 700);
         path.lineTo(100,900);
@@ -89,13 +93,13 @@ public class PainView extends View {
         path.moveTo(700, 100);
         path.lineTo(800, 400);
         path.lineTo(900, 100);
-        paint.setPathEffect(new CornerPathEffect(120));
+        paint.setPathEffect(cornerPathEffect);
         canvas.drawPath(path, paint);
 
         path.moveTo(700, 500);
         path.lineTo(800, 800);
         path.lineTo(900, 500);
-        paint.setPathEffect(new DashPathEffect(new float[]{20, 10, 50, 20}, fx));
+        paint.setPathEffect(dashPathEffect);
         canvas.drawPath(path, paint);
     }
 

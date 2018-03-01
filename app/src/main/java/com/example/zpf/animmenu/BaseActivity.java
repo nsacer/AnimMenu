@@ -1,5 +1,6 @@
 package com.example.zpf.animmenu;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -48,7 +49,8 @@ public class BaseActivity extends AppCompatActivity {
 
     protected void openAct(Class<?> clazz) {
 
-        startActivity(new Intent(this, clazz));
+        startActivity(new Intent(this, clazz),
+                ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
     }
 
     protected void showToast(String message) {
