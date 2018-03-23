@@ -65,64 +65,64 @@
     <!-- 带文字的横向柱状图 -->
     <declare-styleable name="TextDiagram">
         <!-- 股票名字的textSize -->
-        <attr name="textSize" format="dimension"/>
+        <attr name="textSize" format="dimension" />
         <!-- 股票名字的textColor -->
-        <attr name="textColor" format="color"/>
+        <attr name="textColor" format="color" />
         <!-- 股票名字右边距离图形的距离 -->
-        <attr name="textMarginRight" format="dimension"/>
+        <attr name="textMarginRight" format="dimension" />
         <!-- 股票的数值值的文本大小 -->
-        <attr name="textValueSize" format="dimension"/>
+        <attr name="textValueSize" format="dimension" />
         <!-- 顶部的颜色 -->
-        <attr name="topColor" format="color"/>
+        <attr name="topColor" format="color" />
         <!-- 底部的颜色 -->
-        <attr name="bottomColor" format="color"/>
+        <attr name="bottomColor" format="color" />
         <!-- 数据线条的宽度 -->
-        <attr name="lineWidth" format="dimension"/>
+        <attr name="lineWidth" format="dimension" />
         <!-- 竖直虚线的颜色 -->
-        <attr name="dashLineColor" format="color"/>
+        <attr name="dashLineColor" format="color" />
         <!-- 竖直虚线的线条长度 -->
-        <attr name="dashLineLength" format="dimension"/>
+        <attr name="dashLineLength" format="dimension" />
         <!-- 竖直虚线的间隔 -->
-        <attr name="dashLinePadding" format="dimension"/>
+        <attr name="dashLinePadding" format="dimension" />
         <!-- 竖直虚线的宽度 -->
-        <attr name="dashLineWidth" format="dimension"/>
+        <attr name="dashLineWidth" format="dimension" />
         <!-- 竖直虚线是否可见（主力深度不可见） -->
-        <attr name="dashLineVisible" format="boolean"/>
+        <attr name="dashLineVisible" format="boolean" />
         <!-- 主力深度距离第二条数据间距 -->
-        <attr name="mainDeepTop" format="dimension"/>
+        <attr name="mainDeepTop" format="dimension" />
     </declare-styleable>
 
 
     <!-- SpiderChart -->
     <declare-styleable name="SpiderChart">
         <!-- 分割成圆环的数量 -->
-        <attr name="spiderRingNum" format="integer"/>
+        <attr name="spiderRingNum" format="integer" />
         <!-- 五个顶点的标题（从顶部开始顺时针顺序titleOne-titleFive） -->
-        <attr name="spiderTitleOne" format="string"/>
-        <attr name="spiderTitleTwo" format="string"/>
-        <attr name="spiderTitleThree" format="string"/>
-        <attr name="spiderTitleFour" format="string"/>
-        <attr name="spiderTitleFive" format="string"/>
-        <attr name="spiderTitleMargin" format="dimension"/>
-        <attr name="spiderTitleSize" format="dimension"/>
-        <attr name="spiderTitleColor" format="color"/>
+        <attr name="spiderTitleOne" format="string" />
+        <attr name="spiderTitleTwo" format="string" />
+        <attr name="spiderTitleThree" format="string" />
+        <attr name="spiderTitleFour" format="string" />
+        <attr name="spiderTitleFive" format="string" />
+        <attr name="spiderTitleMargin" format="dimension" />
+        <attr name="spiderTitleSize" format="dimension" />
+        <attr name="spiderTitleColor" format="color" />
         <!-- 内圆环的浅色、深色 -->
-        <attr name="spiderRingLightColor" format="color"/>
-        <attr name="spiderRingDarkColor" format="color"/>
+        <attr name="spiderRingLightColor" format="color" />
+        <attr name="spiderRingDarkColor" format="color" />
         <!-- 内圆环线的颜色、宽度 -->
-        <attr name="spiderRingLineColor" format="color"/>
-        <attr name="spiderRingLineWidth" format="dimension"/>
+        <attr name="spiderRingLineColor" format="color" />
+        <attr name="spiderRingLineWidth" format="dimension" />
         <!-- 数值点的颜色、半径 -->
-        <attr name="spiderValuePointColor" format="color"/>
-        <attr name="spiderValuePointRadius" format="dimension"/>
+        <attr name="spiderValuePointColor" format="color" />
+        <attr name="spiderValuePointRadius" format="dimension" />
         <!-- 数值点内点的颜色、半径 -->
-        <attr name="spiderValueInnerPointColor" format="color"/>
-        <attr name="spiderValueInnerPointRadius" format="dimension"/>
+        <attr name="spiderValueInnerPointColor" format="color" />
+        <attr name="spiderValueInnerPointRadius" format="dimension" />
         <!-- 数值点连接线的颜色、宽度 -->
-        <attr name="spiderValueLineColor" format="color"/>
-        <attr name="spiderValueLineWidth" format="dimension"/>
+        <attr name="spiderValueLineColor" format="color" />
+        <attr name="spiderValueLineWidth" format="dimension" />
         <!-- 数值范围内部封闭区域颜色 -->
-        <attr name="spiderValueRectColor" format="color"/>
+        <attr name="spiderValueRectColor" format="color" />
     </declare-styleable>
 
 
@@ -152,10 +152,10 @@
 
     <!-- “股”字加载样式 -->
     <declare-styleable name="LoadingView">
-        <attr name="android:text"/>
-        <attr name="android:textSize"/>
-        <attr name="android:textColor"/>
-        <attr name="android:dividerHeight"/>
+        <attr name="android:text" />
+        <attr name="android:textSize" />
+        <attr name="android:textColor" />
+        <attr name="android:dividerHeight" />
     </declare-styleable>
 
     <!-- 我的积分页面击败多少用户进度条 -->
@@ -187,5 +187,13 @@
         <attr name="tabTextSize" format="dimension" />
         <attr name="tabTextColor" format="color" />
         <attr name="tabSelectedTextColor" format="color" />
+    </declare-styleable>
+    <!-- 主页背景View -->
+    <declare-styleable name="MainBgView">
+        <attr name="mainBgColor" format="color" />
+        <attr name="mainCircleLTColor" format="color" />
+        <attr name="mainCircleLTRadius" format="dimension" />
+        <attr name="mainCircleBRColor" format="color" />
+        <attr name="mainCircleBRRadius" format="dimension" />
     </declare-styleable>
 </resources>

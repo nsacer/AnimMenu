@@ -10,8 +10,6 @@ import android.view.View;
 import android.view.animation.OvershootInterpolator;
 import android.widget.ImageView;
 
-import com.squareup.picasso.Picasso;
-
 import fragment.BlankFragment2;
 import fragment.BlankFragment3;
 import fragment.BlankFragment4;
@@ -21,7 +19,6 @@ import utils.ScreenUtils;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private ImageView iv_switch;
     private boolean isMenuOpen = false;
 
     private ImageView iv_menu1;
@@ -39,7 +36,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initDeviceInfo();
 
         initView();
-
     }
 
     private void initDeviceInfo() {
@@ -53,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void initView() {
 
-        iv_switch = (ImageView) findViewById(R.id.menu_switch);
+        ImageView iv_switch = (ImageView) findViewById(R.id.menu_switch);
         iv_switch.setOnClickListener(this);
 
         iv_menu1 = (ImageView) findViewById(R.id.menu_1);
@@ -71,20 +67,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         iv_menu5 = (ImageView) findViewById(R.id.menu_5);
         iv_menu5.setOnClickListener(this);
 
-        initWallpaper();
-
-    }
-
-    private void initWallpaper() {
-
-        String[] urls = getResources().getStringArray(R.array.picUrls);
-        int size = urls.length;
-        int position = (int) (Math.random() * (size - 1));
-        ImageView iv = (ImageView) findViewById(R.id.iv);
-        Picasso.with(this).load(urls[position])
-                .placeholder(R.mipmap.ic_header)
-                .error(R.mipmap.ic_header)
-                .into(iv);
     }
 
     /**
@@ -114,7 +96,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         transaction.replace(R.id.layout_container, fragment2, "2");
 
         transaction.commit();
-
     }
 
     /**
@@ -130,7 +111,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         transaction.replace(R.id.layout_container, fragment3, "3");
 
         transaction.commit();
-
     }
 
     /**
@@ -146,7 +126,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         transaction.replace(R.id.layout_container, fragment4, "4");
 
         transaction.commit();
-
     }
 
     /**
@@ -162,7 +141,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         transaction.replace(R.id.layout_container, fragment5, "5");
 
         transaction.commit();
-
     }
 
 
@@ -174,41 +152,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.menu_switch:
 
                 if (isMenuOpen) {
-                    //关闭菜单
                     closeAllMenu();
                 } else {
-                    //打开菜单
                     openAllMenu();
                 }
-
                 break;
-
             case R.id.menu_1:
-
                 addOneFragment();
                 closeAllMenu();
                 break;
-
             case R.id.menu_2:
-
                 replaceTwoFragment();
                 closeAllMenu();
                 break;
-
             case R.id.menu_3:
-
                 replaceThreeFragment();
                 closeAllMenu();
                 break;
-
             case R.id.menu_4:
-
                 replaceFourFragment();
                 closeAllMenu();
                 break;
-
             case R.id.menu_5:
-
                 replaceFiveFragment();
                 closeAllMenu();
                 break;
