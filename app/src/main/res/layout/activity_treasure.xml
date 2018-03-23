@@ -153,6 +153,17 @@
                 android:background="@drawable/shape_btn_corners"/>
         </LinearLayout>
 
+        <customview.StockInfoTabView
+            android:id="@+id/stockInfoTabView"
+            android:layout_width="match_parent"
+            android:layout_margin="16dp"
+            android:layout_height="28dp" />
+
+        <customview.StockLongAndShortChart
+            android:id="@+id/slsc"
+            android:layout_width="match_parent"
+            android:layout_height="100dp" />
+
     </LinearLayout>
 
 </ScrollView>

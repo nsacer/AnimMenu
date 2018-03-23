@@ -179,4 +179,13 @@
         <attr name="points_visibility" format="boolean" />
         <attr name="points_container_background" format="reference" />
     </declare-styleable>
+    <!-- 股票详细信息分时、日K...tab显示 -->
+    <declare-styleable name="StockInfoTabView">
+        <attr name="tabBarBackground" format="color" />
+        <attr name="tabColor" format="color" />
+        <attr name="tabSelectedColor" format="color" />
+        <attr name="tabTextSize" format="dimension" />
+        <attr name="tabTextColor" format="color" />
+        <attr name="tabSelectedTextColor" format="color" />
+    </declare-styleable>
 </resources>

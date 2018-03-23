@@ -1,22 +1,24 @@
 package com.example.zpf.animmenu;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
+import customview.StockInfoTabView;
+import customview.StockLongAndShortChart;
 import customview.TurtleGraph;
 
-public class CowboyActivity extends AppCompatActivity implements View.OnClickListener {
+public class CowboyActivity extends BaseActivity implements View.OnClickListener {
 
     private TurtleGraph turtleGraph;
-    
+
     private EditText etInputBlank;
 
     @Override
@@ -36,11 +38,30 @@ public class CowboyActivity extends AppCompatActivity implements View.OnClickLis
         btnCancelAnim.setOnClickListener(this);
 
         turtleGraph = (TurtleGraph) findViewById(R.id.turtle);
-        
+
         etInputBlank = (EditText) findViewById(R.id.et_input_blank);
         Button btnInputSubmit = (Button) findViewById(R.id.btn_blank_click);
         btnInputSubmit.setOnClickListener(this);
 
+        StockInfoTabView stockInfoTabView = (StockInfoTabView) findViewById(R.id.stockInfoTabView);
+        stockInfoTabView.setmTitles(getResources().getStringArray(R.array.stockTabTitlesShort));
+
+        stockInfoTabView.setOnTabChangeListener(new StockInfoTabView.onTabChangeListener() {
+            @Override
+            public void OnTabChanged(int index) {
+
+                showToast(String.valueOf(index));
+            }
+        });
+
+
+        List<String> datas = new ArrayList<>();
+        //TODO
+        String[] ss = getResources().getStringArray(R.array.strengthLine);
+        datas.addAll(Arrays.asList(ss));
+        StockLongAndShortChart shortChart = (StockLongAndShortChart) findViewById(R.id.slsc);
+        //TODO
+        shortChart.setDatas(datas, "3");
     }
 
     @Override
@@ -57,10 +78,10 @@ public class CowboyActivity extends AppCompatActivity implements View.OnClickLis
 
                 turtleGraph.cancelAnimator();
                 break;
-            
+
             case R.id.btn_blank_click:
-                
-                if(TextUtils.isEmpty(etInputBlank.getText().toString().trim()))
+
+                if (TextUtils.isEmpty(etInputBlank.getText().toString().trim()))
                     Toast.makeText(this, "提交的内容不可以为空啊", Toast.LENGTH_SHORT).show();
                 else
                     Toast.makeText(this, "成功！", Toast.LENGTH_SHORT).show();

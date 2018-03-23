@@ -78,4 +78,94 @@
     <string name="tag_face">face</string>
     <string name="send">发送</string>
     <string name="list_page">列表页</string>
+
+    <string-array name="stockTabTitlesShort">
+        <item>日k</item>
+        <item>周k</item>
+        <item>月k</item>
+    </string-array>
+
+    <string-array name="stockTabTitles">
+        <item>分时</item>
+        <item>五日</item>
+        <item>日k</item>
+        <item>周k</item>
+        <item>月k</item>
+    </string-array>
+
+    <!-- 测试多空图数据 -->
+    <!-- 短线电波/大盘趋势 -->
+    <string-array name="longShortShortWave">
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>0</item>
+        <item>0</item>
+        <item>1</item>
+        <item>-1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>-1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+    </string-array>
+    <!-- 强弱线/资金动能 -->
+    <string-array name="strengthLine">
+        <item>1</item>
+        <item>10</item>
+        <item>19</item>
+        <item>20</item>
+        <item>20</item>
+        <item>9</item>
+        <item>-15</item>
+        <item>-13</item>
+        <item>-19</item>
+        <item>-21</item>
+        <item>-11</item>
+        <item>-21</item>
+        <item>30</item>
+        <item>0</item>
+        <item>1</item>
+        <item>9</item>
+        <item>-15</item>
+        <item>-13</item>
+        <item>-19</item>
+        <item>-21</item>
+        <item>-11</item>
+        <item>-1</item>
+        <item>1</item>
+        <item>9</item>
+        <item>-15</item>
+        <item>-13</item>
+        <item>-19</item>
+        <item>-21</item>
+        <item>-11</item>
+        <item>-21</item>
+        <item>51</item>
+        <item>16</item>
+        <item>1</item>
+        <item>10</item>
+        <item>8</item>
+        <item>16</item>
+        <item>1</item>
+        <item>10</item>
+        <item>10</item>
+        <item>8</item>
+        <item>16</item>
+        <item>1</item>
+        <item>10</item>
+        <item>8</item>
+        <item>10</item>
+        <item>8</item>
+        <item>16</item>
+        <item>1</item>
+        <item>10</item>
+        <item>10</item>
+        <item>8</item>
+    </string-array>
 </resources>

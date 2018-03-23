@@ -265,7 +265,7 @@ public class BlankFragment5 extends Fragment implements View.OnClickListener {
             case R.id.btn_emoji:
                 openActivity(EmojiActivity.class, v);
                 break;
-            //ConstraintLayout
+            //测试入口
             case R.id.btn_ConstraintLayout:
                 openActivity(ConstraintEnterActivity.class, v);
                 break;
