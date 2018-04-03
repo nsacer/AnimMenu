@@ -20,6 +20,7 @@ class ConstraintEnterActivity : BaseActivity(), View.OnClickListener {
             R.id.btnBanner -> openActivity(BannerZoomCenterActivity::class.java, v)
             R.id.btnSheet -> btmSheetDialog!!.show()
             R.id.btnSurfaceView -> openActivity(SurfaceViewActivity::class.java, v)
+            R.id.btnMainBgView -> openActivity(MainBgActivity::class.java, v)
         }
     }
 

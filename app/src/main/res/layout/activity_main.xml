@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#9961C5FE"
     tools:context="com.example.zpf.animmenu.MainActivity">
-
-    <customview.MainBgView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:mainCircleBRRadius="300dp"
-        app:mainCircleLTRadius="180dp" />
 
     <RelativeLayout
         android:id="@+id/layout_container"

@@ -49,22 +49,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void initView() {
 
-        ImageView iv_switch = (ImageView) findViewById(R.id.menu_switch);
+        ImageView iv_switch = findViewById(R.id.menu_switch);
         iv_switch.setOnClickListener(this);
 
-        iv_menu1 = (ImageView) findViewById(R.id.menu_1);
+        iv_menu1 = findViewById(R.id.menu_1);
         iv_menu1.setOnClickListener(this);
 
-        iv_menu2 = (ImageView) findViewById(R.id.menu_2);
+        iv_menu2 = findViewById(R.id.menu_2);
         iv_menu2.setOnClickListener(this);
 
-        iv_menu3 = (ImageView) findViewById(R.id.menu_3);
+        iv_menu3 = findViewById(R.id.menu_3);
         iv_menu3.setOnClickListener(this);
 
-        iv_menu4 = (ImageView) findViewById(R.id.menu_4);
+        iv_menu4 = findViewById(R.id.menu_4);
         iv_menu4.setOnClickListener(this);
 
-        iv_menu5 = (ImageView) findViewById(R.id.menu_5);
+        iv_menu5 = findViewById(R.id.menu_5);
         iv_menu5.setOnClickListener(this);
 
     }

@@ -168,4 +168,6 @@
         <item>10</item>
         <item>8</item>
     </string-array>
+
+    <string name="title_activity_main_bg_view">MainBgViewActivity</string>
 </resources>

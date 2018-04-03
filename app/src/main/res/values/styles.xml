@@ -40,6 +40,7 @@
         <item name="android:windowExitAnimation">@anim/pop_window_dismiss</item>
     </style>
 
+    <!-- 全屏页面的主题样式 -->
     <style name="FullscreenTheme" parent="AppTheme">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -76,6 +77,10 @@
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="FullscreenActionBarStyle" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/black_overlay</item>
     </style>
 
 </resources>

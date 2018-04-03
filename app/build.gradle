@@ -52,6 +52,7 @@ dependencies {
     implementation 'com.shuyu:GSYVideoPlayer:2.1.0'
     implementation 'com.google.android:flexbox:0.3.0'
     implementation 'com.youth.banner:banner:1.4.10'
+    implementation 'com.android.support:support-v4:27.1.0'
     testImplementation 'junit:junit:4.12'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
