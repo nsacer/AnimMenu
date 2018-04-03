@@ -1,5 +1,6 @@
 package customview;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
@@ -9,6 +10,7 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
+import android.view.animation.AccelerateDecelerateInterpolator;
 
 import com.example.zpf.animmenu.R;
 
@@ -41,6 +43,12 @@ public class MainBgView extends View {
     private Paint mPaintCircle;
     //控件的实际的宽、高
     private int mWidth, mHeight;
+    //左上角动画数值、右下角动画数值
+    private float mCurValueLT = 0, mCurValueBR = 0;
+    //右下角动画是否在进行
+    private boolean isRunningBRAnim = false;
+    //是否开始动画
+    private boolean isStartAnim = false;
 
     public MainBgView(Context context) {
         super(context);
@@ -117,6 +125,7 @@ public class MainBgView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         drawContent(canvas);
+        if (!isStartAnim) startAnim();
     }
 
     //绘制图形
@@ -125,9 +134,58 @@ public class MainBgView extends View {
         canvas.drawColor(mColorBg);
 
         mPaintCircle.setColor(mColorCircleLT);
-        canvas.drawCircle(0, 0, mRadiusCircleLT, mPaintCircle);
+        canvas.drawCircle(0, 0, mCurValueLT, mPaintCircle);
 
         mPaintCircle.setColor(mColorCircleBR);
-        canvas.drawCircle(mWidth, mHeight, mRadiusCircleBR, mPaintCircle);
+        canvas.drawCircle(mWidth, mHeight, mCurValueBR, mPaintCircle);
+    }
+
+    //启动动画
+    public void startAnim() {
+
+        isStartAnim = true;
+        doAnimLTCircle();
+    }
+
+    //绘制左上角的动画
+    private void doAnimLTCircle() {
+
+        ValueAnimator animatorLT = ValueAnimator.ofFloat(0, mRadiusCircleLT);
+        animatorLT.setDuration(400);
+        animatorLT.setInterpolator(new AccelerateDecelerateInterpolator());
+        animatorLT.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+
+                mCurValueLT = (float) animation.getAnimatedValue();
+                if (mCurValueLT > (mRadiusCircleLT / 2) && !isRunningBRAnim) {
+                    doAnimBRCircle();
+                    isRunningBRAnim = true;
+                }
+                invalidate();
+            }
+        });
+        animatorLT.start();
+
+    }
+
+    //开始右下角动画
+    private void doAnimBRCircle() {
+
+        ValueAnimator animatorBR = ValueAnimator.ofFloat(0, mRadiusCircleBR);
+        animatorBR.setDuration(400);
+        animatorBR.setInterpolator(new AccelerateDecelerateInterpolator());
+        animatorBR.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+
+                mCurValueBR = (float) animation.getAnimatedValue();
+                if (mCurValueBR >= mRadiusCircleBR) {
+                    isRunningBRAnim = false;
+                }
+                invalidate();
+            }
+        });
+        animatorBR.start();
     }
 }
