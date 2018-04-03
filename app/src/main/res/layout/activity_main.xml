@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.example.zpf.animmenu.MainActivity">
 
     <customview.MainBgView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:mainCircleLTRadius="180dp"
-        app:mainCircleBRRadius="300dp" />
+        app:mainCircleBRRadius="300dp"
+        app:mainCircleLTRadius="180dp" />
 
     <RelativeLayout
         android:id="@+id/layout_container"
@@ -20,13 +20,14 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="400dp"
-        android:layout_gravity="bottom|right"
+        android:layout_gravity="bottom|end"
         android:layout_marginBottom="88dp"
-        android:layout_marginRight="24dp">
+        android:layout_marginEnd="24dp">
 
         <ImageView
             android:id="@+id/menu_1"
             style="@style/MenuItemStyle"
+            android:contentDescription="@null"
             android:src="@mipmap/ic_accessibility_black_48dp"
             android:tint="@color/colorWhite"
             android:visibility="invisible" />
@@ -34,6 +35,7 @@
         <ImageView
             android:id="@+id/menu_2"
             style="@style/MenuItemStyle"
+            android:contentDescription="@null"
             android:src="@mipmap/ic_accessible_black_48dp"
             android:tint="@color/colorWhite"
             android:visibility="invisible" />
@@ -41,6 +43,7 @@
         <ImageView
             android:id="@+id/menu_3"
             style="@style/MenuItemStyle"
+            android:contentDescription="@null"
             android:src="@mipmap/ic_account_balance_wallet_black_48dp"
             android:tint="@color/colorWhite"
             android:visibility="invisible" />
@@ -48,6 +51,7 @@
         <ImageView
             android:id="@+id/menu_4"
             style="@style/MenuItemStyle"
+            android:contentDescription="@null"
             android:src="@mipmap/ic_account_box_black_48dp"
             android:tint="@color/colorWhite"
             android:visibility="invisible" />
@@ -55,6 +59,7 @@
         <ImageView
             android:id="@+id/menu_5"
             style="@style/MenuItemStyle"
+            android:contentDescription="@null"
             android:src="@mipmap/ic_account_balance_black_48dp"
             android:tint="@color/colorWhite"
             android:visibility="invisible" />
@@ -62,6 +67,7 @@
         <ImageView
             android:id="@+id/menu_switch"
             style="@style/MenuItemStyle"
+            android:contentDescription="@null"
             android:src="@mipmap/ic_3d_rotation_black_48dp"
             android:tint="@color/colorWhite" />
 

@@ -36,6 +36,8 @@ class ConstraintEnterActivity : BaseActivity(), View.OnClickListener {
         btnSheet.setOnClickListener(this)
 
         btnSurfaceView.setOnClickListener(this)
+
+        btnMainBgView.setOnClickListener(this)
     }
 
     //创建bottomSheetDialog
@@ -43,7 +45,7 @@ class ConstraintEnterActivity : BaseActivity(), View.OnClickListener {
 
         btmSheetDialog = BottomSheetDialog(this)
         btmSheetDialog!!.setContentView(R.layout.layout_bottom_sheet_dialog)
-        val frameLayout = btmSheetDialog!!.delegate.findViewById(R.id.design_bottom_sheet) as FrameLayout
+        val frameLayout = btmSheetDialog!!.delegate.findViewById<FrameLayout>(R.id.design_bottom_sheet)
         val mBehavior = BottomSheetBehavior.from(frameLayout)
         mBehavior.peekHeight = getDp(240)
         mBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
