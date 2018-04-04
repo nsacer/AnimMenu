@@ -36,8 +36,7 @@ public class BlankFragment3 extends Fragment {
 
     public void initView(){
 
-        PainView painView = (PainView) root.findViewById(R.id.paintView);
-        painView.startAnim();
+        PainView painView = root.findViewById(R.id.paintView);
 
     }
 }
