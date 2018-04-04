@@ -114,7 +114,8 @@
         <activity android:name=".SurfaceViewActivity" />
         <activity android:name=".GlideListPicActivity" />
         <activity android:name=".TanTanCardActivity" />
-        <activity android:name=".MainBgActivity"></activity>
+        <activity android:name=".MainBgActivity" />
+        <activity android:name=".SurfaceRainActivity"></activity>
     </application>
 
 </manifest>
