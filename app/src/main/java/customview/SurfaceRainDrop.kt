@@ -19,7 +19,6 @@ class SurfaceRainDrop : SurfaceView, SurfaceHolder.Callback, Runnable {
     private var mHeight = 0f
     private val mPaintBg: Paint = Paint()
     private var mLinearGradient: LinearGradient? = null
-    private var mHasDrawBg: Boolean = false
 
     constructor(context: Context?) : super(context) {
         initPaint()
@@ -73,14 +72,6 @@ class SurfaceRainDrop : SurfaceView, SurfaceHolder.Callback, Runnable {
                 Color.parseColor("#FF6F9E"), Shader.TileMode.CLAMP)
     }
 
-//    override fun onDraw(canvas: Canvas?) {
-//        super.onDraw(canvas)
-//
-//        if (mLinearGradient != null) mPaintBg.shader = mLinearGradient
-//        canvas?.drawRect(0f, 0f, mWidth, mHeight, mPaintBg)
-//
-//    }
-
     override fun run() {
 
         while (mCanDraw) {
@@ -103,11 +94,10 @@ class SurfaceRainDrop : SurfaceView, SurfaceHolder.Callback, Runnable {
 
     private fun drawCanvas(canvas: Canvas) {
 
-        if (mLinearGradient != null || !mHasDrawBg) {
+        if (mLinearGradient != null) {
 
             mPaintBg.shader = mLinearGradient
-            canvas.drawRect(0f, 0f, 0f, measuredHeight.toFloat(), mPaintBg)
-            mHasDrawBg = true
+            canvas.drawRect(0f, 0f, mWidth, mHeight, mPaintBg)
         }
     }
 }
