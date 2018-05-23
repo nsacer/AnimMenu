@@ -20,8 +20,8 @@ public class EmotionUtils {
      * key-表情文字;
      * value-表情图片资源
      */
-    public static ArrayMap<String, Integer> EMPTY_MAP;
-    public static ArrayMap<String, Integer> EMOTION_CLASSIC_MAP;
+    private static ArrayMap<String, Integer> EMPTY_MAP;
+    private static ArrayMap<String, Integer> EMOTION_CLASSIC_MAP;
 
     static {
         EMPTY_MAP = new ArrayMap<>();
@@ -144,7 +144,7 @@ public class EmotionUtils {
      *
      * @param EmotionType 表情类型标志符
      * @param imgName     名称
-     * @return
+     * @return 返回对应表情资源id
      */
     public static int getImgByName(int EmotionType, String imgName) {
         Integer integer = null;
@@ -162,19 +162,11 @@ public class EmotionUtils {
     /**
      * 根据类型获取表情数据
      *
-     * @param EmotionType
-     * @return
+     * @param EmotionType 表情类型
+     * @return 表情map
      */
     public static ArrayMap<String, Integer> getEmojiMap(int EmotionType) {
-        ArrayMap EmojiMap = null;
-        switch (EmotionType) {
-            case EMOTION_CLASSIC_TYPE:
-                EmojiMap = EMOTION_CLASSIC_MAP;
-                break;
-            default:
-                EmojiMap = EMPTY_MAP;
-                break;
-        }
-        return EmojiMap;
+
+        return EmotionType == EMOTION_CLASSIC_TYPE ? EMOTION_CLASSIC_MAP : EMPTY_MAP;
     }
 }

@@ -99,6 +99,11 @@ public class SmartRefreshFooter extends RelativeLayout implements RefreshFooter 
     }
 
     @Override
+    public void onLoadmoreReleased(RefreshLayout layout, int footerHeight, int extendHeight) {
+
+    }
+
+    @Override
     public boolean setLoadmoreFinished(boolean finished) {
         return false;
     }

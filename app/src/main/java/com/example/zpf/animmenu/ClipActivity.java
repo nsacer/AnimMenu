@@ -1,59 +1,63 @@
 package com.example.zpf.animmenu;
 
-import java.io.File;
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import java.io.File;
+
 import customview.ClipImageLayout;
 import utils.AnimMenuSetting;
 import utils.ImageTools;
 
-public class ClipActivity extends AppCompatActivity{
+public class ClipActivity extends AppCompatActivity {
 
-	private static final String IMAGE_CROP_SAVE_PATH = "/ClipHeadPhoto/cache";
-	private static final String IMAGE_CROP_SAVE_NAME = "/aaaa.jpg";
-	private ClipImageLayout mClipImageLayout;
-	private ProgressDialog loadingDialog;
+    private static final String IMAGE_CROP_SAVE_PATH = "/ClipHeadPhoto/cache";
+    private static final String IMAGE_CROP_SAVE_NAME = "/aaaa.jpg";
+    private ClipImageLayout mClipImageLayout;
+    private ProgressBar progressBar;
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState){
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
 //		requestWindowFeature(Window.FEATURE_NO_TITLE);//去掉标题栏
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_clipimage);
-		getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_clipimage);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         init();
-	}
+    }
 
-    private void init(){
+    private void init() {
 
         initToolbar();
 
         showProgressDialog();
 
-        mClipImageLayout = (ClipImageLayout) findViewById(R.id.id_clipImageLayout);
+        mClipImageLayout = findViewById(R.id.id_clipImageLayout);
         mClipImageLayout.setBitmap(loadImg());
     }
 
-    /** init Toolbar */
-    private void initToolbar(){
+    /**
+     * init Toolbar
+     */
+    private void initToolbar() {
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("移动和缩放");
-        toolbar.setTitleTextColor(getResources().getColor(R.color.colorWhite));
+        toolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.colorWhite));
         setSupportActionBar(toolbar);
-        if(getSupportActionBar() != null)
+        if (getSupportActionBar() != null)
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -89,34 +93,39 @@ public class ClipActivity extends AppCompatActivity{
         return super.onCreateOptionsMenu(menu);
     }
 
-    /** 显示加载Dialog */
-	private void showProgressDialog(){
+    /**
+     * 显示加载Dialog
+     */
+    private void showProgressDialog() {
 
-        loadingDialog=new ProgressDialog(this);
-        loadingDialog.setTitle("请稍后...");
+        progressBar = new ProgressBar(this);
     }
 
-    /** 获取传过来的Intent存储的信息 */
-    private Bitmap loadImg(){
+    /**
+     * 获取传过来的Intent存储的信息
+     */
+    private Bitmap loadImg() {
 
         Intent intent = getIntent();
         String path = intent.getStringExtra(AnimMenuSetting.IMAGE_SOURCE_PATH);
-        if(TextUtils.isEmpty(path)||!(new File(path).exists())){
-            Toast.makeText(this, "图片加载失败",Toast.LENGTH_SHORT).show();
+        if (TextUtils.isEmpty(path) || !(new File(path).exists())) {
+            Toast.makeText(this, "图片加载失败", Toast.LENGTH_SHORT).show();
             return null;
         }
-        Bitmap bitmap= ImageTools.convertToBitmap(path, 600,600);
-        if(bitmap==null){
-            Toast.makeText(this, "图片加载失败",Toast.LENGTH_SHORT).show();
+        Bitmap bitmap = ImageTools.convertToBitmap(path, 600, 600);
+        if (bitmap == null) {
+            Toast.makeText(this, "图片加载失败", Toast.LENGTH_SHORT).show();
         }
 
         return bitmap;
     }
 
-    /** “确定”按钮的点击事件 */
-    private void completeClip(){
+    /**
+     * “确定”按钮的点击事件
+     */
+    private void completeClip() {
 
-        loadingDialog.show();
+        progressBar.setVisibility(View.VISIBLE);
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -124,10 +133,10 @@ public class ClipActivity extends AppCompatActivity{
                 String path = Environment.getExternalStorageDirectory().getPath() +
                         IMAGE_CROP_SAVE_PATH;
 
-                if(ImageTools.savePhotoToSDCard(bitmap,path, IMAGE_CROP_SAVE_NAME)){
+                if (ImageTools.savePhotoToSDCard(bitmap, path, IMAGE_CROP_SAVE_NAME)) {
 
                     Intent intent = new Intent();
-                    intent.putExtra(AnimMenuSetting.IMAGE_CROP_PATH,path + IMAGE_CROP_SAVE_NAME);
+                    intent.putExtra(AnimMenuSetting.IMAGE_CROP_PATH, path + IMAGE_CROP_SAVE_NAME);
                     setResult(RESULT_OK, intent);
                     finish();
                 } else {
@@ -140,7 +149,7 @@ public class ClipActivity extends AppCompatActivity{
                         }
                     });
                 }
-                loadingDialog.dismiss();
+                progressBar.setVisibility(View.INVISIBLE);
             }
         }).start();
     }

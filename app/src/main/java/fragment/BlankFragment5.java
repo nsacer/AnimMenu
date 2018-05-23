@@ -28,7 +28,6 @@ import com.example.zpf.animmenu.PermissionActivity;
 import com.example.zpf.animmenu.PhotoSetActivity;
 import com.example.zpf.animmenu.R;
 import com.example.zpf.animmenu.RecyclerViewEnterActivity;
-import com.example.zpf.animmenu.TabMainActivity;
 import com.example.zpf.animmenu.TabTitleActivity;
 import com.example.zpf.animmenu.TableLayoutActivity;
 import com.example.zpf.animmenu.TurnTableActivity;
@@ -284,10 +283,6 @@ public class BlankFragment5 extends Fragment implements View.OnClickListener {
             //视频
             case R.id.btn_video:
                 openActivity(VideoActivity.class, v);
-                break;
-            //TabActivity
-            case R.id.btn_tabAct:
-                openActivity(TabMainActivity.class, v);
                 break;
             default:
                 break;

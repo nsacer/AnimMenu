@@ -6,6 +6,7 @@
 
     <string name="anim_start">start</string>
     <string name="anim_cancel">cancel</string>
+    <string name="launcher_jump">Jump</string>
 
     <string name="room_name">冠松操盘直播室</string>
     <string name="tag_one">如来神掌</string>

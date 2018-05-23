@@ -20,12 +20,6 @@ public class RecyclerViewEnterActivity extends BaseActivity {
         openActivity(RecyclerViewSwitchActivity.class, view);
     }
 
-    @Event(R.id.btn_circle_refresh)
-    private void goRecyclerRefresh(View view) {
-
-        openActivity(RecyclerViewRefreshActivity.class, view);
-    }
-
     @Event(R.id.btn_recycler_snap)
     private void goRecyclerSnap(View view) {
 

@@ -3,7 +3,6 @@ package adapter;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.view.MotionEventCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -78,9 +77,14 @@ public class RvAdapterSwipePress extends RecyclerView.Adapter<RvAdapterSwipePres
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
 
-                if (dragListener != null &&
-                        MotionEventCompat.getActionMasked(motionEvent) == MotionEvent.ACTION_DOWN)
-                    dragListener.onStartDrag(holder);
+                switch (motionEvent.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        if (dragListener != null) dragListener.onStartDrag(holder);
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        holder.ivDrag.performClick();
+                        break;
+                }
                 return false;
             }
         });

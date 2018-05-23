@@ -1,16 +1,16 @@
 package com.example.zpf.animmenu;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
-public class AlphaAnalyzeActivity extends AppCompatActivity implements View.OnClickListener{
+public class AlphaAnalyzeActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Toolbar toolbar;
 
@@ -35,7 +35,6 @@ public class AlphaAnalyzeActivity extends AppCompatActivity implements View.OnCl
 
         initHeaderBar();
 
-        initFooter();
     }
 
     private void initHeaderBar() {
@@ -45,7 +44,7 @@ public class AlphaAnalyzeActivity extends AppCompatActivity implements View.OnCl
 
         TextView tvIntroduce = (TextView) findViewById(R.id.tv_introduce);
         tvIntroduce.setOnClickListener(this);
-        
+
         CollapsingToolbarLayout collapsingToolbar = (CollapsingToolbarLayout)
                 findViewById(R.id.collapsing_toolbar);
         collapsingToolbar.setTitle("Alpha量化分析");
@@ -96,27 +95,14 @@ public class AlphaAnalyzeActivity extends AppCompatActivity implements View.OnCl
 
     }
 
-    private void initFooter() {
-
-        TextView tvDeadLine = (TextView) findViewById(R.id.tv_deadline);
-        tvDeadLine.setOnClickListener(this);
-    }
-
     @Override
     public void onClick(View v) {
 
         switch (v.getId()) {
 
             case R.id.tv_introduce:
-
                 startActivity(new Intent(this, CustomBehaviorActivity.class));
                 break;
-
-            case R.id.tv_deadline:
-
-                startActivity(new Intent(this, RecyclerViewRefreshActivity.class));
-                break;
-
             default:
                 break;
         }

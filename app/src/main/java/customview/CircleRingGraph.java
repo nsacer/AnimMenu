@@ -4,14 +4,10 @@ import android.animation.TypeEvaluator;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.graphics.BlurMaskFilter;
 import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.LinearGradient;
 import android.graphics.Paint;
 import android.graphics.RectF;
-import android.graphics.Shader;
-import android.graphics.SweepGradient;
+import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
@@ -56,9 +52,9 @@ public class CircleRingGraph extends View {
      * colorIn: 圆心背景色
      * colorPro: 进度条的颜色
      */
-    private int colorOut = getResources().getColor(R.color.colorGray),
-            colorIn = getResources().getColor(R.color.circle_in),
-            colorPro = getResources().getColor(R.color.circle_progress_blue);
+    private int colorOut = ContextCompat.getColor(getContext(), R.color.colorGray),
+            colorIn = ContextCompat.getColor(getContext(), R.color.circle_in),
+            colorPro = ContextCompat.getColor(getContext(), R.color.circle_progress_blue);
     /**
      * 用来画圆弧的RectF
      */
@@ -84,7 +80,7 @@ public class CircleRingGraph extends View {
      * centerTextSize: TextView文字大小
      */
     private String centerText;
-    private int centerTextColor = getResources().getColor(R.color.colorBlack);
+    private int centerTextColor = ContextCompat.getColor(getContext(), R.color.colorBlack);
     private float centerTextSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 16,
             getResources().getDisplayMetrics());
 
@@ -135,17 +131,17 @@ public class CircleRingGraph extends View {
 
                 case R.styleable.CircleRingGraph_progressBackgroundColor:
 
-                    colorOut = typedArray.getColor(attr, context.getResources().getColor(R.color.circle_out_blue));
+                    colorOut = typedArray.getColor(attr, ContextCompat.getColor(context, R.color.circle_out_blue));
                     break;
 
                 case R.styleable.CircleRingGraph_progressColor:
 
-                    colorPro = typedArray.getColor(attr, context.getResources().getColor(R.color.circle_progress_blue));
+                    colorPro = typedArray.getColor(attr, ContextCompat.getColor(context, R.color.circle_progress_blue));
                     break;
 
                 case R.styleable.CircleRingGraph_circleHeartColor:
 
-                    colorIn = typedArray.getColor(attr, context.getResources().getColor(R.color.circle_in));
+                    colorIn = typedArray.getColor(attr, ContextCompat.getColor(context, R.color.circle_in));
                     break;
 
                 case R.styleable.CircleRingGraph_progressRoundCap:
@@ -165,7 +161,7 @@ public class CircleRingGraph extends View {
 
                 case R.styleable.CircleRingGraph_centerTextColor:
 
-                    centerTextColor = typedArray.getColor(attr, context.getResources().getColor(R.color.colorBlack));
+                    centerTextColor = typedArray.getColor(attr, ContextCompat.getColor(context, R.color.colorBlack));
                     break;
 
                 case R.styleable.CircleRingGraph_centerTextSize:

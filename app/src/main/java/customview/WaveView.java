@@ -5,6 +5,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
@@ -29,7 +30,7 @@ public class WaveView extends View {
         paint = new Paint();
         paint.setAntiAlias(true);
         paint.setStrokeWidth(8);
-        paint.setColor(getResources().getColor(R.color.colorPrimary));
+        paint.setColor(ContextCompat.getColor(context, R.color.colorPrimary));
         paint.setStyle(Paint.Style.FILL_AND_STROKE);
 
         path = new Path();

@@ -6,7 +6,6 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.graphics.Region;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -42,7 +41,8 @@ public class LineView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        canvas.clipRect(0, 0, xCurrent, height, Region.Op.INTERSECT);
+//        canvas.clipRect(0, 0, xCurrent, height, Region.Op.INTERSECT);
+        canvas.clipRect(0, 0, xCurrent, height);
         path = getPath();
         canvas.drawPath(path, paint);
 

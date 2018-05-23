@@ -64,7 +64,6 @@
             android:configChanges="orientation|screenSize" />
         <activity android:name=".DanmuKuActivity" />
         <activity android:name=".ChartActivity" />
-        <activity android:name=".RecyclerViewRefreshActivity" />
         <activity android:name=".CircleTextViewAnim" />
         <activity
             android:name=".AlphaAnalyzeActivity"
@@ -101,7 +100,6 @@
         <activity
             android:name=".VideoActivity"
             android:configChanges="orientation|keyboardHidden|screenSize" />
-        <activity android:name=".TabMainActivity" />
         <activity android:name=".GroupListActivity" />
         <activity android:name=".RvChatActivity" />
         <activity android:name=".RvGroupTitleActivity" />

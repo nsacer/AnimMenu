@@ -5,7 +5,6 @@ import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.view.PagerAdapter;
@@ -135,11 +134,7 @@ public class FindFlyBanner extends RelativeLayout {
         addView(mViewPager, vp);
         //设置指示器背景容器
         RelativeLayout pointContainerRl = new RelativeLayout(context);
-        if (Build.VERSION.SDK_INT >= 16) {
-            pointContainerRl.setBackground(mPointContainerBackgroundDrawable);
-        } else {
-            pointContainerRl.setBackgroundDrawable(mPointContainerBackgroundDrawable);
-        }
+        pointContainerRl.setBackground(mPointContainerBackgroundDrawable);
         //设置内边距
         pointContainerRl.setPadding(0, 10, 0, 10);
         //设定指示器容器布局及位置

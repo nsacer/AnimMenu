@@ -6,11 +6,10 @@ import android.graphics.Bitmap;
 import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
+import android.support.v4.content.ContextCompat;
 import android.text.util.Linkify;
 import android.util.SparseArray;
 import android.view.View;
-import android.view.animation.AlphaAnimation;
 import android.widget.Checkable;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -40,6 +39,7 @@ public class NestFullViewHolder {
      * @param viewId
      * @return
      */
+    @SuppressWarnings("unchecked")
     public <T extends View> T getView(int viewId) {
         View view = mViews.get(viewId);
         if (view == null) {
@@ -110,21 +110,13 @@ public class NestFullViewHolder {
 
     public NestFullViewHolder setTextColorRes(int viewId, int textColorRes) {
         TextView view = getView(viewId);
-        view.setTextColor(mContext.getResources().getColor(textColorRes));
+        view.setTextColor(ContextCompat.getColor(mContext, textColorRes));
         return this;
     }
 
     @SuppressLint("NewApi")
     public NestFullViewHolder setAlpha(int viewId, float value) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-            getView(viewId).setAlpha(value);
-        } else {
-            // Pre-honeycomb hack to set Alpha value
-            AlphaAnimation alpha = new AlphaAnimation(value, value);
-            alpha.setDuration(0);
-            alpha.setFillAfter(true);
-            getView(viewId).startAnimation(alpha);
-        }
+        getView(viewId).setAlpha(value);
         return this;
     }
 

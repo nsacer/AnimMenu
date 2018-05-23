@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -28,7 +29,7 @@ public class MyView extends View {
         super(context, attrs);
         paint = new Paint();
         paint.setAntiAlias(true);
-        paint.setColor(getResources().getColor(R.color.colorPrimary));
+        paint.setColor(ContextCompat.getColor(context, R.color.colorPrimary));
         paint.setStrokeWidth(8);
         paint.setStyle(Paint.Style.STROKE);
         mPath = new Path();

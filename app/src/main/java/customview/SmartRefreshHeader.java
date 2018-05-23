@@ -135,6 +135,11 @@ public class SmartRefreshHeader extends LinearLayout implements RefreshHeader {
 
     }
 
+    @Override
+    public void onRefreshReleased(RefreshLayout layout, int headerHeight, int extendHeight) {
+
+    }
+
     @NonNull
     @Override
     public View getView() {

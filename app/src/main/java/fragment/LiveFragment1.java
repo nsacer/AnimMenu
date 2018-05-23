@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -64,8 +65,8 @@ public class LiveFragment1 extends Fragment {
 
     private void initSwipeRefresh(){
 
-        swipeRefresh = (SwipeRefreshLayout) root.findViewById(R.id.swipe_refresh);
-        swipeRefresh.setColorSchemeColors(getResources().getColor(R.color.colorPrimary));
+        swipeRefresh = root.findViewById(R.id.swipe_refresh);
+        swipeRefresh.setColorSchemeColors(ContextCompat.getColor(getContext(), R.color.colorPrimary));
         swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {

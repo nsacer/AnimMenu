@@ -10,6 +10,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Point;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.animation.LinearOutSlowInInterpolator;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
@@ -66,20 +67,20 @@ public class TurtleGraph extends View {
     private int radarMargin = DisplayUtil.dip2px(getContext(), 15);
     //雷达区画笔
     private Paint mainPaint;
-    private int colorRingLine = getResources().getColor(R.color.colorBlack);
+    private int colorRingLine = ContextCompat.getColor(getContext(), R.color.colorBlack);
     private float ringLineWidth = DEFAULT_RING_LINE_WIDTH;
     //数据区画笔
     private Paint valuePaint;
-    private int colorValue = getResources().getColor(R.color.colorAccent);
+    private int colorValue = ContextCompat.getColor(getContext(), R.color.colorAccent);
     //分数画笔
     private Paint scorePaint;
-    private int colorScore = getResources().getColor(R.color.colorBlack);
+    private int colorScore = ContextCompat.getColor(getContext(), R.color.colorBlack);
     //标题画笔
     private Paint titlePaint;
-    private int colorTitle = getResources().getColor(R.color.colorBlack);
+    private int colorTitle = ContextCompat.getColor(getContext(), R.color.colorBlack);
     //图标画笔
     private Paint iconPaint;
-    private int colorIcon = getResources().getColor(R.color.colorBlack);
+    private int colorIcon = ContextCompat.getColor(getContext(), R.color.colorBlack);
     //分数大小
     private float scoreSize = DEFAULT_TEXT_SIZE;
     //标题文字大小
@@ -124,8 +125,7 @@ public class TurtleGraph extends View {
 
                 case R.styleable.TurtleGraph_turtleRingLineColor:
 
-                    colorRingLine = array.getColor(attr,
-                            context.getResources().getColor(R.color.colorBlack));
+                    colorRingLine = array.getColor(attr, ContextCompat.getColor(context, R.color.colorBlack));
                     break;
 
                 case R.styleable.TurtleGraph_turtleRingLineWidth:
@@ -135,14 +135,12 @@ public class TurtleGraph extends View {
 
                 case R.styleable.TurtleGraph_turtleColorValue:
 
-                    colorValue = array.getColor(attr,
-                            context.getResources().getColor(R.color.colorAccent));
+                    colorValue = array.getColor(attr, ContextCompat.getColor(context, R.color.colorAccent));
                     break;
 
                 case R.styleable.TurtleGraph_turtleColorTitle:
 
-                    colorTitle = array.getColor(attr,
-                            context.getResources().getColor(R.color.colorBlack));
+                    colorTitle = array.getColor(attr, ContextCompat.getColor(context, R.color.colorBlack));
                     break;
 
                 case R.styleable.TurtleGraph_turtleTitleSize:

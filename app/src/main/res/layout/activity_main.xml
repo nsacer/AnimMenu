@@ -3,8 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#9961C5FE"
     tools:context="com.example.zpf.animmenu.MainActivity">
+
+    <ImageView
+        android:id="@+id/ivCoverMain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@null" />
 
     <RelativeLayout
         android:id="@+id/layout_container"
