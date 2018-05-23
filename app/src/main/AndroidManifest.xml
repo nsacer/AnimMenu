@@ -115,6 +115,7 @@
         <activity android:name=".MainBgActivity" />
         <activity android:name=".SurfaceRainActivity" />
         <activity android:name=".TabBarActivity" />
+        <activity android:name=".emotion.EmotionTestActivity"></activity>
     </application>
 
 </manifest>

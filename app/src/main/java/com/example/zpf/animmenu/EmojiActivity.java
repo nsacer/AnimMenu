@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.zpf.animmenu.emotion.EmotionTestActivity;
+
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
@@ -39,6 +41,6 @@ public class EmojiActivity extends BaseActivity {
     @Event(R.id.btnFaceInput)
     private void openFaceInputAct(View view) {
 
-        openAct(FaceInputActivity.class);
+        openAct(EmotionTestActivity.class);
     }
 }

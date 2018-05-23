@@ -1,8 +1,10 @@
 package utils;
 
 import android.app.Activity;
+import android.content.Context;
 import android.util.DisplayMetrics;
 import android.view.Window;
+import android.view.WindowManager;
 
 /**
  * Created by zpf on 2018/1/23.
@@ -21,6 +23,14 @@ public class ScreenUtils {
     public static int getScreenWidth(Activity activity) {
         DisplayMetrics displayMetrics = new DisplayMetrics();
         activity.getWindowManager().getDefaultDisplay().getRealMetrics(displayMetrics);
+        return displayMetrics.widthPixels;
+    }
+
+    //屏幕宽度
+    public static int getScreenWidth(Context context) {
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+        if (wm != null) wm.getDefaultDisplay().getRealMetrics(displayMetrics);
         return displayMetrics.widthPixels;
     }
 

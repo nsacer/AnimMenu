@@ -1,4 +1,4 @@
-package utils;
+package emotion.util;
 
 import android.content.Context;
 import android.view.KeyEvent;
@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
 
-import adapter.EmotionGridViewAdapter;
+import emotion.adapter.EmotionGridViewAdapter;
 
 
 /**
@@ -61,7 +61,7 @@ public class GlobalOnItemClickManagerUtils {
                         sb.insert(curPosition, emotionName);
 
                         // 特殊文字处理,将表情等转换一下
-                        mEditText.setText(SpanStringUtils.getEmotionContent(emotion_map_type,
+                        mEditText.setText(EmotionSpanStringUtils.getEmotionContent(emotion_map_type,
                                 mContext, mEditText, sb.toString()));
 
                         // 将光标设置到新增完表情的右侧

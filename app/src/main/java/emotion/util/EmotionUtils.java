@@ -1,4 +1,4 @@
-package utils;
+package emotion.util;
 
 import android.support.v4.util.ArrayMap;
 import android.util.Log;

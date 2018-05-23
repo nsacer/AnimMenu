@@ -1,4 +1,4 @@
-package adapter;
+package emotion.adapter;
 
 import android.support.v4.view.PagerAdapter;
 import android.view.View;
@@ -33,12 +33,12 @@ public class EmotionPagerAdapter extends PagerAdapter {
 
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
-        container.removeView(gvs.get(position));
+        (container).removeView(gvs.get(position));
     }
 
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
-        container.addView(gvs.get(position));
+        (container).addView(gvs.get(position));
         return gvs.get(position);
     }
 

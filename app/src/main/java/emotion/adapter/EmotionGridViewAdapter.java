@@ -1,4 +1,4 @@
-package adapter;
+package emotion.adapter;
 
 import android.content.Context;
 import android.view.View;
@@ -11,7 +11,7 @@ import com.example.zpf.animmenu.R;
 
 import java.util.List;
 
-import utils.EmotionUtils;
+import emotion.util.EmotionUtils;
 
 /**
  * Created by zejian
@@ -59,7 +59,7 @@ public class EmotionGridViewAdapter extends BaseAdapter {
 
         //判断是否为最后一个item
         if (position == getCount() - 1) {
-            iv_emotion.setImageResource(R.mipmap.face_delete);
+            iv_emotion.setImageResource(R.mipmap.compose_emotion_delete);
         } else {
             String emotionName = emotionNames.get(position);
             iv_emotion.setImageResource(EmotionUtils.getImgByName(emotion_map_type, emotionName));

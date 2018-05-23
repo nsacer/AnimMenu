@@ -1,4 +1,7 @@
-package utils;
+/**
+ *
+ */
+package emotion.util;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -18,14 +21,16 @@ import java.util.regex.Pattern;
  * @email : shinezejian@163.com
  * @description :文本中的emojb字符处理为表情图片
  */
-public class SpanStringUtils {
+public class EmotionSpanStringUtils {
 
     public static SpannableString getEmotionContent(int emotion_map_type, final Context context, final TextView tv, String source) {
         SpannableString spannableString = new SpannableString(source);
         Resources res = context.getResources();
+
         String regexEmotion = "\\[([\u4e00-\u9fa5\\w])+\\]";
         Pattern patternEmotion = Pattern.compile(regexEmotion);
         Matcher matcherEmotion = patternEmotion.matcher(spannableString);
+
         while (matcherEmotion.find()) {
             // 获取匹配到的具体字符
             String key = matcherEmotion.group();
@@ -37,6 +42,7 @@ public class SpanStringUtils {
             int size = (int) tv.getTextSize() * 13 / 10;
             Bitmap bitmap = BitmapFactory.decodeResource(res, imgRes);
             Bitmap scaleBitmap = Bitmap.createScaledBitmap(bitmap, size, size, true);
+
             ImageSpan span = new ImageSpan(context, scaleBitmap);
             spannableString.setSpan(span, start, start + key.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         }
