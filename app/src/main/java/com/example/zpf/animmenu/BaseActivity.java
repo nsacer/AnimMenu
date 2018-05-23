@@ -1,6 +1,7 @@
 package com.example.zpf.animmenu;
 
 import android.app.ActivityOptions;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -10,12 +11,18 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.RequestManager;
+
 import org.xutils.x;
 
 import top.wefor.circularanim.CircularAnim;
 import utils.DisplayUtil;
 
 public class BaseActivity extends AppCompatActivity {
+
+    protected RequestManager mRequestManager;
+    protected Context mContext;
 
     protected Handler mhandler = new Handler() {
 
@@ -28,7 +35,27 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mContext = this;
+        mRequestManager = Glide.with(this);
         x.view().inject(this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mRequestManager.resumeRequests();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mRequestManager.pauseRequests();
+    }
+
+    @Override
+    protected void onDestroy() {
+        mRequestManager.onDestroy();
+        super.onDestroy();
     }
 
     /**

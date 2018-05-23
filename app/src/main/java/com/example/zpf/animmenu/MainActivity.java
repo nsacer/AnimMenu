@@ -2,13 +2,19 @@ package com.example.zpf.animmenu;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.animation.OvershootInterpolator;
 import android.widget.ImageView;
+
+import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.transition.Transition;
+import com.zhouwei.blurlibrary.EasyBlur;
 
 import fragment.BlankFragment2;
 import fragment.BlankFragment3;
@@ -17,9 +23,13 @@ import fragment.BlankFragment5;
 import fragment.Fragment1;
 import utils.ScreenUtils;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     private boolean isMenuOpen = false;
+    //url
+    private String mCover = "http://isujin.com/wp-content/uploads/2018/05/wallhaven-636003.jpg";
+    //背景图
+    private ImageView ivCover;
 
     private ImageView iv_menu1;
     private ImageView iv_menu2;
@@ -36,6 +46,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initDeviceInfo();
 
         initView();
+
+        mRequestManager.asBitmap().load(mCover).into(new SimpleTarget<Bitmap>() {
+            @Override
+            public void onResourceReady(@NonNull Bitmap resource, @Nullable Transition<? super Bitmap> transition) {
+
+                ivCover.setImageBitmap(EasyBlur.with(mContext).bitmap(resource).radius(8).blur());
+            }
+        });
     }
 
     private void initDeviceInfo() {
@@ -48,6 +66,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initView() {
+
+        ivCover = findViewById(R.id.ivCoverMain);
 
         ImageView iv_switch = findViewById(R.id.menu_switch);
         iv_switch.setOnClickListener(this);
