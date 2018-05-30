@@ -11,13 +11,13 @@ import android.view.MotionEvent;
  * Email shinezejian@163.com
  * Description:不可横向滑动的ViewPager
  */
-public class NoHorizontalScrollerViewPager extends ViewPager {
+public class EmotionNoHorizontalScrollerViewPager extends ViewPager {
 
-    public NoHorizontalScrollerViewPager(Context context) {
+    public EmotionNoHorizontalScrollerViewPager(Context context) {
         super(context);
     }
 
-    public NoHorizontalScrollerViewPager(Context context, AttributeSet attrs) {
+    public EmotionNoHorizontalScrollerViewPager(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 

@@ -21,11 +21,11 @@ import java.util.List;
 import emotion.adapter.HorizontalRecyclerviewAdapter;
 import emotion.adapter.NoHorizontalScrollerVPAdapter;
 import emotion.model.EmotionImageModel;
+import emotion.util.EmotionGlobalOnItemClickManagerUtils;
 import emotion.util.EmotionSharedPreferencedUtils;
 import emotion.util.EmotionUtils;
-import emotion.util.GlobalOnItemClickManagerUtils;
 import emotion.view.EmotionKeyboard;
-import emotion.view.NoHorizontalScrollerViewPager;
+import emotion.view.EmotionNoHorizontalScrollerViewPager;
 
 /**
  * Created by zejian
@@ -58,7 +58,7 @@ public class EmotionMainFragment extends EmotionBaseFragment {
     private View contentView;
 
     //不可横向滚动的ViewPager
-    private NoHorizontalScrollerViewPager viewPager;
+    private EmotionNoHorizontalScrollerViewPager viewPager;
 
     //是否绑定当前Bar的编辑框,默认true,即绑定。
     //false,则表示绑定contentView,此时外部提供的contentView必定也是EditText
@@ -94,7 +94,7 @@ public class EmotionMainFragment extends EmotionBaseFragment {
         initListener();
         initDatas();
         //创建全局监听
-        GlobalOnItemClickManagerUtils globalOnItemClickManager = GlobalOnItemClickManagerUtils.getInstance(getActivity());
+        EmotionGlobalOnItemClickManagerUtils globalOnItemClickManager = EmotionGlobalOnItemClickManagerUtils.getInstance(getActivity());
 
         if (isBindToBarEditText) {
             //绑定当前Bar的编辑框

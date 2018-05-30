@@ -16,8 +16,8 @@ import java.util.List;
 import emotion.adapter.EmotionGridViewAdapter;
 import emotion.adapter.EmotionPagerAdapter;
 import emotion.util.EmotionDisplayUtils;
+import emotion.util.EmotionGlobalOnItemClickManagerUtils;
 import emotion.util.EmotionUtils;
-import emotion.util.GlobalOnItemClickManagerUtils;
 import emotion.view.EmojiIndicatorView;
 
 /**
@@ -154,7 +154,7 @@ public class EmotiomComplateFragment extends EmotionBaseFragment {
         EmotionGridViewAdapter adapter = new EmotionGridViewAdapter(getActivity(), emotionNames, itemWidth, emotion_map_type);
         gv.setAdapter(adapter);
         //设置全局点击事件
-        gv.setOnItemClickListener(GlobalOnItemClickManagerUtils.getInstance(getActivity()).getOnItemClickListener(emotion_map_type));
+        gv.setOnItemClickListener(EmotionGlobalOnItemClickManagerUtils.getInstance(getActivity()).getOnItemClickListener(emotion_map_type));
         return gv;
     }
 

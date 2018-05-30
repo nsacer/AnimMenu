@@ -15,18 +15,18 @@ import emotion.adapter.EmotionGridViewAdapter;
  * Email shinezejian@163.com
  * Description:点击表情的全局监听管理类
  */
-public class GlobalOnItemClickManagerUtils {
+public class EmotionGlobalOnItemClickManagerUtils {
 
-    private static GlobalOnItemClickManagerUtils instance;
+    private static EmotionGlobalOnItemClickManagerUtils instance;
     private EditText mEditText;//输入框
     private static Context mContext;
 
-    public static GlobalOnItemClickManagerUtils getInstance(Context context) {
+    public static EmotionGlobalOnItemClickManagerUtils getInstance(Context context) {
         mContext = context.getApplicationContext();
         if (instance == null) {
-            synchronized (GlobalOnItemClickManagerUtils.class) {
+            synchronized (EmotionGlobalOnItemClickManagerUtils.class) {
                 if (instance == null) {
-                    instance = new GlobalOnItemClickManagerUtils();
+                    instance = new EmotionGlobalOnItemClickManagerUtils();
                 }
             }
         }
