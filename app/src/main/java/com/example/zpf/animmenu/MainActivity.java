@@ -27,7 +27,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     private boolean isMenuOpen = false;
     //url
-    private String mCover = "http://isujin.com/wp-content/uploads/2018/05/wallhaven-636003.jpg";
+    private String mCover = "https://isujin.com/wp-content/uploads/2018/05/wallhaven-635742.jpg";
     //背景图
     private ImageView ivCover;
 

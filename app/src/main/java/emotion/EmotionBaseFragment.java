@@ -1,5 +1,6 @@
 package emotion;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
@@ -14,6 +15,7 @@ public class EmotionBaseFragment extends Fragment {
 
     //传递过来的参数Bundle，供子类使用
     protected Bundle args;
+    protected Context mContext;
 
     /**
      * 创建fragment的静态方法，方便传递参数
@@ -44,6 +46,7 @@ public class EmotionBaseFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         args = getArguments();
+        mContext = getContext();
     }
 
 

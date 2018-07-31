@@ -3,7 +3,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <LinearLayout
+    <View
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:background="@color/bg_horizontal_line_color" />
@@ -19,11 +19,11 @@
         android:paddingRight="8dp"
         android:paddingTop="6dp">
 
-
         <ImageView
             android:id="@+id/bar_emotion_btn"
             android:layout_width="32dp"
             android:layout_height="32dp"
+            android:contentDescription="@null"
             android:src="@mipmap/ic_emotion"
             android:visibility="gone" />
 
@@ -31,6 +31,7 @@
             android:id="@+id/bar_image_add_btn"
             android:layout_width="28dp"
             android:layout_height="28dp"
+            android:contentDescription="@null"
             android:scaleType="centerCrop"
             android:src="@mipmap/ic_plus"
             android:visibility="gone" />
@@ -74,10 +75,9 @@
             android:visibility="gone" />
     </LinearLayout>
 
-    <LinearLayout
+    <View
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:background="@color/bg_horizontal_line_color" />
-
 
 </LinearLayout>

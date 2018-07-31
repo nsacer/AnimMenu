@@ -9,8 +9,8 @@
         android:id="@+id/ivCoverMain"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:contentDescription="@null" />
+        android:contentDescription="@null"
+        android:scaleType="centerCrop" />
 
     <RelativeLayout
         android:id="@+id/layout_container"

@@ -67,6 +67,7 @@ public class EmotionMainFragment extends EmotionBaseFragment {
     //是否隐藏bar上的编辑框和发生按钮,默认不隐藏
     private boolean isHidenBarEditTextAndBtn = false;
 
+    //分类表情fragment列表
     List<Fragment> fragments = new ArrayList<>();
 
 
@@ -157,13 +158,13 @@ public class EmotionMainFragment extends EmotionBaseFragment {
         for (int i = 0; i < fragments.size(); i++) {
             if (i == 0) {
                 EmotionImageModel model1 = new EmotionImageModel();
-                model1.icon = ContextCompat.getDrawable(getContext(), R.mipmap.ic_emotion);
+                model1.icon = ContextCompat.getDrawable(mContext, R.mipmap.ic_emotion);
                 model1.flag = "经典笑脸";
                 model1.isSelected = true;
                 list.add(model1);
             } else {
                 EmotionImageModel model = new EmotionImageModel();
-                model.icon = ContextCompat.getDrawable(getContext(), R.mipmap.ic_plus);
+                model.icon = ContextCompat.getDrawable(mContext, R.mipmap.ic_plus);
                 model.flag = "其他笑脸" + i;
                 model.isSelected = false;
                 list.add(model);
