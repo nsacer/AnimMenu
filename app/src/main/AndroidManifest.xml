@@ -106,16 +106,14 @@
         <activity android:name=".ConstraintLayoutAnimActivity" />
         <activity android:name=".ConstraintEnterActivity" />
         <activity android:name=".BannerZoomCenterActivity" />
-        <activity
-            android:name=".FaceInputActivity"
-            android:windowSoftInputMode="adjustResize" />
         <activity android:name=".SurfaceViewActivity" />
         <activity android:name=".GlideListPicActivity" />
         <activity android:name=".TanTanCardActivity" />
         <activity android:name=".MainBgActivity" />
         <activity android:name=".SurfaceRainActivity" />
         <activity android:name=".TabBarActivity" />
-        <activity android:name=".emotion.EmotionTestActivity"></activity>
+        <activity android:name=".emotion.EmotionTestActivity" />
+        <activity android:name=".recyclerview.gridList.GridListActivity"/>
     </application>
 
 </manifest>

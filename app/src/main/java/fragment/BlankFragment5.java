@@ -1,7 +1,6 @@
 package fragment;
 
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -43,7 +42,6 @@ import tyrantgit.explosionfield.ExplosionField;
 public class BlankFragment5 extends Fragment implements View.OnClickListener {
 
     private View root;
-    private Context context;
 
     /**
      * 任意View的爆炸效果
@@ -60,7 +58,6 @@ public class BlankFragment5 extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        context = getActivity();
         root = inflater.inflate(R.layout.fragment_blank_fragment5, container, false);
 
         initView();
@@ -89,97 +86,97 @@ public class BlankFragment5 extends Fragment implements View.OnClickListener {
     private void initBtnEvent() {
 
         //CoordinatorLayout Demo
-        Button btnCoordinator = (Button) root.findViewById(R.id.btn_to_coordinator);
+        Button btnCoordinator = root.findViewById(R.id.btn_to_coordinator);
         btnCoordinator.setOnClickListener(this);
 
         //九宫格密码 Demo
-        Button btnPassword = (Button) root.findViewById(R.id.btn_password);
+        Button btnPassword = root.findViewById(R.id.btn_password);
         btnPassword.setOnClickListener(this);
 
         //上传头像 Demo
-        Button btnPhoto = (Button) root.findViewById(R.id.btn_photo);
+        Button btnPhoto = root.findViewById(R.id.btn_photo);
         btnPhoto.setOnClickListener(this);
 
         //PickerDialog
-        Button btnDateSelect = (Button) root.findViewById(R.id.btn_date_select);
+        Button btnDateSelect = root.findViewById(R.id.btn_date_select);
         btnDateSelect.setOnClickListener(this);
 
         //各种Shape
-        Button btnShape = (Button) root.findViewById(R.id.btn_shape);
+        Button btnShape = root.findViewById(R.id.btn_shape);
         btnShape.setOnClickListener(this);
 
         //Band效果
-        civBang = (CircleImageView) root.findViewById(R.id.civ_bang);
+        civBang = root.findViewById(R.id.civ_bang);
         addBangListener(civBang);
 
-        Button btnFieldReset = (Button) root.findViewById(R.id.btn_field_reset);
+        Button btnFieldReset = root.findViewById(R.id.btn_field_reset);
         btnFieldReset.setOnClickListener(this);
 
         //弹幕
-        Button btnBarrage = (Button) root.findViewById(R.id.btn_barrage);
+        Button btnBarrage = root.findViewById(R.id.btn_barrage);
         btnBarrage.setOnClickListener(this);
 
         //量化分析图表动画
-        Button btnAnim = (Button) root.findViewById(R.id.btn_anim);
+        Button btnAnim = root.findViewById(R.id.btn_anim);
         btnAnim.setOnClickListener(this);
 
-        Button btnAlphaAnalyze = (Button) root.findViewById(R.id.btn_alpha_analyze);
+        Button btnAlphaAnalyze = root.findViewById(R.id.btn_alpha_analyze);
         btnAlphaAnalyze.setOnClickListener(this);
 
         //RecyclerView总界面
-        Button btnRefresh = (Button) root.findViewById(R.id.btn_recycler_enter);
+        Button btnRefresh = root.findViewById(R.id.btn_recycler_enter);
         btnRefresh.setOnClickListener(this);
 
         //转圈的文本（唤醒文本）
-        Button btnCircleTextAnim = (Button) root.findViewById(R.id.btn_circle_text_anim);
+        Button btnCircleTextAnim = root.findViewById(R.id.btn_circle_text_anim);
         btnCircleTextAnim.setOnClickListener(this);
 
         //TableLayout
-        Button btnTable = (Button) root.findViewById(R.id.btn_table_layout);
+        Button btnTable = root.findViewById(R.id.btn_table_layout);
         btnTable.setOnClickListener(this);
 
         //获取系统权限
-        Button btnPermission = (Button) root.findViewById(R.id.btn_request_permission);
+        Button btnPermission = root.findViewById(R.id.btn_request_permission);
         btnPermission.setOnClickListener(this);
 
         //自定义加载样式
-        Button btnLoading = (Button) root.findViewById(R.id.btn_loading_progress);
+        Button btnLoading = root.findViewById(R.id.btn_loading_progress);
         btnLoading.setOnClickListener(this);
 
         //大转盘
-        Button btnTurntable = (Button) root.findViewById(R.id.btn_turntable);
+        Button btnTurntable = root.findViewById(R.id.btn_turntable);
         btnTurntable.setOnClickListener(this);
 
         //图片切换
-        Button btnSwitch = (Button) root.findViewById(R.id.btn_iv_switch);
+        Button btnSwitch = root.findViewById(R.id.btn_iv_switch);
         btnSwitch.setOnClickListener(this);
 
         //过滤emoji表情
-        Button btnEmoji = (Button) root.findViewById(R.id.btn_emoji);
+        Button btnEmoji = root.findViewById(R.id.btn_emoji);
         btnEmoji.setOnClickListener(this);
 
         //ConstraintLayout
-        Button btnConstraint = (Button) root.findViewById(R.id.btn_ConstraintLayout);
+        Button btnConstraint = root.findViewById(R.id.btn_ConstraintLayout);
         btnConstraint.setOnClickListener(this);
 
         //Glide
-        Button btnGlide = (Button) root.findViewById(R.id.btn_Glide);
+        Button btnGlide = root.findViewById(R.id.btn_Glide);
         btnGlide.setOnClickListener(this);
 
         //tabRadioGroup
-        Button btnTabRg = (Button) root.findViewById(R.id.btn_tab_rg);
+        Button btnTabRg = root.findViewById(R.id.btn_tab_rg);
         btnTabRg.setOnClickListener(this);
 
         //F10
-        Button btnF10 = (Button) root.findViewById(R.id.btn_tab_f10);
+        Button btnF10 = root.findViewById(R.id.btn_tab_f10);
         btnF10.setOnClickListener(this);
 
         //视频
-        Button btnVideo = (Button) root.findViewById(R.id.btn_video);
+        Button btnVideo = root.findViewById(R.id.btn_video);
         btnVideo.setOnClickListener(this);
 
         //TabActivity
-        Button btnTabAct = (Button) root.findViewById(R.id.btn_tabAct);
+        Button btnTabAct = root.findViewById(R.id.btn_tabAct);
         btnTabAct.setOnClickListener(this);
 
     }

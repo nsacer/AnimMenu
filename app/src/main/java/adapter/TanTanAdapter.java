@@ -26,7 +26,7 @@ public class TanTanAdapter extends BaseQuickAdapter<String, BaseViewHolder> {
     protected void convert(BaseViewHolder helper, String item) {
 
         ImageView iv = helper.getView(R.id.ivCoverTanItem);
-        manager.load(item).into(iv);
+        manager.load(item).thumbnail(0.2f).into(iv);
 
         helper.setText(R.id.tvContentTanItem, item);
 

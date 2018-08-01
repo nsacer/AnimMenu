@@ -33,17 +33,17 @@ public class TanTanCardActivity extends BaseActivity {
     protected void onDestroy() {
         super.onDestroy();
         requestManager.pauseRequests();
+        requestManager.onDestroy();
     }
 
     private void initView(RequestManager requestManager) {
 
-        RecyclerView rvTan = (RecyclerView) findViewById(R.id.rvTanTanCard);
+        RecyclerView rvTan = findViewById(R.id.rvTanTanCard);
         rvTan.setLayoutManager(new OverLayCardLayoutManager());
         CardConfig.initConfig(this);
         CardConfig.MAX_SHOW_COUNT = 6;
 
-        ArrayList<String> urls = new ArrayList<>();
-        urls.addAll(Arrays.asList(getResources().getStringArray(R.array.picUrls10)));
+        ArrayList<String> urls = new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.picUrls10)));
 
         TanTanAdapter adapter = new TanTanAdapter(requestManager, urls);
         ItemTouchHelper.Callback callback = new RenRenCallback(rvTan, adapter, urls);

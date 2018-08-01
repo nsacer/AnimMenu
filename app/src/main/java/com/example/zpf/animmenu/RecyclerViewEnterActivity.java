@@ -2,6 +2,8 @@ package com.example.zpf.animmenu;
 
 import android.view.View;
 
+import com.example.zpf.animmenu.recyclerview.gridList.GridListActivity;
+
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
 
@@ -84,6 +86,12 @@ public class RecyclerViewEnterActivity extends BaseActivity {
     private void goTanTanCard(View view) {
 
         openAct(TanTanCardActivity.class);
+    }
+
+    @Event(R.id.btnGridList)
+    private void goGridListAct(View view) {
+
+        openActivity(GridListActivity.class, view);
     }
 
 }

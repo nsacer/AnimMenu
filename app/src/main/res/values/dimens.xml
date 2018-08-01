@@ -41,6 +41,8 @@
     <dimen name="radius_input_border">4dp</dimen>
     <dimen name="radius_button_send_border">4dp</dimen>
     <dimen name="text_size_send">12sp</dimen>
+    <!-- 自选股列表的每个item的每个数据列的宽度 -->
+    <dimen name="selected_stock_item_width">80dp</dimen>
 
 
 </resources>

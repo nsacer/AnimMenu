@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".recyclerview.gridList.GridListActivity">
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/colorGray"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="@dimen/selected_stock_item_width"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="股票名称"
+                    android:textColor="@color/colorBlack" />
+
+                <TextView
+                    android:layout_width="@dimen/selected_stock_item_width"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="最新价"
+                    android:textColor="@color/colorBlack" />
+
+                <TextView
+                    android:layout_width="@dimen/selected_stock_item_width"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="涨跌幅"
+                    android:textColor="@color/colorBlack" />
+
+                <TextView
+                    android:layout_width="@dimen/selected_stock_item_width"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="买卖点"
+                    android:textColor="@color/colorBlack" />
+
+                <TextView
+                    android:layout_width="@dimen/selected_stock_item_width"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="持仓线"
+                    android:textColor="@color/colorBlack" />
+
+                <TextView
+                    android:layout_width="@dimen/selected_stock_item_width"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="价值分析"
+                    android:textColor="@color/colorBlack" />
+
+                <TextView
+                    android:layout_width="@dimen/selected_stock_item_width"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="股性分析"
+                    android:textColor="@color/colorBlack" />
+
+                <TextView
+                    android:layout_width="@dimen/selected_stock_item_width"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="涨跌额"
+                    android:textColor="@color/colorBlack" />
+
+                <TextView
+                    android:layout_width="@dimen/selected_stock_item_width"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="换手率"
+                    android:textColor="@color/colorBlack" />
+
+                <TextView
+                    android:layout_width="@dimen/selected_stock_item_width"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="总市值"
+                    android:textColor="@color/colorBlack" />
+
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rvGridList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+</android.support.constraint.ConstraintLayout>
