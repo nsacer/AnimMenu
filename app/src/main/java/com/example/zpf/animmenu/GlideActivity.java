@@ -51,9 +51,9 @@ public class GlideActivity extends BaseActivity implements View.OnClickListener 
 
         (findViewById(R.id.btn_load_glide)).setOnClickListener(this);
 
-        ivGlide = (ImageView) findViewById(R.id.iv_glide);
+        ivGlide = findViewById(R.id.iv_glide);
         ivGlide.setOnClickListener(this);
-        tvInfo = (TextView) findViewById(R.id.tv_info_glide);
+        tvInfo = findViewById(R.id.tv_info_glide);
 
         findViewById(R.id.btnGlideListImg).setOnClickListener(this);
     }

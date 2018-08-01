@@ -196,4 +196,9 @@
         <attr name="mainCircleBRColor" format="color" />
         <attr name="mainCircleBRRadius" format="dimension" />
     </declare-styleable>
+    <!-- 温度计（刻度表）自定义属性值 -->
+    <declare-styleable name="StockMarketTemperature">
+        <attr name="stockMarketTemperatureLeftText" format="string" />
+        <attr name="stockMarketTemperatureRightText" format="string" />
+    </declare-styleable>
 </resources>

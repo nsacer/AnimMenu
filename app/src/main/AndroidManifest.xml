@@ -113,7 +113,8 @@
         <activity android:name=".SurfaceRainActivity" />
         <activity android:name=".TabBarActivity" />
         <activity android:name=".emotion.EmotionTestActivity" />
-        <activity android:name=".recyclerview.gridList.GridListActivity"/>
+        <activity android:name=".recyclerview.gridList.GridListActivity" />
+        <activity android:name=".customview.TemperatureActivity"></activity>
     </application>
 
 </manifest>

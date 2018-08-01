@@ -5,6 +5,7 @@ import android.support.design.widget.BottomSheetBehavior
 import android.support.design.widget.BottomSheetDialog
 import android.view.View
 import android.widget.FrameLayout
+import com.example.zpf.animmenu.customview.TemperatureActivity
 import kotlinx.android.synthetic.main.activity_constraint_enter.*
 
 class ConstraintEnterActivity : BaseActivity(), View.OnClickListener {
@@ -23,6 +24,7 @@ class ConstraintEnterActivity : BaseActivity(), View.OnClickListener {
             R.id.btnMainBgView -> openActivity(MainBgActivity::class.java, v)
             R.id.btnSurfaceRain -> openActivity(SurfaceRainActivity::class.java, v)
             R.id.btnTabBar -> openActivity(TabBarActivity::class.java, v)
+            R.id.btnTemperature -> openActivity(TemperatureActivity::class.java, v)
         }
     }
 
@@ -45,6 +47,8 @@ class ConstraintEnterActivity : BaseActivity(), View.OnClickListener {
         btnSurfaceRain.setOnClickListener(this)
 
         btnTabBar.setOnClickListener(this)
+
+        btnTemperature.setOnClickListener(this)
     }
 
     //创建bottomSheetDialog
