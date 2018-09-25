@@ -89,9 +89,9 @@ public class RecyclerEasySwipeMenuAdapter extends
         EasySwipeViewHolder(View itemView) {
             super(itemView);
 
-            swipeLayout = (EasySwipeMenuLayout) itemView.findViewById(R.id.easy_swipe_layout);
-            tvContent = (TextView) itemView.findViewById(R.id.tv_content_easy_swipe);
-            tvDelete = (TextView) itemView.findViewById(R.id.tv_delete_easy_swipe);
+            swipeLayout = itemView.findViewById(R.id.easy_swipe_layout);
+            tvContent = itemView.findViewById(R.id.tv_content_easy_swipe);
+            tvDelete = itemView.findViewById(R.id.tv_delete_easy_swipe);
         }
     }
 }

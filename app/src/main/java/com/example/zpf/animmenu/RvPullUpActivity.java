@@ -74,8 +74,7 @@ public class RvPullUpActivity extends BaseActivity {
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
-        ArrayList<String> strings = new ArrayList<>();
-        strings.addAll(Arrays.asList(urls));
+        ArrayList<String> strings = new ArrayList<>(Arrays.asList(urls));
 
         RecyclerEasySwipeMenuAdapter adapter = new RecyclerEasySwipeMenuAdapter(this);
         recyclerView.setAdapter(adapter);

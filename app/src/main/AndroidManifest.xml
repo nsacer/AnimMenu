@@ -114,7 +114,8 @@
         <activity android:name=".TabBarActivity" />
         <activity android:name=".emotion.EmotionTestActivity" />
         <activity android:name=".recyclerview.gridList.GridListActivity" />
-        <activity android:name=".customview.TemperatureActivity"></activity>
+        <activity android:name=".customview.TemperatureActivity" />
+        <activity android:name=".recyclerview.gridList.ScrollablePanelActivity"/>
     </application>
 
 </manifest>
