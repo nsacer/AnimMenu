@@ -72,5 +72,18 @@
         android:layout_margin="@dimen/btn_margin"
         android:text="刻度表" />
 
+    <Button
+        android:id="@+id/btnDownRetrofit"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/btn_height"
+        android:layout_margin="@dimen/btn_margin"
+        android:text="大文件下下载" />
+
+    <Button
+        android:id="@+id/btnDataBind"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/btn_height"
+        android:layout_margin="@dimen/btn_margin"
+        android:text="DataBind" />
 
 </com.google.android.flexbox.FlexboxLayout>

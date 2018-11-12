@@ -8,6 +8,9 @@ import android.widget.FrameLayout
 import com.example.zpf.animmenu.customview.TemperatureActivity
 import kotlinx.android.synthetic.main.activity_constraint_enter.*
 
+/**
+ * 测试试验田入口页面
+ * */
 class ConstraintEnterActivity : BaseActivity(), View.OnClickListener {
 
     private var btmSheetDialog: BottomSheetDialog? = null
@@ -25,6 +28,8 @@ class ConstraintEnterActivity : BaseActivity(), View.OnClickListener {
             R.id.btnSurfaceRain -> openActivity(SurfaceRainActivity::class.java, v)
             R.id.btnTabBar -> openActivity(TabBarActivity::class.java, v)
             R.id.btnTemperature -> openActivity(TemperatureActivity::class.java, v)
+            R.id.btnDownRetrofit -> showToast("大文件下载")
+            R.id.btnDataBind -> openActivity(DataBindingActivity::class.java, v)
         }
     }
 
@@ -49,6 +54,10 @@ class ConstraintEnterActivity : BaseActivity(), View.OnClickListener {
         btnTabBar.setOnClickListener(this)
 
         btnTemperature.setOnClickListener(this)
+
+        btnDownRetrofit.setOnClickListener(this)
+
+        btnDataBind.setOnClickListener(this)
     }
 
     //创建bottomSheetDialog

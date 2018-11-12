@@ -171,4 +171,5 @@
     </string-array>
 
     <string name="title_activity_main_bg_view">MainBgViewActivity</string>
+    <string name="changeValue">改变属性</string>
 </resources>
