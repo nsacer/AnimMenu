@@ -117,7 +117,7 @@
         <activity android:name=".customview.TemperatureActivity" />
         <activity android:name=".recyclerview.gridList.ScrollablePanelActivity" />
         <activity android:name=".BigFileDownloadActivity" />
-        <activity android:name=".DataBindingActivity"></activity>
+        <activity android:name=".DataBindingActivity"/>
     </application>
 
 </manifest>
