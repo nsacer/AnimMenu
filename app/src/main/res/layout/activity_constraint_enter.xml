@@ -86,4 +86,20 @@
         android:layout_margin="@dimen/btn_margin"
         android:text="DataBind" />
 
+    <TextView
+        android:id="@+id/tvDrawableSize"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/btn_height"
+        android:layout_margin="@dimen/btn_margin"
+        android:drawableLeft="@mipmap/ic_face_chat"
+        android:gravity="center_vertical"
+        android:text="changeDrawable" />
+
+    <Button
+        android:id="@+id/btnChangeMainBg"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/btn_height"
+        android:layout_margin="@dimen/btn_margin"
+        android:text="主页背景" />
+
 </com.google.android.flexbox.FlexboxLayout>

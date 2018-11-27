@@ -8,6 +8,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.animation.OvershootInterpolator;
 import android.widget.ImageView;
@@ -21,7 +22,9 @@ import fragment.BlankFragment3;
 import fragment.BlankFragment4;
 import fragment.BlankFragment5;
 import fragment.Fragment1;
+import utils.SPKey;
 import utils.ScreenUtils;
+import utils.SharedPreferencesHelper;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
 
@@ -47,6 +50,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
         initView();
 
+        String bgUrl = SharedPreferencesHelper.getInstance(this).getString(SPKey.getInstance().MAIN_BG_URL, null);
+        if (!TextUtils.isEmpty(bgUrl)) mCover = bgUrl;
         mRequestManager.asBitmap().load(mCover).into(new SimpleTarget<Bitmap>() {
             @Override
             public void onResourceReady(@NonNull Bitmap resource, @Nullable Transition<? super Bitmap> transition) {

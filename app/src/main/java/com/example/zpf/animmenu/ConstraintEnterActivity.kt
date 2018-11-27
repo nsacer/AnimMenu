@@ -30,6 +30,26 @@ class ConstraintEnterActivity : BaseActivity(), View.OnClickListener {
             R.id.btnTemperature -> openActivity(TemperatureActivity::class.java, v)
             R.id.btnDownRetrofit -> showToast("bigFileDownload")
             R.id.btnDataBind -> openActivity(DataBindingActivity::class.java, v)
+            R.id.tvDrawableSize -> {
+
+                when {
+                    tvDrawableSize.tag == null || !(tvDrawableSize.tag as Boolean) -> {
+
+                        val drawable = getDrawable(R.mipmap.ic_face_chat)
+                        drawable.setBounds(0, 0, 40, 40)
+                        tvDrawableSize.setCompoundDrawables(drawable, null, null, null)
+                        tvDrawableSize.tag = true
+                    }
+                    else -> {
+
+                        tvDrawableSize.tag = false
+                        tvDrawableSize.setCompoundDrawablesWithIntrinsicBounds(getDrawable(R.mipmap.ic_face_chat), null, null, null)
+                    }
+                }
+            }
+            R.id.btnChangeMainBg -> {
+
+            }
         }
     }
 
@@ -58,6 +78,10 @@ class ConstraintEnterActivity : BaseActivity(), View.OnClickListener {
         btnDownRetrofit.setOnClickListener(this)
 
         btnDataBind.setOnClickListener(this)
+
+        tvDrawableSize.setOnClickListener(this)
+
+        btnChangeMainBg.setOnClickListener(this)
     }
 
     //创建bottomSheetDialog

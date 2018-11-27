@@ -10,7 +10,35 @@
         android:id="@+id/mainBgView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:mainCircleLTRadius="200dp"
-        app:mainCircleBRRadius="300dp" />
+        app:mainCircleBRRadius="300dp"
+        app:mainCircleLTRadius="200dp" />
+
+    <android.support.design.widget.TextInputEditText
+        android:id="@+id/etMainPicUrl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/inputMainPicUrl"
+        android:lineSpacingMultiplier="1.2"
+        android:textColor="@color/colorWhite"
+        android:textColorHint="@color/white_alpha_7"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <Button
+        android:id="@+id/btnSaveMainPicUrl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@color/black_overlay"
+        android:elevation="6dp"
+        android:gravity="center"
+        android:shadowColor="@color/white_alpha_9"
+        android:text="@string/saveMainBgPicUrl"
+        android:textColor="@color/white_alpha_9"
+        android:textSize="14sp"
+        android:translationZ="6dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.3" />
 
 </android.support.constraint.ConstraintLayout>

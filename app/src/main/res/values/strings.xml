@@ -172,4 +172,6 @@
 
     <string name="title_activity_main_bg_view">MainBgViewActivity</string>
     <string name="changeValue">改变属性</string>
+    <string name="inputMainPicUrl">please input MainActivity bg pic url</string>
+    <string name="saveMainBgPicUrl">save url</string>
 </resources>
