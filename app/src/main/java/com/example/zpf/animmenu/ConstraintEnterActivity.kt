@@ -28,7 +28,7 @@ class ConstraintEnterActivity : BaseActivity(), View.OnClickListener {
             R.id.btnSurfaceRain -> openActivity(SurfaceRainActivity::class.java, v)
             R.id.btnTabBar -> openActivity(TabBarActivity::class.java, v)
             R.id.btnTemperature -> openActivity(TemperatureActivity::class.java, v)
-            R.id.btnDownRetrofit -> showToast("大文件下载")
+            R.id.btnDownRetrofit -> showToast("bigFileDownload")
             R.id.btnDataBind -> openActivity(DataBindingActivity::class.java, v)
         }
     }
