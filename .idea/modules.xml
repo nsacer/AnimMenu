@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AnimMenu.iml" filepath="$PROJECT_DIR$/AnimMenu.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/explosionfield/explosionfield.iml" filepath="$PROJECT_DIR$/explosionfield/explosionfield.iml" />
-      <module fileurl="file://$PROJECT_DIR$/multi-image-selector/multi-image-selector.iml" filepath="$PROJECT_DIR$/multi-image-selector/multi-image-selector.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/AnimMenu.iml" filepath="$PROJECT_DIR$/.idea/AnimMenu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AnimMenu.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AnimMenu.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/explosionfield/AnimMenu.explosionfield.iml" filepath="$PROJECT_DIR$/.idea/modules/explosionfield/AnimMenu.explosionfield.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/multi-image-selector/AnimMenu.multi-image-selector.iml" filepath="$PROJECT_DIR$/.idea/modules/multi-image-selector/AnimMenu.multi-image-selector.iml" />
     </modules>
   </component>
 </project>

@@ -151,7 +151,7 @@ class SurfaceShootMarbles : SurfaceView, SurfaceHolder.Callback, Runnable {
                     updateMarbleTarget()
                 }
             } catch (e: Exception) {
-                Log.e(tagLog, e.message)
+                Log.e(tagLog, e.message?:"")
 
             } finally {
                 //提交绘制内容展示

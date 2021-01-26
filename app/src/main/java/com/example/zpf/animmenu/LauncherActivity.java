@@ -3,12 +3,12 @@ package com.example.zpf.animmenu;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageSwitcher;
 import android.widget.ImageView;
@@ -25,15 +25,21 @@ import top.wefor.circularanim.CircularAnim;
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
-public class LauncherActivity extends AppCompatActivity implements View.OnClickListener{
+public class LauncherActivity extends AppCompatActivity implements View.OnClickListener, Handler.Callback {
 
-    /** 触发切换的message.what */
+    /**
+     * 触发切换的message.what
+     */
     private static final int MESSAGE_SWITCH_TXT = 0;
-    /** 图片切换的时间间隔 */
+    /**
+     * 图片切换的时间间隔
+     */
     private static final int DELAY_TIME = 4000;
-    /** 等待图片的切换次数 */
+    /**
+     * 等待图片的切换次数
+     */
     private static final int SWITCH_TIMES = 6;
-    private static final String[] strings = new String[] {
+    private static final String[] strings = new String[]{
 
             "曾经沧海难为水",
             "除却巫山不是云",
@@ -41,7 +47,7 @@ public class LauncherActivity extends AppCompatActivity implements View.OnClickL
             "直挂云帆济沧海",
             "天阶夜色凉如水"
     };
-    private static final int[] catImages = new int[] {
+    private static final int[] catImages = new int[]{
 
             R.mipmap.img_one, R.mipmap.img_two, R.mipmap.img_three,
             R.mipmap.img_four, R.mipmap.img_five, R.mipmap.img_six,
@@ -55,15 +61,7 @@ public class LauncherActivity extends AppCompatActivity implements View.OnClickL
     private int currentImageIndex = 0;
     private ImageSwitcher is;
     private HTextView htv;
-    private Handler handler = new Handler() {
-
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-
-            doMessage(msg);
-        }
-    };
+    private Handler handler = new Handler(Looper.getMainLooper(), this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,7 +76,7 @@ public class LauncherActivity extends AppCompatActivity implements View.OnClickL
 
     private void initListView() {
 
-        for (int i:catImages) {
+        for (int i : catImages) {
 
             ImageView iv = new ImageView(this);
             iv.setLayoutParams(new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
@@ -172,7 +170,7 @@ public class LauncherActivity extends AppCompatActivity implements View.OnClickL
 
     /**
      * 动画跳转页面
-     * */
+     */
     private void openActivity(final Class<?> clazz, View view) {
 
         CircularAnim.fullActivity(this, view)
@@ -185,5 +183,11 @@ public class LauncherActivity extends AppCompatActivity implements View.OnClickL
                         LauncherActivity.this.finish();
                     }
                 });
+    }
+
+    @Override
+    public boolean handleMessage(@NonNull Message msg) {
+        doMessage(msg);
+        return false;
     }
 }

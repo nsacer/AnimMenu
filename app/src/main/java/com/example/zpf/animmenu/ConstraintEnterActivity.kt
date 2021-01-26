@@ -36,7 +36,7 @@ class ConstraintEnterActivity : BaseActivity(), View.OnClickListener {
                     tvDrawableSize.tag == null || !(tvDrawableSize.tag as Boolean) -> {
 
                         val drawable = getDrawable(R.mipmap.ic_face_chat)
-                        drawable.setBounds(0, 0, 40, 40)
+                        drawable!!.setBounds(0, 0, 40, 40)
                         tvDrawableSize.setCompoundDrawables(drawable, null, null, null)
                         tvDrawableSize.tag = true
                     }

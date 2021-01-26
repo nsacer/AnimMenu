@@ -4,14 +4,14 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion 27
-    buildToolsVersion '28.0.3'
+    compileSdkVersion 30
+    buildToolsVersion '30.0.3'
 
     defaultConfig {
 
         applicationId "com.example.zpf.animmenu"
         minSdkVersion 21
-        targetSdkVersion 23
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
         //使用renderscript 兼容包
@@ -29,6 +29,8 @@ android {
         exclude 'lib/armeabi-v7a/libblasV8.so'
         exclude 'lib/x86/libblasV8.so'
         exclude 'lib/mips/libblasV8.so'
+        exclude "lib/mips/libRSSupport.so"
+        exclude "lib/mips/librsjni.so"
     }
 
     dataBinding {

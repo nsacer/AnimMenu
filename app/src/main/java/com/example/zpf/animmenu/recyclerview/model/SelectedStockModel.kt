@@ -17,17 +17,17 @@ import android.os.Parcelable
  * @param handTurnoverRate 换手率
  * @param totalMarketCapitalization 总市值
  * */
-class SelectedStockModel constructor(var stockCode: String,
-                                     var stockName: String,
-                                     var priceNew: String,
-                                     var quoteChange: String,
-                                     var buySellPoint: String,
-                                     var holdLine: String,
-                                     var valueAnalysis: String,
-                                     var stockAnalysis: String,
-                                     var riseAndFall: String,
-                                     var handTurnoverRate: String,
-                                     var totalMarketCapitalization: String) : Parcelable {
+class SelectedStockModel constructor(var stockCode: String?,
+                                     var stockName: String?,
+                                     var priceNew: String?,
+                                     var quoteChange: String?,
+                                     var buySellPoint: String?,
+                                     var holdLine: String?,
+                                     var valueAnalysis: String?,
+                                     var stockAnalysis: String?,
+                                     var riseAndFall: String?,
+                                     var handTurnoverRate: String?,
+                                     var totalMarketCapitalization: String?) : Parcelable {
     constructor(source: Parcel) : this(
             source.readString(),
             source.readString(),
