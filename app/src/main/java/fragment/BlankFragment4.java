@@ -18,7 +18,7 @@ import customview.LineView;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class BlankFragment4 extends Fragment implements View.OnClickListener {
+public class BlankFragment4 extends Fragment {
 
     private View root;
     private Context context;
@@ -41,17 +41,22 @@ public class BlankFragment4 extends Fragment implements View.OnClickListener {
         return root;
     }
 
-    private void initView(){
+    private void initView() {
 
         initBtnToSpark();
 
         Button btnStartAnim = (Button) root.findViewById(R.id.btnStartLineAnim);
-        btnStartAnim.setOnClickListener(this);
+        btnStartAnim.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                lineView.doAnimator();
+            }
+        });
 
         lineView = (LineView) root.findViewById(R.id.lineView);
     }
 
-    private void initBtnToSpark(){
+    private void initBtnToSpark() {
 
         Button btn = (Button) root.findViewById(R.id.btn_to_spark);
         btn.setOnClickListener(new View.OnClickListener() {
@@ -61,16 +66,5 @@ public class BlankFragment4 extends Fragment implements View.OnClickListener {
                 startActivity(new Intent(context, ActivitySpark.class));
             }
         });
-    }
-
-    @Override
-    public void onClick(View v) {
-
-        switch (v.getId()) {
-
-            case R.id.btnStartLineAnim:
-                lineView.doAnimator();
-                break;
-        }
     }
 }

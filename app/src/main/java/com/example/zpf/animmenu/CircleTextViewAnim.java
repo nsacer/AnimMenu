@@ -8,9 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.TextUtils;
-import android.text.style.AbsoluteSizeSpan;
 import android.text.style.ForegroundColorSpan;
-import android.text.style.RelativeSizeSpan;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -41,7 +39,9 @@ public class CircleTextViewAnim extends AppCompatActivity implements View.OnClic
         initPartClickTextView();
     }
 
-    /** init CircleTextView */
+    /**
+     * init CircleTextView
+     */
     private void initCircleTextView() {
 
         Button btnStartAnim = (Button) findViewById(R.id.btn_start_anim);
@@ -56,7 +56,9 @@ public class CircleTextViewAnim extends AppCompatActivity implements View.OnClic
         ctvFour = (CircleTextView) findViewById(R.id.ctv_four);
     }
 
-    /** 渐变文字 */
+    /**
+     * 渐变文字
+     */
     private void initGradientTextView() {
 
         TextView tvGradient = (TextView) findViewById(R.id.tv_gradient);
@@ -67,12 +69,14 @@ public class CircleTextViewAnim extends AppCompatActivity implements View.OnClic
         tvGradient.getPaint().setShader(shader);
     }
 
-    /** init part click event textview */
+    /**
+     * init part click event textview
+     */
     private void initPartClickTextView() {
 
         TextView tv = (TextView) findViewById(R.id.tv_part_click);
 
-        if(TextUtils.isEmpty(tv.getText()))
+        if (TextUtils.isEmpty(tv.getText()))
             return;
 
         SpannableString ss = new SpannableString(tv.getText());
@@ -96,23 +100,26 @@ public class CircleTextViewAnim extends AppCompatActivity implements View.OnClic
     @Override
     public void onClick(View v) {
 
-        switch (v.getId()) {
-
-            case R.id.btn_start_anim:
-
-                ctvOne.doAnimation();
-                ctvTwo.doAnimation();
-                ctvThree.doAnimation();
-                ctvFour.doAnimation();
-                break;
-
-            case R.id.btn_cancel_anim:
-
-                ctvOne.cancelAnimation();
-                ctvTwo.cancelAnimation();
-                ctvThree.cancelAnimation();
-                ctvFour.cancelAnimation();
-                break;
+        if (v.getId() == R.id.btn_start_anim) {
+            animStartCircle();
+        } else if (v.getId() == R.id.btn_cancel_anim) {
+            animCancelCircle();
         }
+    }
+
+    //开启旋转动画
+    private void animStartCircle() {
+        ctvOne.doAnimation();
+        ctvTwo.doAnimation();
+        ctvThree.doAnimation();
+        ctvFour.doAnimation();
+    }
+
+    //关闭旋转动画
+    private void animCancelCircle() {
+        ctvOne.cancelAnimation();
+        ctvTwo.cancelAnimation();
+        ctvThree.cancelAnimation();
+        ctvFour.cancelAnimation();
     }
 }
