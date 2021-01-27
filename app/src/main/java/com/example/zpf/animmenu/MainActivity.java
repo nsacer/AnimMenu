@@ -19,10 +19,6 @@ import utils.ScreenUtils;
 public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     private boolean isMenuOpen = false;
-    //url
-    private String mCover = "http://pic94.nipic.com/file/20160403/22743169_220209251000_2.jpg";
-    //背景图
-    private ImageView ivCover;
 
     private ImageView iv_menu1;
     private ImageView iv_menu2;
@@ -52,8 +48,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     }
 
     private void initView() {
-
-        ivCover = findViewById(R.id.ivCoverMain);
 
         ImageView iv_switch = findViewById(R.id.menu_switch);
         iv_switch.setOnClickListener(this);

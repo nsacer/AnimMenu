@@ -8,7 +8,6 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
-import android.util.TypedValue;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 
@@ -28,9 +27,9 @@ public class MainBgView extends View {
     //默认右下角圆形颜色
     private final int COLOR_CIRCLE_BR = Color.BLACK;
     //默认坐上角圆形半径
-    private final float DEFAULT_RADIUS_CIRCLE_LT = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 99, getResources().getDisplayMetrics());
+    private final float DEFAULT_RADIUS_CIRCLE_LT = getResources().getDisplayMetrics().widthPixels / 2f;
     //默认右下角圆形半径
-    private final float DEFAULT_RADIUS_CIRCLE_BR = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 120, getResources().getDisplayMetrics());
+    private final float DEFAULT_RADIUS_CIRCLE_BR = DEFAULT_RADIUS_CIRCLE_LT * 1.5f;
     //背景颜色
     private int mColorBg = COLOR_BG;
     //左上角圆形颜色、半径
@@ -125,7 +124,7 @@ public class MainBgView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         drawContent(canvas);
-        if (!isStartAnim) startAnim();
+        startAnim();
     }
 
     //绘制图形
@@ -143,8 +142,10 @@ public class MainBgView extends View {
     //启动动画
     public void startAnim() {
 
-        isStartAnim = true;
-        doAnimLTCircle();
+        if (!isStartAnim) {
+            isStartAnim = true;
+            doAnimLTCircle();
+        }
     }
 
     //绘制左上角的动画
