@@ -82,32 +82,22 @@ public class MainBgView extends View {
     //读取自定义的属性值
     private void initAttr(Context context, AttributeSet attrs) {
 
-//        DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
         TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.MainBgView);
         int count = array.getIndexCount();
         for (int i = 0; i < count; i++) {
 
             int attr = array.getIndex(i);
-            switch (attr) {
-
-                case R.styleable.MainBgView_mainBgColor:
-                    mColorBg = array.getColor(attr, COLOR_BG);
-                    break;
-                case R.styleable.MainBgView_mainCircleLTColor:
-                    mColorCircleLT = array.getColor(attr, COLOR_CIRCLE_LT);
-                    break;
-                case R.styleable.MainBgView_mainCircleLTRadius:
-                    mRadiusCircleLT = array.getDimension(attr, DEFAULT_RADIUS_CIRCLE_LT);
-                    break;
-                case R.styleable.MainBgView_mainCircleBRColor:
-                    mColorCircleBR = array.getColor(attr, COLOR_CIRCLE_BR);
-                    break;
-                case R.styleable.MainBgView_mainCircleBRRadius:
-                    mRadiusCircleBR = array.getDimension(attr, DEFAULT_RADIUS_CIRCLE_BR);
-                    break;
-
+            if (attr == R.styleable.MainBgView_mainBgColor) {
+                mColorBg = array.getColor(attr, COLOR_BG);
+            } else if (attr == R.styleable.MainBgView_mainCircleLTColor) {
+                mColorCircleLT = array.getColor(attr, COLOR_CIRCLE_LT);
+            } else if (attr == R.styleable.MainBgView_mainCircleLTRadius) {
+                mRadiusCircleLT = array.getDimension(attr, DEFAULT_RADIUS_CIRCLE_LT);
+            } else if (attr == R.styleable.MainBgView_mainCircleBRColor) {
+                mColorCircleBR = array.getColor(attr, COLOR_CIRCLE_BR);
+            } else if (attr == R.styleable.MainBgView_mainCircleBRRadius) {
+                mRadiusCircleBR = array.getDimension(attr, DEFAULT_RADIUS_CIRCLE_BR);
             }
-
         }
 
         array.recycle();

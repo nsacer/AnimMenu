@@ -24,7 +24,6 @@ class ConstraintEnterActivity : BaseActivity(), View.OnClickListener {
             R.id.btnBanner -> openActivity(BannerZoomCenterActivity::class.java, v)
             R.id.btnSheet -> btmSheetDialog!!.show()
             R.id.btnSurfaceView -> openActivity(SurfaceViewActivity::class.java, v)
-            R.id.btnMainBgView -> openActivity(MainBgActivity::class.java, v)
             R.id.btnSurfaceRain -> openActivity(SurfaceRainActivity::class.java, v)
             R.id.btnTabBar -> openActivity(TabBarActivity::class.java, v)
             R.id.btnTemperature -> openActivity(TemperatureActivity::class.java, v)
@@ -66,8 +65,6 @@ class ConstraintEnterActivity : BaseActivity(), View.OnClickListener {
         btnSheet.setOnClickListener(this)
 
         btnSurfaceView.setOnClickListener(this)
-
-        btnMainBgView.setOnClickListener(this)
 
         btnSurfaceRain.setOnClickListener(this)
 

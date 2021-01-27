@@ -45,13 +45,6 @@
         android:text="SurfaceView" />
 
     <Button
-        android:id="@+id/btnMainBgView"
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/btn_height"
-        android:layout_margin="@dimen/btn_margin"
-        android:text="MainBgView" />
-
-    <Button
         android:id="@+id/btnSurfaceRain"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/btn_height"
