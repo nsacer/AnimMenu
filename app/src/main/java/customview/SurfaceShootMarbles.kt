@@ -8,6 +8,7 @@ import android.view.MotionEvent
 import android.view.SurfaceHolder
 import android.view.SurfaceView
 import model.Marbles
+import kotlin.math.floor
 
 /**
  * Created by SurfaceView on 2018/1/23.
@@ -18,36 +19,47 @@ class SurfaceShootMarbles : SurfaceView, SurfaceHolder.Callback, Runnable {
 
     private val tagLog = context.packageName
 
-    private var mSurfaceHolder: SurfaceHolder? = null
     private var mCanvas: Canvas? = null
+
     //子线程标志位，用来判断是否进行绘制
     private var mIsDraw: Boolean = false
+
     //屏幕宽度、高度
     private var hScreen = 0
     private var wScreen = 0
+
     //移动物体宽度、高度
     private val wTank = 150f
     private val hTank = 30f
+
     //全局paint
     private var mPaint = Paint()
+
     //目标被击中之后的paint
     private var mPaintTarget = Paint()
+
     //前一次、当前手指所在的位置
     private var preX = 0F
     private var curX = 0F
+
     //记录上一次tank停留的位置x
     private var preTankX = 0f
+
     //存储每一个发射出去的弹珠
     private var marbles = mutableListOf<Marbles>()
+
     //要打击的目标
     private val wTarget = 120f
     private var marbleTarget = Marbles(0f, 0f, 120f, 30f, false)
+
     //使用线程定时刷新
     private lateinit var threadRefresh: Thread
+
     //用来创建新tank的计数器
     private var mRunCount = 0
+
     //记录目标是否被击中（用于在循环里边判定是否绘制或者跳过）
-    private var isTargetShooted = false
+    private var isTargetHit = false
 
     constructor(context: Context) : super(context) {
         initView()
@@ -57,11 +69,13 @@ class SurfaceShootMarbles : SurfaceView, SurfaceHolder.Callback, Runnable {
         initView()
     }
 
-    constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
+    constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) :
+            super(context, attrs, defStyleAttr) {
         initView()
     }
 
-    constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int, defStyleRes: Int) : super(context, attrs, defStyleAttr, defStyleRes) {
+    constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int, defStyleRes: Int) :
+            super(context, attrs, defStyleAttr, defStyleRes) {
         initView()
     }
 
@@ -88,8 +102,7 @@ class SurfaceShootMarbles : SurfaceView, SurfaceHolder.Callback, Runnable {
     //初始化设置View
     private fun initView() {
 
-        mSurfaceHolder = holder
-        mSurfaceHolder!!.addCallback(this)
+        holder.addCallback(this)
         isFocusable = true
         //保持屏幕常量，使用PowerManager,WakeLock手动处理需要的话
         keepScreenOn = true
@@ -136,7 +149,7 @@ class SurfaceShootMarbles : SurfaceView, SurfaceHolder.Callback, Runnable {
     //真正的绘图逻辑
     private fun drawCanvas() {
 
-        mCanvas = mSurfaceHolder!!.lockCanvas()
+        mCanvas = holder.lockCanvas()
         if (mCanvas != null) {
 
             try {
@@ -145,17 +158,17 @@ class SurfaceShootMarbles : SurfaceView, SurfaceHolder.Callback, Runnable {
                 drawTankCenter(mCanvas)
                 drawMarbleTarget(mCanvas!!)
                 drawShootMarbleAndUpdateData(mCanvas!!)
-                if (isTargetShooted) {
+                if (isTargetHit) {
 
                     mCanvas!!.drawRect(marbleTarget.left, marbleTarget.top, marbleTarget.right, marbleTarget.btm, mPaintTarget)
                     updateMarbleTarget()
                 }
             } catch (e: Exception) {
-                Log.e(tagLog, e.message?:"")
+                Log.e(tagLog, e.message ?: "")
 
             } finally {
                 //提交绘制内容展示
-                mSurfaceHolder!!.unlockCanvasAndPost(mCanvas)
+                holder.unlockCanvasAndPost(mCanvas)
             }
         }
     }
@@ -190,9 +203,9 @@ class SurfaceShootMarbles : SurfaceView, SurfaceHolder.Callback, Runnable {
         marbles.forEachIndexed { index, marble ->
 
             if (marble.right > marbleTarget.left && marble.left < (marbleTarget.right) &&
-                    marbleTarget.btm >= marble.top && !isTargetShooted) {
+                    marbleTarget.btm >= marble.top && !isTargetHit) {
 
-                isTargetShooted = true
+                isTargetHit = true
                 marbles[index].isDestroy = true
             }
 
@@ -256,7 +269,7 @@ class SurfaceShootMarbles : SurfaceView, SurfaceHolder.Callback, Runnable {
     //生成打击目标的随机坐标
     private fun updateMarbleTarget() {
 
-        marbleTarget.left = Math.floor(Math.random() * (wScreen - wTarget)).toFloat()
+        marbleTarget.left = floor(Math.random() * (wScreen - wTarget)).toFloat()
         marbleTarget.right = marbleTarget.left + wTarget
         marbleTarget.top = 0f
         marbleTarget.btm = 30f

@@ -27,7 +27,9 @@ public class CircleRingGraph extends View {
     private final float DEFAULT_PADDING = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
             16, getResources().getDisplayMetrics());
 
-    /** 默认的进度条的宽度 */
+    /**
+     * 默认的进度条的宽度
+     */
     private final float DEFAULT_STROKE_WIDTH = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
             16, getResources().getDisplayMetrics());
 
@@ -36,7 +38,7 @@ public class CircleRingGraph extends View {
      * centerY:中心坐标点y
      * radiusOut:背景色圆形的半径
      * radiusIn:前景色圆形的半径
-     * */
+     */
     private float centerX, centerY, radiusOut, radiusIn;
 
     /**
@@ -44,7 +46,7 @@ public class CircleRingGraph extends View {
      * paintIn:前景色圆形画笔
      * paintPro:进度条的画笔
      * paintTxt:中心数据值文本的画笔
-     * */
+     */
     private Paint paintOut, paintIn, paintPro, paintTxt;
 
     /**
@@ -87,7 +89,7 @@ public class CircleRingGraph extends View {
     /**
      * textBaseLineX:绘制文本的基线x坐标点
      * textBaseLineY：绘制文本的基线y坐标点
-     * */
+     */
     private float textBaseLineX, textBaseLineY;
 
     public CircleRingGraph(Context context) {
@@ -127,51 +129,23 @@ public class CircleRingGraph extends View {
         for (int i = 0; i < count; i++) {
 
             int attr = typedArray.getIndex(i);
-            switch (attr) {
-
-                case R.styleable.CircleRingGraph_progressBackgroundColor:
-
-                    colorOut = typedArray.getColor(attr, ContextCompat.getColor(context, R.color.circle_out_blue));
-                    break;
-
-                case R.styleable.CircleRingGraph_progressColor:
-
-                    colorPro = typedArray.getColor(attr, ContextCompat.getColor(context, R.color.circle_progress_blue));
-                    break;
-
-                case R.styleable.CircleRingGraph_circleHeartColor:
-
-                    colorIn = typedArray.getColor(attr, ContextCompat.getColor(context, R.color.circle_in));
-                    break;
-
-                case R.styleable.CircleRingGraph_progressRoundCap:
-
-                    roundCap = typedArray.getBoolean(attr, Boolean.FALSE);
-                    break;
-
-                case R.styleable.CircleRingGraph_progressWidth:
-
-                    strokeWidth = typedArray.getDimension(attr, DEFAULT_STROKE_WIDTH);
-                    break;
-
-                case R.styleable.CircleRingGraph_centerText:
-
-                    centerText = typedArray.getString(attr);
-                    break;
-
-                case R.styleable.CircleRingGraph_centerTextColor:
-
-                    centerTextColor = typedArray.getColor(attr, ContextCompat.getColor(context, R.color.colorBlack));
-                    break;
-
-                case R.styleable.CircleRingGraph_centerTextSize:
-
-                    centerTextSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_PX,
-                            typedArray.getDimensionPixelSize(attr, 16), displayMetrics);
-                    break;
-
-                default:
-                    break;
+            if (attr == R.styleable.CircleRingGraph_progressBackgroundColor) {
+                colorOut = typedArray.getColor(attr, ContextCompat.getColor(context, R.color.circle_out_blue));
+            } else if (attr == R.styleable.CircleRingGraph_progressColor) {
+                colorPro = typedArray.getColor(attr, ContextCompat.getColor(context, R.color.circle_progress_blue));
+            } else if (attr == R.styleable.CircleRingGraph_circleHeartColor) {
+                colorIn = typedArray.getColor(attr, ContextCompat.getColor(context, R.color.circle_in));
+            } else if (attr == R.styleable.CircleRingGraph_progressRoundCap) {
+                roundCap = typedArray.getBoolean(attr, Boolean.FALSE);
+            } else if (attr == R.styleable.CircleRingGraph_progressWidth) {
+                strokeWidth = typedArray.getDimension(attr, DEFAULT_STROKE_WIDTH);
+            } else if (attr == R.styleable.CircleRingGraph_centerText) {
+                centerText = typedArray.getString(attr);
+            } else if (attr == R.styleable.CircleRingGraph_centerTextColor) {
+                centerTextColor = typedArray.getColor(attr, ContextCompat.getColor(context, R.color.colorBlack));
+            } else if (attr == R.styleable.CircleRingGraph_centerTextSize) {
+                centerTextSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_PX,
+                        typedArray.getDimensionPixelSize(attr, 16), displayMetrics);
             }
         }
 
@@ -230,10 +204,10 @@ public class CircleRingGraph extends View {
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
 
-        radiusOut = Math.min(w, h) / 2 - DEFAULT_PADDING;
+        radiusOut = Math.min(w, h) / 2f - DEFAULT_PADDING;
         radiusIn = radiusOut - strokeWidth;
-        centerX = w / 2;
-        centerY = h / 2;
+        centerX = w / 2f;
+        centerY = h / 2f;
 
         float left = centerX - radiusOut + strokeWidth / 2;
         float top = centerY - radiusOut + strokeWidth / 2;
@@ -291,7 +265,7 @@ public class CircleRingGraph extends View {
         animator.start();
     }
 
-    private class ProgressEvaluator implements TypeEvaluator<Float> {
+    private static class ProgressEvaluator implements TypeEvaluator<Float> {
         @Override
         public Float evaluate(float fraction, Float startValue, Float endValue) {
 
