@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.activity_constraint_enter.*
  * */
 class ConstraintEnterActivity : BaseActivity(), View.OnClickListener {
 
-    private var btmSheetDialog: BottomSheetDialog? = null
+    private lateinit var btmSheetDialog: BottomSheetDialog
 
     override fun onClick(v: View?) {
 
@@ -22,9 +22,8 @@ class ConstraintEnterActivity : BaseActivity(), View.OnClickListener {
             R.id.btnOne -> openActivity(ConstraintLayoutActivity::class.java, v)
             R.id.btnTwo -> openActivity(ConstraintLayoutAnimActivity::class.java, v)
             R.id.btnBanner -> openActivity(BannerZoomCenterActivity::class.java, v)
-            R.id.btnSheet -> btmSheetDialog!!.show()
+            R.id.btnSheet -> btmSheetDialog.show()
             R.id.btnSurfaceView -> openActivity(SurfaceViewActivity::class.java, v)
-            R.id.btnSurfaceRain -> openActivity(SurfaceRainActivity::class.java, v)
             R.id.btnTabBar -> openActivity(TabBarActivity::class.java, v)
             R.id.btnTemperature -> openActivity(TemperatureActivity::class.java, v)
             R.id.btnDownRetrofit -> showToast("bigFileDownload")
@@ -46,9 +45,6 @@ class ConstraintEnterActivity : BaseActivity(), View.OnClickListener {
                     }
                 }
             }
-            R.id.btnChangeMainBg -> {
-
-            }
         }
     }
 
@@ -66,8 +62,6 @@ class ConstraintEnterActivity : BaseActivity(), View.OnClickListener {
 
         btnSurfaceView.setOnClickListener(this)
 
-        btnSurfaceRain.setOnClickListener(this)
-
         btnTabBar.setOnClickListener(this)
 
         btnTemperature.setOnClickListener(this)
@@ -78,15 +72,14 @@ class ConstraintEnterActivity : BaseActivity(), View.OnClickListener {
 
         tvDrawableSize.setOnClickListener(this)
 
-        btnChangeMainBg.setOnClickListener(this)
     }
 
     //创建bottomSheetDialog
     private fun initBottomSheetDialog() {
 
         btmSheetDialog = BottomSheetDialog(this)
-        btmSheetDialog!!.setContentView(R.layout.layout_bottom_sheet_dialog)
-        val frameLayout = btmSheetDialog!!.delegate.findViewById<FrameLayout>(R.id.design_bottom_sheet)
+        btmSheetDialog.setContentView(R.layout.layout_bottom_sheet_dialog)
+        val frameLayout = btmSheetDialog.delegate.findViewById<FrameLayout>(R.id.design_bottom_sheet)
         val mBehavior = BottomSheetBehavior.from(frameLayout)
         mBehavior.peekHeight = getDp(240)
         mBehavior.state = BottomSheetBehavior.STATE_COLLAPSED

@@ -6,8 +6,12 @@ import android.support.v7.app.AppCompatActivity
 import android.text.TextUtils
 import android.transition.TransitionManager
 import android.view.View
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_constraint_layout_anim.*
 
+/**
+ * Constraint动画页面
+ * */
 class ConstraintLayoutAnimActivity : AppCompatActivity() {
 
     private val csApply: ConstraintSet = ConstraintSet()
@@ -30,8 +34,7 @@ class ConstraintLayoutAnimActivity : AppCompatActivity() {
 
         val sNum = et_num.text.toString()
         if (TextUtils.isEmpty(sNum)) return
-        val iNum = Integer.parseInt(sNum)
-        when (iNum) {
+        when (Integer.parseInt(sNum)) {
 
             0 -> animFirstBtnToLeft()
             1 -> animAllBtnCenterHorizontal()
@@ -39,7 +42,7 @@ class ConstraintLayoutAnimActivity : AppCompatActivity() {
             3 -> animTwoBtnWidthHeight()
             4 -> animTwoThreeGoneOneCrop()
             5 -> animChainStyleButtons()
-
+            else -> Toast.makeText(this, "请输入0-5", Toast.LENGTH_SHORT).show()
         }
 
     }
